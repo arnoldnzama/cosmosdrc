@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez toutes les offres d'emploi disponibles sur COSMOS GROUP. Trouvez votre prochain emploi parmi nos milliers d'opportunités.">
+    <title>Offres d'emploi - COSMOS GROUP</title>
+    <link rel="icon" type="image/x-icon" href="ico/favcion.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP" class="logo">
+                </div>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="offres.html" class="active">Offres d'emploi</a></li>
+                        <li class="nav-dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Entreprises <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cosmos-rh.html">Cosmos RH</a></li>
+                                <li><a href="cosmos-tic.html">Cosmos TIC</a></li>
+                                <li><a href="cosmos-sirh.html">Cosmos SIRH</a></li>
+                                <li><a href="cosmos-academy.html">Cosmos Academy</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Conseils carrière</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="nav-auth">
+                        <a href="connexion.html" class="btn-secondary">Connexion</a>
+                        <a href="inscription.html" class="btn-primary">Inscription</a>
+                    </div>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Offres d'emploi</h1>
+                <p>Découvrez des opportunités professionnelles qui correspondent à vos
+                    ambitions</p>
+
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="index.html">Accueil</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Offres d'emploi</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filters Section -->
+    <section class="search-filters">
+        <div class="container">
+            <!-- Main Search -->
+            <div class="search-box-main">
+                <form class="search-form-main">
+                    <div class="search-field">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Métier, mot-clé, entreprise..." class="search-input"
+                            id="job-search">
+                    </div>
+                    <div class="search-field">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Ville, région..." class="location-input" id="location-search">
+                    </div>
+                    <button type="submit" class="btn-search">
+                        <i class="fas fa-search"></i>
+                        Rechercher
+                    </button>
+                </form>
+            </div>
+
+            <!-- Advanced Filters -->
+            <div class="filters-container">
+                <div class="filters-header">
+                    <h3>Filtrer les résultats</h3>
+                    <button class="btn-clear-filters">
+                        <i class="fas fa-times"></i>
+                        Effacer les filtres
+                    </button>
+                </div>
+
+                <div class="filters-grid">
+                    <!-- Contract Type Filter -->
+                    <div class="filter-group">
+                        <label class="filter-label">Type de contrat</label>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="cdi" name="contract">
+                                <span class="checkmark"></span>
+                                CDI <span class="count">(1,245)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="cdd" name="contract">
+                                <span class="checkmark"></span>
+                                CDD <span class="count">(687)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="interim" name="contract">
+                                <span class="checkmark"></span>
+                                Intérim <span class="count">(423)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="freelance" name="contract">
+                                <span class="checkmark"></span>
+                                Freelance <span class="count">(156)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="stage" name="contract">
+                                <span class="checkmark"></span>
+                                Stage <span class="count">(89)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Salary Range Filter -->
+                    <div class="filter-group">
+                        <label class="filter-label">Salaire (FC)</label>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="0-300000" name="salary">
+                                <span class="checkmark"></span>
+                                Moins de 300K <span class="count">(234)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="300000-600000" name="salary">
+                                <span class="checkmark"></span>
+                                300K - 600K <span class="count">(567)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="600000-1000000" name="salary">
+                                <span class="checkmark"></span>
+                                600K - 1M <span class="count">(789)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="1000000+" name="salary">
+                                <span class="checkmark"></span>
+                                Plus de 1M <span class="count">(345)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Experience Level Filter -->
+                    <div class="filter-group">
+                        <label class="filter-label">Niveau d'expérience</label>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="junior" name="experience">
+                                <span class="checkmark"></span>
+                                Débutant (0-2 ans) <span class="count">(456)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="intermediate" name="experience">
+                                <span class="checkmark"></span>
+                                Intermédiaire (2-5 ans) <span class="count">(789)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="senior" name="experience">
+                                <span class="checkmark"></span>
+                                Senior (5+ ans) <span class="count">(567)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Sector Filter -->
+                    <div class="filter-group">
+                        <label class="filter-label">Secteur d'activité</label>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="it" name="sector">
+                                <span class="checkmark"></span>
+                                Informatique <span class="count">(345)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="finance" name="sector">
+                                <span class="checkmark"></span>
+                                Finance <span class="count">(234)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="marketing" name="sector">
+                                <span class="checkmark"></span>
+                                Marketing <span class="count">(189)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="sales" name="sector">
+                                <span class="checkmark"></span>
+                                Commercial <span class="count">(267)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="hr" name="sector">
+                                <span class="checkmark"></span>
+                                Ressources Humaines <span class="count">(123)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="jobs-results">
+        <div class="container">
+            <div class="results-header">
+                <div class="results-info">
+                    <h2><span class="results-count">2,547</span> offres trouvées</h2>
+                    <p>Mise à jour il y a quelques minutes</p>
+                </div>
+
+                <div class="results-controls">
+                    <div class="sort-dropdown">
+                        <label for="sort-select">Trier par :</label>
+                        <select id="sort-select" class="sort-select">
+                            <option value="date">Plus récentes</option>
+                            <option value="relevance">Pertinence</option>
+                            <option value="salary-high">Salaire décroissant</option>
+                            <option value="salary-low">Salaire croissant</option>
+                            <option value="company">Entreprise A-Z</option>
+                        </select>
+                    </div>
+
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jobs Grid -->
+            <div class="jobs-grid" id="jobs-container">
+                <!-- Job Card 1 -->
+                <div class="job-card" data-contract="cdi" data-salary="800000-1200000" data-experience="intermediate"
+                    data-sector="it">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/orange-150x150.png" alt="Orange">
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn-favorite" title="Ajouter aux favoris">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="job-badge">CDI</div>
+                        </div>
+                    </div>
+                    <h3 class="job-title">Développeur Full Stack Senior</h3>
+                    <p class="company-name">Orange Côte d'Ivoire</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Kinshasa</p>
+                    <p class="job-salary"><i class="fas fa-money-bill-wave"></i> 800 000 - 1 200 000 FC/mois</p>
+                    <p class="job-description">Nous recherchons un développeur full stack expérimenté pour rejoindre
+                        notre équipe de développement digital. Vous travaillerez sur des projets innovants...</p>
+                    <div class="job-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date"><i class="fas fa-clock"></i> Il y a 2 jours</span>
+                        <a href="offre-detail.html?id=1" class="btn-apply">Postuler maintenant</a>
+                    </div>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card" data-contract="cdd" data-salary="600000-900000" data-experience="intermediate"
+                    data-sector="marketing">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/fameco-150x150.jpg" alt="Fameco">
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn-favorite" title="Ajouter aux favoris">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="job-badge cdd">CDD</div>
+                        </div>
+                    </div>
+                    <h3 class="job-title">Responsable Marketing Digital</h3>
+                    <p class="company-name">Fameco</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Mwanda</p>
+                    <p class="job-salary"><i class="fas fa-money-bill-wave"></i> 600 000 - 900 000 FC/mois</p>
+                    <p class="job-description">Rejoignez notre équipe marketing pour développer notre présence digitale.
+                        Vous serez responsable de la stratégie marketing online...</p>
+                    <div class="job-tags">
+                        <span class="tag">Marketing Digital</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">Social Media</span>
+                        <span class="tag">Google Ads</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date"><i class="fas fa-clock"></i> Il y a 1 jour</span>
+                        <a href="offre-detail.html?id=2" class="btn-apply">Postuler maintenant</a>
+                    </div>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card" data-contract="cdi" data-salary="700000-1000000" data-experience="senior"
+                    data-sector="finance">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/GRB-300x300-PNG-150x150.png" alt="GRB">
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn-favorite" title="Ajouter aux favoris">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="job-badge">CDI</div>
+                        </div>
+                    </div>
+                    <h3 class="job-title">Comptable Senior</h3>
+                    <p class="company-name">Groupe GRB</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Lubumbashi</p>
+                    <p class="job-salary"><i class="fas fa-money-bill-wave"></i> 700 000 - 1 000 000 FC/mois</p>
+                    <p class="job-description">Nous recherchons un comptable expérimenté pour gérer la comptabilité
+                        générale et analytique de notre groupe...</p>
+                    <div class="job-tags">
+                        <span class="tag">Comptabilité</span>
+                        <span class="tag">Sage</span>
+                        <span class="tag">Fiscalité</span>
+                        <span class="tag">Audit</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date"><i class="fas fa-clock"></i> Il y a 3 jours</span>
+                        <a href="offre-detail.html?id=3" class="btn-apply">Postuler maintenant</a>
+                    </div>
+                </div>
+
+                <!-- Job Card 4 -->
+                <div class="job-card" data-contract="cdi" data-salary="500000-800000" data-experience="intermediate"
+                    data-sector="sales">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/GTS-150x150.jpg" alt="GTS">
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn-favorite" title="Ajouter aux favoris">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="job-badge">CDI</div>
+                        </div>
+                    </div>
+                    <h3 class="job-title">Commercial B2B</h3>
+                    <p class="company-name">GTS Logistics</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> Kinshasa, Zone Industrielle</p>
+                    <p class="job-salary"><i class="fas fa-money-bill-wave"></i> 500 000 - 800 000 FC/mois</p>
+                    <p class="job-description">Développez notre portefeuille client entreprises dans le secteur de la
+                        logistique. Expérience en vente B2B requise...</p>
+                    <div class="job-tags">
+                        <span class="tag">Vente B2B</span>
+                        <span class="tag">Logistique</span>
+                        <span class="tag">Négociation</span>
+                        <span class="tag">CRM</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date"><i class="fas fa-clock"></i> Il y a 4 jours</span>
+                        <a href="offre-detail.html?id=4" class="btn-apply">Postuler maintenant</a>
+                    </div>
+                </div>
+
+                <!-- Job Card 5 -->
+                <div class="job-card" data-contract="stage" data-salary="0-300000" data-experience="junior"
+                    data-sector="it">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/img_baobab_page-0001-1-150x150.jpg" alt="Baobab">
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn-favorite" title="Ajouter aux favoris">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="job-badge stage">Stage</div>
+                        </div>
+                    </div>
+                    <h3 class="job-title">Stagiaire Développeur Web</h3>
+                    <p class="company-name">Baobab Digital</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Kwilu</p>
+                    <p class="job-salary"><i class="fas fa-money-bill-wave"></i> 150 000 FC/mois</p>
+                    <p class="job-description">Stage de 6 mois pour apprendre le développement web dans une équipe
+                        dynamique. Formation assurée...</p>
+                    <div class="job-tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">Formation</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date"><i class="fas fa-clock"></i> Il y a 1 jour</span>
+                        <a href="offre-detail.html?id=5" class="btn-apply">Postuler maintenant</a>
+                    </div>
+                </div>
+
+                <!-- Job Card 6 -->
+                <div class="job-card" data-contract="interim" data-salary="300000-600000" data-experience="intermediate"
+                    data-sector="hr">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/img_seafish_page-0001-1-150x150.jpg" alt="Seafish">
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn-favorite" title="Ajouter aux favoris">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="job-badge interim">Intérim</div>
+                        </div>
+                    </div>
+                    <h3 class="job-title">Assistant RH</h3>
+                    <p class="company-name">Seafish Industries</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Bunia</p>
+                    <p class="job-salary"><i class="fas fa-money-bill-wave"></i> 400 000 - 550 000 FC/mois</p>
+                    <p class="job-description">Mission d'intérim de 3 mois renouvelable pour assister l'équipe RH dans
+                        la gestion administrative du personnel...</p>
+                    <div class="job-tags">
+                        <span class="tag">RH</span>
+                        <span class="tag">Administration</span>
+                        <span class="tag">Paie</span>
+                        <span class="tag">Recrutement</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date"><i class="fas fa-clock"></i> Il y a 5 jours</span>
+                        <a href="offre-detail.html?id=6" class="btn-apply">Postuler maintenant</a>
+                    </div>
+                </div>
+
+                <!-- Job Card 7 -->
+                <div class="job-card" data-contract="freelance" data-salary="1000000+" data-experience="senior"
+                    data-sector="it">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/img_socium_page-0001-150x150.jpg" alt="Socium">
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn-favorite" title="Ajouter aux favoris">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="job-badge freelance">Freelance</div>
+                        </div>
+                    </div>
+                    <h3 class="job-title">Consultant IT Senior</h3>
+                    <p class="company-name">Socium Consulting</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> Télétravail / Abidjan</p>
+                    <p class="job-salary"><i class="fas fa-money-bill-wave"></i> 1 500 000+ FC/mission</p>
+                    <p class="job-description">Mission de consulting pour l'implémentation d'une solution ERP. Expertise
+                        SAP ou Oracle requise...</p>
+                    <div class="job-tags">
+                        <span class="tag">Consulting</span>
+                        <span class="tag">ERP</span>
+                        <span class="tag">SAP</span>
+                        <span class="tag">Télétravail</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date"><i class="fas fa-clock"></i> Il y a 2 jours</span>
+                        <a href="offre-detail.html?id=7" class="btn-apply">Postuler maintenant</a>
+                    </div>
+                </div>
+
+                <!-- Job Card 8 -->
+                <div class="job-card" data-contract="cdi" data-salary="600000-1000000" data-experience="intermediate"
+                    data-sector="marketing">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/img_vlisco_page-0001-1-150x150.jpg" alt="Vlisco">
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn-favorite" title="Ajouter aux favoris">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="job-badge">CDI</div>
+                        </div>
+                    </div>
+                    <h3 class="job-title">Chef de Produit</h3>
+                    <p class="company-name">Vlisco Côte d'Ivoire</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Plateau de Bateke</p>
+                    <p class="job-salary"><i class="fas fa-money-bill-wave"></i> 750 000 - 950 000 FC/mois</p>
+                    <p class="job-description">Gérez le cycle de vie des produits textiles, de la conception au
+                        lancement. Expérience en industrie textile appréciée...</p>
+                    <div class="job-tags">
+                        <span class="tag">Product Management</span>
+                        <span class="tag">Textile</span>
+                        <span class="tag">Innovation</span>
+                        <span class="tag">Marketing</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date"><i class="fas fa-clock"></i> Il y a 6 jours</span>
+                        <a href="offre-detail.html?id=8" class="btn-apply">Postuler maintenant</a>
+                    </div>
+                </div>
+
+                <!-- Job Card 9 -->
+                <div class="job-card" data-contract="cdd" data-salary="300000-600000" data-experience="junior"
+                    data-sector="finance">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/polytra-150x150.jpeg" alt="Polytra">
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn-favorite" title="Ajouter aux favoris">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="job-badge cdd">CDD</div>
+                        </div>
+                    </div>
+                    <h3 class="job-title">Assistant Comptable</h3>
+                    <p class="company-name">Polytra</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Kinshasa</p>
+                    <p class="job-salary"><i class="fas fa-money-bill-wave"></i> 350 000 - 500 000 FC/mois</p>
+                    <p class="job-description">Contrat de 12 mois pour assister l'équipe comptable. Parfait pour débuter
+                        une carrière en comptabilité...</p>
+                    <div class="job-tags">
+                        <span class="tag">Comptabilité</span>
+                        <span class="tag">Saisie</span>
+                        <span class="tag">Débutant</span>
+                        <span class="tag">Formation</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date"><i class="fas fa-clock"></i> Il y a 1 semaine</span>
+                        <a href="offre-detail.html?id=9" class="btn-apply">Postuler maintenant</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-container">
+                <nav class="pagination">
+                    <button class="pagination-btn prev" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                        Précédent
+                    </button>
+
+                    <div class="pagination-numbers"></div>
+
+                    <button class="pagination-btn next">
+                        Suivant
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </nav>
+
+                <div class="pagination-info">
+                    <p>Affichage de 1 à 20 sur 2,547 offres</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Alerts CTA -->
+    <section class="job-alerts-cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="cta-text">
+                    <h3>Ne manquez aucune opportunité</h3>
+                    <p>Créez une alerte emploi et recevez les nouvelles offres correspondant à vos critères directement
+                        par email</p>
+                </div>
+                <a href="alerte-emploi.html" class="btn-primary">Créer une alerte</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de candidature -->
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Postuler à cette offre</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="job-info-modal">
+                    <h3 id="modal-job-title"></h3>
+                    <p id="modal-company-name"></p>
+                    <p id="modal-job-description"></p>
+                </div>
+                <form id="applicationForm" class="application-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nom">Nom <span class="required">*</span></label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="postnom">Postnom <span class="required">*</span></label>
+                            <input type="text" id="postnom" name="postnom" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom <span class="required">*</span></label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Numéro de téléphone <span class="required">*</span></label>
+                        <input type="tel" id="telephone" name="telephone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cv">CV <span class="required">*</span></label>
+                        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                        <small>Formats acceptés : PDF, DOC, DOCX (Max 5MB)</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="lettre-motivation">Lettre de motivation</label>
+                        <input type="file" id="lettre-motivation" name="lettre-motivation" accept=".pdf,.doc,.docx">
+                        <small>Formats acceptés : PDF, DOC, DOCX (Max 5MB)</small>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary modal-cancel">Annuler</button>
+                        <button type="submit" class="btn-primary">Envoyer ma candidature</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP">
+                    </div>
+                    <p>La plateforme de recrutement de référence qui connecte les talents aux meilleures opportunités
+                        professionnelles.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Candidats</h4>
+                    <ul>
+                        <li><a href="offres.html">Rechercher un emploi</a></li>
+                        <li><a href="cv-builder.html">Créer mon CV</a></li>
+                        <li><a href="dashboard-candidat.html">Mon espace</a></li>
+                        <li><a href="blog.html">Conseils carrière</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Entreprises</h4>
+                    <ul>
+                        <li><a href="cosmos-rh.html">Cosmos RH</a></li>
+                        <li><a href="cosmos-tic.html">Cosmos TIC</a></li>
+                        <li><a href="cosmos-sirh.html">Cosmos SIRH</a></li>
+                        <li><a href="cosmos-academy.html">Cosmos Academy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>À propos</h4>
+                    <ul>
+                        <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                        <li><a href="cgv.html">CGV</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 COSMOS GROUP. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">RGPD</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('applicationModal');
+            const modalClose = document.querySelector('.modal-close');
+            const modalCancel = document.querySelector('.modal-cancel');
+            const applicationForm = document.getElementById('applicationForm');
+            const applyButtons = document.querySelectorAll('.btn-apply');
+
+            // Ouvrir le modal au clic sur "Postuler maintenant"
+            applyButtons.forEach(function(button) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Récupérer les informations de l'offre
+                    const jobCard = this.closest('.job-card');
+                    const jobTitle = jobCard.querySelector('.job-title').textContent;
+                    const companyName = jobCard.querySelector('.company-name').textContent;
+                    const jobDescription = jobCard.querySelector('.job-description') 
+                        ? jobCard.querySelector('.job-description').textContent 
+                        : '';
+
+                    // Remplir le modal avec les informations
+                    document.getElementById('modal-job-title').textContent = jobTitle;
+                    document.getElementById('modal-company-name').textContent = companyName;
+                    document.getElementById('modal-job-description').textContent = jobDescription;
+
+                    // Afficher le modal
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Fermer le modal
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                applicationForm.reset();
+            }
+
+            if (modalClose) {
+                modalClose.addEventListener('click', closeModal);
+            }
+
+            if (modalCancel) {
+                modalCancel.addEventListener('click', closeModal);
+            }
+
+            // Fermer le modal en cliquant en dehors
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Gérer la soumission du formulaire
+            applicationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Validation des fichiers
+                const cvFile = document.getElementById('cv').files[0];
+                const lettreFile = document.getElementById('lettre-motivation').files[0];
+
+                if (cvFile && cvFile.size > 5 * 1024 * 1024) {
+                    alert('Le fichier CV ne doit pas dépasser 5MB');
+                    return;
+                }
+
+                if (lettreFile && lettreFile.size > 5 * 1024 * 1024) {
+                    alert('Le fichier lettre de motivation ne doit pas dépasser 5MB');
+                    return;
+                }
+
+                // Récupérer les données du formulaire
+                const formData = new FormData(applicationForm);
+                
+                // Ici, vous ajouteriez l'appel API pour envoyer la candidature
+                console.log('Candidature envoyée:', {
+                    nom: formData.get('nom'),
+                    postnom: formData.get('postnom'),
+                    prenom: formData.get('prenom'),
+                    telephone: formData.get('telephone'),
+                    email: formData.get('email'),
+                    cv: cvFile ? cvFile.name : '',
+                    lettre: lettreFile ? lettreFile.name : ''
+                });
+
+                // Afficher un message de succès
+                alert('Votre candidature a été envoyée avec succès ! Nous vous contacterons bientôt.');
+                
+                // Fermer le modal
+                closeModal();
+            });
+
+            // Script de filtrage et pagination existant
+            const searchInput = document.getElementById('job-search');
+            const locationInput = document.getElementById('location-search');
+            const searchForm = document.querySelector('.search-form-main');
+            const sortSelect = document.getElementById('sort-select');
+            const filterCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+            const clearFiltersBtn = document.querySelector('.btn-clear-filters');
+            let jobCards = Array.from(document.querySelectorAll('.job-card'));
+            const resultsCount = document.querySelector('.results-count');
+            const viewBtns = document.querySelectorAll('.view-btn');
+            const jobsContainer = document.getElementById('jobs-container');
+            const paginationInfo = document.querySelector('.pagination-info p');
+            const jobsCountEl = document.querySelector('.jobs-count');
+            const paginationElement = document.querySelector('.pagination');
+            const paginationNumbers = document.querySelector('.pagination-numbers');
+            const prevBtn = document.querySelector('.pagination-btn.prev');
+            const nextBtn = document.querySelector('.pagination-btn.next');
+            const jobsPerPage = 3;
+            let totalJobsCount = 0;
+            let currentPage = 1;
+            let filteredJobCards = [];
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialQuery = urlParams.get('q') || '';
+            const initialLocation = urlParams.get('loc') || '';
+            if (searchInput && initialQuery) {
+                searchInput.value = initialQuery;
+            }
+            if (locationInput && initialLocation) {
+                locationInput.value = initialLocation;
+            }
+
+            function parseSalaryRange(value) {
+                if (!value) return { min: 0, max: 0 };
+                const v = String(value).trim();
+                if (v.endsWith('+')) {
+                    const n = parseInt(v.replace(/[^0-9]/g, ''), 10);
+                    return { min: isNaN(n) ? 0 : n, max: Number.POSITIVE_INFINITY };
+                }
+                const parts = v.split('-');
+                const min = parseInt(parts[0], 10);
+                const max = parseInt(parts[1], 10);
+                return {
+                    min: isNaN(min) ? 0 : min,
+                    max: isNaN(max) ? (isNaN(min) ? 0 : min) : max
+                };
+            }
+
+            function parseRelativeDays(text) {
+                const t = String(text || '').toLowerCase();
+                const m = t.match(/(\d+)/);
+                const n = m ? parseInt(m[1], 10) : 0;
+                if (t.includes('semaine')) return n * 7;
+                if (t.includes('jour')) return n;
+                if (t.includes('jours')) return n;
+                return Number.MAX_SAFE_INTEGER;
+            }
+
+            function isCardPublished(card) {
+                const status = card.dataset.status;
+                return !status || status === 'published';
+            }
+
+            function updateFilterCounts() {
+                const publishedCards = jobCards.filter(isCardPublished);
+                totalJobsCount = publishedCards.length;
+
+                const filterTypes = ['contract', 'salary', 'experience', 'sector'];
+
+                filterTypes.forEach(type => {
+                    const checkboxes = document.querySelectorAll('input[name="' + type + '"]');
+                    checkboxes.forEach(cb => {
+                        const value = cb.value;
+                        const count = publishedCards.filter(card => card.dataset[type] === value).length;
+                        const countSpan = cb.parentElement && cb.parentElement.querySelector('.count');
+                        if (countSpan) {
+                            countSpan.textContent = '(' + count.toLocaleString() + ')';
+                        }
+                    });
+                });
+
+                if (jobsCountEl) {
+                    jobsCountEl.textContent = totalJobsCount.toLocaleString();
+                }
+            }
+
+            function renderPaginationNumbers(totalPages) {
+                if (!paginationNumbers) return;
+                paginationNumbers.innerHTML = '';
+                for (let page = 1; page <= totalPages; page++) {
+                    const btn = document.createElement('button');
+                    btn.className = 'pagination-number' + (page === currentPage ? ' active' : '');
+                    btn.textContent = String(page);
+                    btn.addEventListener('click', function () {
+                        if (page === currentPage) return;
+                        currentPage = page;
+                        applyPagination();
+                    });
+                    paginationNumbers.appendChild(btn);
+                }
+            }
+
+            function updatePrevNextButtons(totalPages) {
+                if (prevBtn) {
+                    prevBtn.disabled = currentPage <= 1 || totalPages <= 1;
+                }
+                if (nextBtn) {
+                    nextBtn.disabled = currentPage >= totalPages || totalPages <= 1;
+                }
+            }
+
+            function applyPagination() {
+                if (!filteredJobCards || filteredJobCards.length === 0) {
+                    jobCards.forEach(function (card) {
+                        card.style.display = 'none';
+                    });
+                    if (resultsCount) {
+                        resultsCount.textContent = '0';
+                    }
+                    if (paginationInfo) {
+                        const total = totalJobsCount || 0;
+                        paginationInfo.textContent = 'Affichage de 0 à 0 sur ' + total.toLocaleString() + ' offres';
+                    }
+                    if (paginationNumbers) {
+                        paginationNumbers.innerHTML = '';
+                    }
+                    updatePrevNextButtons(0);
+                    return;
+                }
+
+                const totalVisible = filteredJobCards.length;
+                const totalPages = Math.max(1, Math.ceil(totalVisible / jobsPerPage));
+                if (currentPage > totalPages) {
+                    currentPage = totalPages;
+                }
+
+                jobCards.forEach(function (card) {
+                    card.style.display = 'none';
+                });
+
+                const startIndex = (currentPage - 1) * jobsPerPage;
+                const endIndex = Math.min(startIndex + jobsPerPage, totalVisible);
+                for (let i = startIndex; i < endIndex; i++) {
+                    filteredJobCards[i].style.display = 'block';
+                }
+
+                if (resultsCount) {
+                    resultsCount.textContent = totalVisible.toLocaleString();
+                }
+
+                if (paginationInfo) {
+                    const fromIndex = totalVisible === 0 ? 0 : startIndex + 1;
+                    const toIndex = totalVisible === 0 ? 0 : endIndex;
+                    const total = totalJobsCount || totalVisible;
+                    paginationInfo.textContent = 'Affichage de ' + fromIndex + ' à ' + toIndex + ' sur ' + total.toLocaleString() + ' offres';
+                }
+
+                renderPaginationNumbers(totalPages);
+                updatePrevNextButtons(totalPages);
+            }
+
+            function filterJobs() {
+                currentPage = 1;
+                const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+                const locationTerm = locationInput ? locationInput.value.toLowerCase() : '';
+
+                const activeFilters = {
+                    contract: Array.from(document.querySelectorAll('input[name="contract"]:checked')).map(cb => cb.value),
+                    salary: Array.from(document.querySelectorAll('input[name="salary"]:checked')).map(cb => cb.value),
+                    experience: Array.from(document.querySelectorAll('input[name="experience"]:checked')).map(cb => cb.value),
+                    sector: Array.from(document.querySelectorAll('input[name="sector"]:checked')).map(cb => cb.value)
+                };
+
+                const matches = [];
+
+                jobCards.forEach(function (card) {
+                    const title = card.querySelector('.job-title').textContent.toLowerCase();
+                    const company = card.querySelector('.company-name').textContent.toLowerCase();
+                    const location = card.querySelector('.job-location').textContent.toLowerCase();
+                    const description = card.querySelector('.job-description').textContent.toLowerCase();
+
+                    const matchesSearch = !searchTerm ||
+                        title.includes(searchTerm) ||
+                        company.includes(searchTerm) ||
+                        description.includes(searchTerm);
+
+                    const matchesLocation = !locationTerm || location.includes(locationTerm);
+
+                    const matchesFilters = Object.keys(activeFilters).every(function (filterType) {
+                        if (activeFilters[filterType].length === 0) return true;
+                        const cardValue = card.dataset[filterType];
+                        return activeFilters[filterType].includes(cardValue);
+                    });
+
+                    if (isCardPublished(card) && matchesSearch && matchesLocation && matchesFilters) {
+                        matches.push(card);
+                    }
+                });
+
+                filteredJobCards = matches;
+                applyPagination();
+            }
+
+            // Event listeners
+            if (searchForm) {
+                searchForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    filterJobs();
+                });
+            }
+            if (searchInput) {
+                searchInput.addEventListener('input', filterJobs);
+            }
+            if (locationInput) {
+                locationInput.addEventListener('input', filterJobs);
+            }
+            filterCheckboxes.forEach(function (checkbox) {
+                checkbox.addEventListener('change', filterJobs);
+            });
+
+            if (clearFiltersBtn) {
+                clearFiltersBtn.addEventListener('click', function () {
+                    filterCheckboxes.forEach(function (checkbox) {
+                        checkbox.checked = false;
+                    });
+                    if (searchInput) {
+                        searchInput.value = '';
+                    }
+                    if (locationInput) {
+                        locationInput.value = '';
+                    }
+                    filterJobs();
+                });
+            }
+
+            viewBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    viewBtns.forEach(function (b) {
+                        b.classList.remove('active');
+                    });
+                    this.classList.add('active');
+
+                    const view = this.dataset.view;
+                    jobsContainer.className = view === 'list' ? 'jobs-list' : 'jobs-grid';
+                });
+            });
+
+            document.querySelectorAll('.btn-favorite').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        this.classList.add('favorited');
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        this.classList.remove('favorited');
+                    }
+                });
+            });
+
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function () {
+                    const sortBy = this.value;
+                    const jobsArray = Array.from(jobCards);
+
+                    jobsArray.sort(function (a, b) {
+                        switch (sortBy) {
+                            case 'date':
+                                {
+                                    const aDays = parseRelativeDays(a.querySelector('.job-date') ? a.querySelector('.job-date').textContent : '');
+                                    const bDays = parseRelativeDays(b.querySelector('.job-date') ? b.querySelector('.job-date').textContent : '');
+                                    return aDays - bDays;
+                                }
+                            case 'salary-high':
+                                {
+                                    const aSal = parseSalaryRange(a.dataset.salary);
+                                    const bSal = parseSalaryRange(b.dataset.salary);
+                                    const aMax = aSal.max === Number.POSITIVE_INFINITY ? Number.MAX_SAFE_INTEGER : aSal.max;
+                                    const bMax = bSal.max === Number.POSITIVE_INFINITY ? Number.MAX_SAFE_INTEGER : bSal.max;
+                                    return bMax - aMax;
+                                }
+                            case 'salary-low':
+                                {
+                                    const aSal = parseSalaryRange(a.dataset.salary);
+                                    const bSal = parseSalaryRange(b.dataset.salary);
+                                    return aSal.min - bSal.min;
+                                }
+                            case 'company':
+                                {
+                                    const companyA = a.querySelector('.company-name').textContent;
+                                    const companyB = b.querySelector('.company-name').textContent;
+                                    return companyA.localeCompare(companyB);
+                                }
+                            default:
+                                return 0;
+                        }
+                    });
+
+                    jobsArray.forEach(function (card) {
+                        jobsContainer.appendChild(card);
+                    });
+
+                    jobCards = jobsArray;
+                    filterJobs();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function () {
+                    if (currentPage > 1) {
+                        currentPage -= 1;
+                        applyPagination();
+                    }
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function () {
+                    if (!filteredJobCards || filteredJobCards.length === 0) return;
+                    const totalVisible = filteredJobCards.length;
+                    const totalPages = Math.max(1, Math.ceil(totalVisible / jobsPerPage));
+                    if (currentPage < totalPages) {
+                        currentPage += 1;
+                        applyPagination();
+                    }
+                });
+            }
+
+            updateFilterCounts();
+            filterJobs();
+        });
+    </script>
+</body>
+
+</html>

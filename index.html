@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="COSMOS GROUP - Plateforme de recrutement professionnelle. Trouvez votre emploi idéal ou recrutez les meilleurs talents.">
+    <title>COSMOS GROUP - Plateforme de Recrutement</title>
+    <link rel="icon" type="image/x-icon" href="ico/favcion.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP" class="logo">
+                </div>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="offres.html">Offres d'emploi</a></li>
+                        <li class="nav-dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Entreprises <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cosmos-rh.html">Cosmos RH</a></li>
+                                <li><a href="cosmos-tic.html">Cosmos TIC</a></li>
+                                <li><a href="cosmos-sirh.html">Cosmos SIRH</a></li>
+                                <li><a href="cosmos-academy.html">Cosmos Academy</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Conseils carrière</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="nav-auth">
+                        <a href="connexion.html" class="btn-secondary">Connexion</a>
+                        <a href="inscription.html" class="btn-primary">Inscription</a>
+                    </div>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero-home" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Parce que chaque talent compte... 
+                </h1>
+                <p class="hero-subtitle">Chaque collaborateur est une pièce essentielle au succès de votre entreprise. Chez Cosmos Group DRC, nous mettons notre expertise au service de la valorisation et de l’accompagnement des talents.</p>
+
+                <!-- Recherche principale supprimée -->
+
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <br>
+                    <h2>A Propos de nous</h2>
+                    <p>Initialement créée en 2015 comme une plateforme d’échange entre spécialistes de deux secteurs d’activités (RH et TIC), nous avons évolué pour devenir un consortium d’experts et avons créé une entité légale.</p>
+                    <p>Aujourd’hui reconnue légalement, et surtout grâce aux réalisations et parcours élogieux de nos experts, associés et collaborateurs, le Group COSMOS se distingue par la qualité de son accompagnement des clients et candidats ainsi que par son hyperspécialisation dans les domaines des RH et des TIC.</p>
+                    <p>Composé de 4 entités spécialisées, le Group COSMOS se différencie par son expertise et son engagement envers l’excellence.</p>
+                    <p>Notre bureau central est basé à Kinshasa Gombe, mais nous couvrons toute la RDC et ses environs grâce à nos cellules et nos réseaux de partenaires répartis dans plusieurs provinces.</p>
+                </div>
+                <div class="about-image">
+                    <div class="about-stats">
+                        <div class="about-stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <span class="about-stat-number" data-target="70000">0</span>
+                            <span class="about-stat-label">CV collectés</span>
+                        </div>
+                        <div class="about-stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <span class="about-stat-number" data-target="60">0</span>
+                            <span class="about-stat-label">Recrutements</span>
+                        </div>
+                        <div class="about-stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <span class="about-stat-number" data-target="100">0</span>
+                            <span class="about-stat-label">Jeunes accompagnés</span>
+                        </div>
+                        <div class="about-stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <span class="about-stat-number" data-target="200">0</span>
+                            <span class="about-stat-label">Participants formés</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtres rapides -->
+    <section class="quick-filters">
+        <div class="container">
+            <h2>Recherche par type de contrat</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="cdi">CDI</button>
+                <button class="filter-btn" data-filter="cdd">CDD</button>
+                <button class="filter-btn" data-filter="interim">Intérim</button>
+                <button class="filter-btn" data-filter="freelance">Freelance</button>
+                <button class="filter-btn" data-filter="stage">Stage</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offres en vedette -->
+    <section class="featured-jobs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Offres en vedette</h2>
+                <a href="offres.html" class="btn-link">Voir toutes les offres <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="jobs-grid">
+                <!-- Job Card 1 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/orange-150x150.png" alt="Orange">
+                        </div>
+                        <div class="job-badge">CDI</div>
+                    </div>
+                    <h3 class="job-title">Développeur Full Stack</h3>
+                    <p class="company-name">Orange Côte d'Ivoire</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Kinshasa</p>
+                    <p class="job-salary">Salaire : 800 000 - 1 200 000 FC</p>
+                    <div class="job-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date">Il y a 2 jours</span>
+                        <a href="offre-detail.html" class="btn-apply">Postuler</a>
+                    </div>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/fameco-150x150.jpg" alt="Fameco">
+                        </div>
+                        <div class="job-badge cdd">CDD</div>
+                    </div>
+                    <h3 class="job-title">Responsable Marketing Digital</h3>
+                    <p class="company-name">Fameco</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Moanda</p>
+                    <p class="job-salary">Salaire : 600 000 - 900 000 FC</p>
+                    <div class="job-tags">
+                        <span class="tag">Marketing</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">Social Media</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date">Il y a 1 jour</span>
+                        <a href="offre-detail.html" class="btn-apply">Postuler</a>
+                    </div>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/GRB-300x300-PNG-150x150.png" alt="GRB">
+                        </div>
+                        <div class="job-badge">CDI</div>
+                    </div>
+                    <h3 class="job-title">Comptable Senior</h3>
+                    <p class="company-name">Groupe GRB</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Katanga</p>
+                    <p class="job-salary">Salaire : 700 000 - 1 000 000 FC</p>
+                    <div class="job-tags">
+                        <span class="tag">Comptabilité</span>
+                        <span class="tag">Sage</span>
+                        <span class="tag">Fiscalité</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date">Il y a 3 jours</span>
+                        <a href="offre-detail.html" class="btn-apply">Postuler</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Nos partenaires -->
+    <section class="partners">
+        <div class="container">
+            <h2>Nos entreprises partenaires</h2>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="part/orange-150x150.png" alt="Orange">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/fameco-150x150.jpg" alt="Fameco">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/GRB-300x300-PNG-150x150.png" alt="GRB">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/GTS-150x150.jpg" alt="GTS">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/img_baobab_page-0001-1-150x150.jpg" alt="Baobab">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/img_seafish_page-0001-1-150x150.jpg" alt="Seafish">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/img_socium_page-0001-150x150.jpg" alt="Socium">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/img_vlisco_page-0001-1-150x150.jpg" alt="Vlisco">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos services</h2>
+                <p>Une plateforme complète pour candidats et entreprises</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Recherche avancée</h3>
+                    <p>Trouvez l'emploi parfait grâce à nos filtres intelligents par métier, localisation et type de
+                        contrat.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>CV en ligne</h3>
+                    <p>Créez et gérez votre CV professionnel directement sur notre plateforme.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Alertes emploi</h3>
+                    <p>Recevez les nouvelles offres correspondant à vos critères directement par email.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Espace entreprise</h3>
+                    <p>Publiez vos offres et gérez vos candidatures depuis un tableau de bord dédié.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à donner un nouvel élan à votre carrière ?</h2>
+                <p>Rejoignez des milliers de professionnels qui ont trouvé leur emploi idéal grâce à COSMOS GROUP</p>
+                <div class="cta-buttons">
+                    <a href="inscription.html?type=candidat" class="btn-primary">Je cherche un emploi</a>
+                    <a href="inscription.html?type=entreprise" class="btn-secondary">Je recrute</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP">
+                    </div>
+                    <p>La plateforme de recrutement de référence qui connecte les talents aux meilleures opportunités
+                        professionnelles.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Candidats</h4>
+                    <ul>
+                        <li><a href="offres.html">Rechercher un emploi</a></li>
+                        <li><a href="cv-builder.html">Créer mon CV</a></li>
+                        <li><a href="dashboard-candidat.html">Mon espace</a></li>
+                        <li><a href="blog.html">Conseils carrière</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Entreprises</h4>
+                    <ul>
+                        <li><a href="cosmos-rh.html">Cosmos RH</a></li>
+                        <li><a href="cosmos-tic.html">Cosmos TIC</a></li>
+                        <li><a href="cosmos-sirh.html">Cosmos SIRH</a></li>
+                        <li><a href="cosmos-academy.html">Cosmos Academy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>À propos</h4>
+                    <ul>
+                        <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                        <li><a href="cgv.html">CGV</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 COSMOS GROUP. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">RGPD</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+    <script>
+        // Animation des statistiques
+        document.addEventListener('DOMContentLoaded', function() {
+            const statNumbers = document.querySelectorAll('.about-stat-number');
+            let animated = false;
+
+            function animateCounter(element) {
+                const target = parseInt(element.getAttribute('data-target'));
+                const duration = 2000; // 2 secondes
+                const increment = target / (duration / 16); // 60 FPS
+                let current = 0;
+
+                const updateCounter = function() {
+                    current += increment;
+                    if (current < target) {
+                        if (target >= 1000) {
+                            element.textContent = '+' + Math.floor(current / 1000) + 'K';
+                        } else {
+                            element.textContent = '+' + Math.floor(current);
+                        }
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        if (target >= 1000) {
+                            element.textContent = '+' + Math.floor(target / 1000) + 'K';
+                        } else {
+                            element.textContent = '+' + target;
+                        }
+                    }
+                };
+
+                updateCounter();
+            }
+
+            function checkScroll() {
+                const aboutSection = document.querySelector('.about-stats');
+                if (!aboutSection || animated) return;
+
+                const rect = aboutSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+                if (rect.top <= windowHeight * 0.75) {
+                    animated = true;
+                    statNumbers.forEach(function(stat, index) {
+                        setTimeout(function() {
+                            stat.closest('.about-stat-card').classList.add('animate');
+                            animateCounter(stat);
+                        }, index * 150);
+                    });
+                }
+            }
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Vérifier au chargement
+        });
+    </script>
+</body>
+
+</html>

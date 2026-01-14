@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez l'équipe COSMOS GROUP. Nous sommes là pour vous accompagner dans votre recherche d'emploi ou vos besoins de recrutement.">
+    <title>Contact - COSMOS GROUP</title>
+    <link rel="icon" type="image/x-icon" href="ico/favcion.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP" class="logo">
+                </div>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="offres.html">Offres d'emploi</a></li>
+                        <li class="nav-dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                Entreprises <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cosmos-rh.html">Cosmos RH</a></li>
+                                <li><a href="cosmos-tic.html">Cosmos TIC</a></li>
+                                <li><a href="cosmos-sirh.html">Cosmos SIRH</a></li>
+                                <li><a href="cosmos-academy.html">Cosmos Academy</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Conseils carrière</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                    <div class="nav-auth">
+                        <a href="connexion.html" class="btn-secondary">Connexion</a>
+                        <a href="inscription.html" class="btn-primary">Inscription</a>
+                    </div>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Contactez-nous</h1>
+                <p>Notre équipe est là pour vous accompagner dans vos projets professionnels</p>
+                
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="index.html">Accueil</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Contact</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Envoyez-nous un message</h2>
+                    <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Sélectionnez un sujet</option>
+                                <option value="candidat">Question candidat</option>
+                                <option value="entreprise">Partenariat entreprise</option>
+                                <option value="technique">Support technique</option>
+                                <option value="autre">Autre demande</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Décrivez votre demande en détail..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" id="newsletter">
+                                <span class="checkmark"></span>
+                                Je souhaite recevoir la newsletter COSMOS GROUP
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="privacy" id="privacy" required>
+                                <span class="checkmark"></span>
+                                J'accepte la <a href="politique-confidentialite.html" target="_blank">politique de confidentialité</a> *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Nos coordonnées</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Adresse</h4>
+                            <p>39 Boulevard du 30 juin, Immeuble Itimbiri,
+                                1er niveau, Gombe/Kinshasa. <br>
+                                Référence : Planète J centre-ville</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Téléphone</h4>
+                            <p>+243 999 980 902  <br>
+                                +243 820 707 070</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>contact@cosmosdrc.com<br>
+                            recrutement@cosmosdrc.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Horaires d'ouverture</h4>
+                            <p>Lundi - Vendredi : 8h00 - 18h00<br>
+                            Samedi : 8h00 - 13h00<br>
+                            Dimanche : Fermé</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="contact-social">
+                        <h4>Suivez-nous</h4>
+                        <div class="social-links">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Questions fréquentes</h2>
+                <p>Trouvez rapidement les réponses à vos questions</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Comment publier une offre d'emploi ?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pour publier une offre d'emploi, créez un compte entreprise, puis accédez à votre tableau de bord et cliquez sur "Publier une offre". Remplissez les informations requises et votre offre sera en ligne après validation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Comment postuler à une offre ?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Créez votre profil candidat, téléchargez votre CV, puis cliquez sur "Postuler" sur l'offre qui vous intéresse. Vous pouvez également ajouter une lettre de motivation personnalisée.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Quels sont vos tarifs pour les entreprises ?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous proposons plusieurs formules adaptées à vos besoins. Consultez notre page <a href="tarifs.html">tarifs</a> ou contactez-nous pour un devis personnalisé.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Comment modifier mon profil candidat ?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Connectez-vous à votre espace candidat, puis cliquez sur "Mon profil" pour modifier vos informations personnelles, votre CV et vos préférences de recherche.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP">
+                    </div>
+                    <p>La plateforme de recrutement de référence qui connecte les talents aux meilleures opportunités professionnelles.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Candidats</h4>
+                    <ul>
+                        <li><a href="offres.html">Rechercher un emploi</a></li>
+                        <li><a href="cv-builder.html">Créer mon CV</a></li>
+                        <li><a href="dashboard-candidat.html">Mon espace</a></li>
+                        <li><a href="blog.html">Conseils carrière</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Entreprises</h4>
+                    <ul>
+                        <li><a href="cosmos-rh.html">Cosmos RH</a></li>
+                        <li><a href="cosmos-tic.html">Cosmos TIC</a></li>
+                        <li><a href="cosmos-sirh.html">Cosmos SIRH</a></li>
+                        <li><a href="cosmos-academy.html">Cosmos Academy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>À propos</h4>
+                    <ul>
+                        <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+                        <li><a href="cgv.html">CGV</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 COSMOS GROUP. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">RGPD</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(function (item) {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = question ? question.querySelector('i') : null;
+
+                if (!question || !answer) return;
+
+                answer.style.display = 'none';
+
+                question.addEventListener('click', function () {
+                    const isOpen = answer.style.display === 'block';
+
+                    faqItems.forEach(function (otherItem) {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherQuestion = otherItem.querySelector('.faq-question');
+                        const otherIcon = otherQuestion ? otherQuestion.querySelector('i') : null;
+
+                        if (otherAnswer && otherAnswer !== answer) {
+                            otherAnswer.style.display = 'none';
+                        }
+                        if (otherIcon && otherIcon !== icon) {
+                            otherIcon.classList.remove('fa-minus');
+                            otherIcon.classList.add('fa-plus');
+                        }
+                        otherItem.classList.remove('open');
+                    });
+
+                    if (isOpen) {
+                        answer.style.display = 'none';
+                        if (icon) {
+                            icon.classList.remove('fa-minus');
+                            icon.classList.add('fa-plus');
+                        }
+                        item.classList.remove('open');
+                    } else {
+                        answer.style.display = 'block';
+                        if (icon) {
+                            icon.classList.remove('fa-plus');
+                            icon.classList.add('fa-minus');
+                        }
+                        item.classList.add('open');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
