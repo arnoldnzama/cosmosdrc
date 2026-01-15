@@ -980,126 +980,160 @@ rs Section */
     text-align: center;
     font-size: 2rem;
     color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.ad-banner-slider .section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-light);
     margin-bottom: 3rem;
 }
 
 .ad-slider-wrapper {
     position: relative;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 60px;
 }
 
 .ad-slider-container {
     position: relative;
     width: 100%;
-    height: 400px;
     overflow: hidden;
-    border-radius: 16px;
-    box-shadow: var(--shadow-hover);
 }
 
-.ad-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.ad-slide-page {
+    display: none;
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-    background-color: var(--white);
+    transition: opacity 0.5s ease;
 }
 
-.ad-slide.active {
+.ad-slide-page.active {
+    display: block;
     opacity: 1;
-    visibility: visible;
-    z-index: 1;
 }
 
-.ad-slide-image {
-    width: 100%;
+.ad-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.ad-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    object-fit: cover;
 }
 
-.ad-slide-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    color: var(--white);
-    padding: 2rem;
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
+.ad-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.ad-slide.active .ad-slide-content {
-    transform: translateY(0);
+.ad-card-image {
+    width: 100%;
+    height: 180px;
+    background-color: var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.ad-slide-content h3 {
-    font-size: 1.8rem;
-    margin: 0 0 0.5rem 0;
-    color: var(--white);
+.ad-card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.ad-slide-content p {
+.ad-card:hover .ad-card-image img {
+    transform: scale(1.05);
+}
+
+.ad-card-content {
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ad-card-content h3 {
     font-size: 1.1rem;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.ad-card-content p {
+    font-size: 0.9rem;
+    color: var(--text-light);
     margin: 0;
-    opacity: 0.9;
+    line-height: 1.4;
 }
 
 .ad-slider-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    border: none;
-    width: 50px;
-    height: 50px;
+    background-color: var(--white);
+    border: 2px solid var(--border-color);
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     z-index: 10;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .ad-slider-btn:hover {
     background-color: var(--primary-color);
     color: var(--white);
+    border-color: var(--primary-color);
     transform: translateY(-50%) scale(1.1);
 }
 
 .ad-slider-btn i {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .prev-btn {
-    left: 20px;
+    left: 0;
 }
 
 .next-btn {
-    right: 20px;
+    right: 0;
 }
 
 .ad-pagination {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 0.75rem;
+    margin-top: 2.5rem;
 }
 
 .ad-dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: #d0d0d0;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .ad-dot:hover {
@@ -1109,13 +1143,28 @@ rs Section */
 
 .ad-dot.active {
     background-color: var(--primary-color);
-    width: 30px;
-    border-radius: 6px;
+    width: 10px;
+    height: 10px;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(63, 167, 222, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .ad-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .ad-slider-container {
-        height: 300px;
+    .ad-slider-wrapper {
+        padding: 0 50px;
+    }
+
+    .ad-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
 
     .ad-slider-btn {
@@ -1123,28 +1172,53 @@ rs Section */
         height: 40px;
     }
 
+    .ad-card-image {
+        height: 140px;
+        padding: 1rem;
+    }
+
+    .ad-card-content {
+        padding: 1rem;
+    }
+
+    .ad-card-content h3 {
+        font-size: 1rem;
+    }
+
+    .ad-card-content p {
+        font-size: 0.85rem;
+    }
+
+    .ad-banner-slider .section-title {
+        font-size: 1.5rem;
+    }
+
+    .ad-banner-slider .section-subtitle {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ad-slider-wrapper {
+        padding: 0 40px;
+    }
+
+    .ad-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .ad-slider-btn {
+        width: 35px;
+        height: 35px;
+    }
+
     .prev-btn {
-        left: 10px;
+        left: -5px;
     }
 
     .next-btn {
-        right: 10px;
-    }
-
-    .ad-slide-content h3 {
-        font-size: 1.3rem;
-    }
-
-    .ad-slide-content p {
-        font-size: 0.9rem;
-    }
-
-    .splash-logo-container {
-        padding: 2rem 3rem;
-    }
-
-    .splash-logo {
-        height: 45px;
+        right: -5px;
     }
 }
 

@@ -603,32 +603,102 @@
     <!-- Publicité Banner avec Slider -->
     <section class="ad-banner-slider">
         <div class="container">
-            <h2 class="section-title">Nos Partenaires Publicitaires</h2>
+            <h2 class="section-title">Zoom sur nos marques partenaires</h2>
+            <p class="section-subtitle">Découvrez nos partenaires qui font confiance à COSMOS GROUP</p>
+            
             <div class="ad-slider-wrapper">
-                <button class="ad-slider-btn prev-btn" aria-label="Précédent"></button>
+                <button class="ad-slider-btn prev-btn" aria-label="Précédent">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 
                 <div class="ad-slider-container">
-                    <div class="ad-slide active">
-                        <img src="img/lambdaoptimized.webp" alt="Publicité Lambda" class="ad-slide-image">
-                        <div class="ad-slide-content">
-                            <h3>Lambda Solutions</h3>
-                            <p>Votre partenaire technologique de confiance</p>
+                    <!-- Slide 1 - 4 cartes -->
+                    <div class="ad-slide-page active">
+                        <div class="ad-cards-grid">
+                            <a href="https://www.orange.com" target="_blank" class="ad-card">
+                                <div class="ad-card-image">
+                                    <img src="part/orange-150x150.png" alt="Orange">
+                                </div>
+                                <div class="ad-card-content">
+                                    <h3>Orange RDC</h3>
+                                    <p>Leader des télécommunications en RDC</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="ad-card">
+                                <div class="ad-card-image">
+                                    <img src="part/fameco-150x150.jpg" alt="Fameco">
+                                </div>
+                                <div class="ad-card-content">
+                                    <h3>Fameco</h3>
+                                    <p>Solutions industrielles et commerciales</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="ad-card">
+                                <div class="ad-card-image">
+                                    <img src="part/GRB-300x300-PNG-150x150.png" alt="GRB">
+                                </div>
+                                <div class="ad-card-content">
+                                    <h3>Groupe GRB</h3>
+                                    <p>Excellence en services financiers</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="ad-card">
+                                <div class="ad-card-image">
+                                    <img src="part/GTS-150x150.jpg" alt="GTS">
+                                </div>
+                                <div class="ad-card-content">
+                                    <h3>GTS Logistics</h3>
+                                    <p>Solutions logistiques innovantes</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="ad-slide">
-                        <img src="img/cosmos-academy.png" alt="Cosmos Academy" class="ad-slide-image">
-                        <div class="ad-slide-content">
-                            <h3>Cosmos Academy</h3>
-                            <p>Formation professionnelle d'excellence</p>
-                        </div>
-                    </div>
-                    <div class="ad-slide">
-                        <img src="img/hero_cosmos.png" alt="Cosmos Group" class="ad-slide-image">
-                        <div class="ad-slide-content">
-                            <h3>Cosmos Group</h3>
-                            <p>L'expertise RH au service de votre réussite</p>
+                    
+                    <!-- Slide 2 - 4 cartes -->
+                    <div class="ad-slide-page">
+                        <div class="ad-cards-grid">
+                            <a href="#" class="ad-card">
+                                <div class="ad-card-image">
+                                    <img src="part/img_baobab_page-0001-1-150x150.jpg" alt="Baobab">
+                                </div>
+                                <div class="ad-card-content">
+                                    <h3>Baobab Digital</h3>
+                                    <p>Innovation technologique et digitale</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="ad-card">
+                                <div class="ad-card-image">
+                                    <img src="part/img_seafish_page-0001-1-150x150.jpg" alt="Seafish">
+                                </div>
+                                <div class="ad-card-content">
+                                    <h3>Seafish Industries</h3>
+                                    <p>Leader de l'industrie agroalimentaire</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="ad-card">
+                                <div class="ad-card-image">
+                                    <img src="part/img_socium_page-0001-150x150.jpg" alt="Socium">
+                                </div>
+                                <div class="ad-card-content">
+                                    <h3>Socium Consulting</h3>
+                                    <p>Conseil stratégique et management</p>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="ad-card">
+                                <div class="ad-card-image">
+                                    <img src="part/img_vlisco_page-0001-1-150x150.jpg" alt="Vlisco">
+                                </div>
+                                <div class="ad-card-content">
+                                    <h3>Vlisco</h3>
+                                    <p>Excellence textile et mode africaine</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -641,7 +711,6 @@
             <div class="ad-pagination">
                 <span class="ad-dot active" data-slide="0"></span>
                 <span class="ad-dot" data-slide="1"></span>
-                <span class="ad-dot" data-slide="2"></span>
             </div>
         </div>
     </section>
@@ -1193,27 +1262,31 @@
         });
 
         // ===== AD BANNER SLIDER =====
-        const adSlides = document.querySelectorAll('.ad-slide');
+        const adSlidePages = document.querySelectorAll('.ad-slide-page');
         const adDots = document.querySelectorAll('.ad-dot');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
+        const prevBtnAd = document.querySelector('.ad-slider-wrapper .prev-btn');
+        const nextBtnAd = document.querySelector('.ad-slider-wrapper .next-btn');
         let currentSlide = 0;
         let slideInterval;
 
         function showSlide(index) {
-            adSlides.forEach(slide => slide.classList.remove('active'));
+            adSlidePages.forEach(slide => slide.classList.remove('active'));
             adDots.forEach(dot => dot.classList.remove('active'));
             
-            if (index >= adSlides.length) {
+            if (index >= adSlidePages.length) {
                 currentSlide = 0;
             } else if (index < 0) {
-                currentSlide = adSlides.length - 1;
+                currentSlide = adSlidePages.length - 1;
             } else {
                 currentSlide = index;
             }
             
-            adSlides[currentSlide].classList.add('active');
-            adDots[currentSlide].classList.add('active');
+            if (adSlidePages[currentSlide]) {
+                adSlidePages[currentSlide].classList.add('active');
+            }
+            if (adDots[currentSlide]) {
+                adDots[currentSlide].classList.add('active');
+            }
         }
 
         function nextSlide() {
@@ -1232,14 +1305,14 @@
             clearInterval(slideInterval);
         }
 
-        if (prevBtn && nextBtn) {
-            prevBtn.addEventListener('click', function() {
+        if (prevBtnAd && nextBtnAd) {
+            prevBtnAd.addEventListener('click', function() {
                 prevSlide();
                 stopAutoSlide();
                 startAutoSlide();
             });
 
-            nextBtn.addEventListener('click', function() {
+            nextBtnAd.addEventListener('click', function() {
                 nextSlide();
                 stopAutoSlide();
                 startAutoSlide();
@@ -1254,12 +1327,15 @@
             });
         });
 
-        if (adSlides.length > 0) {
+        if (adSlidePages.length > 0) {
             startAutoSlide();
         }
 
-        document.querySelector('.ad-slider-container')?.addEventListener('mouseenter', stopAutoSlide);
-        document.querySelector('.ad-slider-container')?.addEventListener('mouseleave', startAutoSlide);
+        const adSliderContainer = document.querySelector('.ad-slider-container');
+        if (adSliderContainer) {
+            adSliderContainer.addEventListener('mouseenter', stopAutoSlide);
+            adSliderContainer.addEventListener('mouseleave', startAutoSlide);
+        }
     </script>
 </body>
 
