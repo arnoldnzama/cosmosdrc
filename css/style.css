@@ -27,6 +27,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -34,6 +35,8 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--white);
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 .container {
@@ -4539,6 +4542,7 @@ FRES.HTML SPECIFIC STYLES ===== */
 .partners-modern {
     padding: 5rem 0;
     background-color: #ffffff;
+    overflow-x: hidden;
 }
 
 .partners-grid-modern {
@@ -4547,14 +4551,16 @@ FRES.HTML SPECIFIC STYLES ===== */
     gap: 3rem;
     align-items: center;
     margin-top: 3rem;
+    width: 100%;
 }
 
 .partner-logo-modern {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1rem;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 .partner-logo-modern:hover {
@@ -4562,8 +4568,10 @@ FRES.HTML SPECIFIC STYLES ===== */
 }
 
 .partner-logo-modern img {
-    max-width: 120px;
+    max-width: 100%;
     max-height: 80px;
+    width: auto;
+    height: auto;
     object-fit: contain;
     filter: grayscale(100%) opacity(0.6);
     transition: all 0.3s ease;
@@ -4666,10 +4674,15 @@ FRES.HTML SPECIFIC STYLES ===== */
     .partners-grid-modern {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
+        padding: 0;
+    }
+
+    .partner-logo-modern {
+        padding: 0.75rem;
     }
 
     .partner-logo-modern img {
-        max-width: 100px;
+        max-width: 90px;
         max-height: 60px;
     }
 }
@@ -4700,5 +4713,20 @@ FRES.HTML SPECIFIC STYLES ===== */
 
     .section-header-center p {
         font-size: 0.95rem;
+    }
+
+    .partners-grid-modern {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0;
+    }
+
+    .partner-logo-modern {
+        padding: 0.5rem;
+    }
+
+    .partner-logo-modern img {
+        max-width: 80px;
+        max-height: 50px;
     }
 }
