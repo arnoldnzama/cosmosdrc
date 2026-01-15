@@ -1381,20 +1381,20 @@
                 mobileCurrentCard = index;
             }
 
-            // Faire défiler vers la carte
-            const cardWidth = allCards[0].offsetWidth;
-            const gap = 16; // 1rem = 16px
-            const scrollPosition = mobileCurrentCard * (cardWidth + gap);
-            
+            // Faire défiler vers la carte avec un défilement fluide
             const container = document.querySelector('.ad-cards-grid');
-            if (container) {
+            if (container && allCards[mobileCurrentCard]) {
+                const cardWidth = allCards[mobileCurrentCard].offsetWidth;
+                const gap = 16; // 1rem = 16px
+                const scrollPosition = mobileCurrentCard * (cardWidth + gap);
+                
                 container.scrollTo({
                     left: scrollPosition,
                     behavior: 'smooth'
                 });
             }
 
-            // Mettre à jour les dots pour mobile
+            // Mettre à jour les dots pour mobile (afficher le dot correspondant à la page)
             const dotIndex = Math.floor(mobileCurrentCard / 4);
             adDots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === dotIndex);

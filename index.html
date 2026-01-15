@@ -316,6 +316,28 @@ Cosmos Group devient ainsi un véritable accélérateur de visibilité, de recru
         </div>
     </footer>
 
+    <!-- Cookie Popup -->
+    <div id="cookiePopup" class="cookie-popup">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h4><i class="fas fa-cookie-bite"></i> Nous utilisons des cookies</h4>
+                <p>
+                    Nous utilisons des cookies pour améliorer votre expérience sur notre site. 
+                    En continuant à naviguer, vous acceptez notre utilisation des cookies. 
+                    <a href="politique-confidentialite.html">En savoir plus</a>
+                </p>
+            </div>
+            <div class="cookie-actions">
+                <button class="btn-cookie btn-cookie-accept" id="acceptCookies">
+                    <i class="fas fa-check"></i> Accepter
+                </button>
+                <button class="btn-cookie btn-cookie-decline" id="declineCookies">
+                    <i class="fas fa-times"></i> Refuser
+                </button>
+            </div>
+        </div>
+    </div>
+
 
     <script src="js/main.js"></script>
     <script>
@@ -384,6 +406,51 @@ Cosmos Group devient ainsi un véritable accélérateur de visibilité, de recru
 
             window.addEventListener('scroll', checkScroll);
             checkScroll(); // Vérifier au chargement
+        });
+
+        // ===== COOKIE POPUP =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookiePopup = document.getElementById('cookiePopup');
+            const acceptBtn = document.getElementById('acceptCookies');
+            const declineBtn = document.getElementById('declineCookies');
+            const splashScreen = document.querySelector('.splash-screen');
+
+            // Fonction pour afficher le popup de cookies après le splash screen
+            function showCookiePopup() {
+                const cookieConsent = localStorage.getItem('cookieConsent');
+                
+                if (!cookieConsent) {
+                    // Attendre que le splash screen disparaisse (2 secondes)
+                    setTimeout(function() {
+                        cookiePopup.classList.add('show');
+                    }, 2500); // 2.5 secondes après le chargement
+                }
+            }
+
+            // Accepter les cookies
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', function() {
+                    localStorage.setItem('cookieConsent', 'accepted');
+                    cookiePopup.classList.remove('show');
+                    setTimeout(function() {
+                        cookiePopup.classList.add('hidden');
+                    }, 400);
+                });
+            }
+
+            // Refuser les cookies
+            if (declineBtn) {
+                declineBtn.addEventListener('click', function() {
+                    localStorage.setItem('cookieConsent', 'declined');
+                    cookiePopup.classList.remove('show');
+                    setTimeout(function() {
+                        cookiePopup.classList.add('hidden');
+                    }, 400);
+                });
+            }
+
+            // Afficher le popup si nécessaire
+            showCookiePopup();
         });
     </script>
 </body>

@@ -1205,11 +1205,6 @@ rs Section */
         padding: 0 40px;
     }
 
-    .ad-cards-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
     .ad-slider-btn {
         width: 35px;
         height: 35px;
@@ -1223,28 +1218,35 @@ rs Section */
         right: -5px;
     }
 
-    /* Mobile: une carte à la fois avec slider */
+    /* Mobile: une carte à la fois avec slider horizontal */
     .ad-slider-container {
-        overflow: visible;
+        overflow: hidden;
     }
 
     .ad-slide-page {
-        display: flex !important;
+        display: block !important;
         opacity: 1 !important;
     }
 
     .ad-cards-grid {
         display: flex;
-        overflow: hidden;
+        overflow-x: auto;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         gap: 1rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .ad-cards-grid::-webkit-scrollbar {
+        display: none;
     }
 
     .ad-card {
-        flex: 0 0 100%;
+        flex: 0 0 calc(100% - 1rem);
         scroll-snap-align: start;
         transition: transform 0.3s ease;
+        min-width: calc(100% - 1rem);
     }
 }
 
@@ -1638,6 +1640,7 @@ rs Section */
 
     .partners-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .showcase-content {
