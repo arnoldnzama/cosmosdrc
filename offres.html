@@ -544,6 +544,37 @@
                         <a href="offre-detail.html?id=9" class="btn-apply">Postuler maintenant</a>
                     </div>
                 </div>
+
+                <!-- Job Card 10 -->
+                <div class="job-card" data-contract="cdi" data-salary="600000-1000000" data-experience="intermediate"
+                    data-sector="it">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <img src="part/Yoka-Logo-150x150.png" alt="Yoka">
+                        </div>
+                        <div class="job-actions">
+                            <button class="btn-favorite" title="Ajouter aux favoris">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <div class="job-badge">CDI</div>
+                        </div>
+                    </div>
+                    <h3 class="job-title">Ingénieur DevOps</h3>
+                    <p class="company-name">Yoka Technologies</p>
+                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Kinshasa</p>
+                    <p class="job-salary"><i class="fas fa-money-bill-wave"></i> 700 000 - 950 000 FC/mois</p>
+                    <p class="job-description">Rejoignez notre équipe technique pour gérer notre infrastructure cloud et automatiser nos déploiements. Expérience avec Docker et Kubernetes requise...</p>
+                    <div class="job-tags">
+                        <span class="tag">DevOps</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-date"><i class="fas fa-clock"></i> Il y a 3 jours</span>
+                        <a href="offre-detail.html?id=10" class="btn-apply">Postuler maintenant</a>
+                    </div>
+                </div>
             </div>
 
             <!-- Pagination -->
@@ -569,22 +600,53 @@
         </div>
     </section>
 
-    <!-- Job Alerts CTA -->
-    <section class="job-alerts-cta">
+    <!-- Publicité Banner avec Slider -->
+    <section class="ad-banner-slider">
         <div class="container">
-            <div class="cta-content">
-                <div class="cta-icon">
-                    <i class="fas fa-bell"></i>
+            <h2 class="section-title">Nos Partenaires Publicitaires</h2>
+            <div class="ad-slider-wrapper">
+                <button class="ad-slider-btn prev-btn" aria-label="Précédent"></button>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="ad-slider-container">
+                    <div class="ad-slide active">
+                        <img src="img/lambdaoptimized.webp" alt="Publicité Lambda" class="ad-slide-image">
+                        <div class="ad-slide-content">
+                            <h3>Lambda Solutions</h3>
+                            <p>Votre partenaire technologique de confiance</p>
+                        </div>
+                    </div>
+                    <div class="ad-slide">
+                        <img src="img/cosmos-academy.png" alt="Cosmos Academy" class="ad-slide-image">
+                        <div class="ad-slide-content">
+                            <h3>Cosmos Academy</h3>
+                            <p>Formation professionnelle d'excellence</p>
+                        </div>
+                    </div>
+                    <div class="ad-slide">
+                        <img src="img/hero_cosmos.png" alt="Cosmos Group" class="ad-slide-image">
+                        <div class="ad-slide-content">
+                            <h3>Cosmos Group</h3>
+                            <p>L'expertise RH au service de votre réussite</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="cta-text">
-                    <h3>Ne manquez aucune opportunité</h3>
-                    <p>Créez une alerte emploi et recevez les nouvelles offres correspondant à vos critères directement
-                        par email</p>
-                </div>
-                <a href="alerte-emploi.html" class="btn-primary">Créer une alerte</a>
+                
+                <button class="ad-slider-btn next-btn" aria-label="Suivant">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="ad-pagination">
+                <span class="ad-dot active" data-slide="0"></span>
+                <span class="ad-dot" data-slide="1"></span>
+                <span class="ad-dot" data-slide="2"></span>
             </div>
         </div>
     </section>
+
+    
 
     <!-- Modal de candidature -->
     <div id="applicationModal" class="modal">
@@ -813,7 +875,7 @@
             const paginationNumbers = document.querySelector('.pagination-numbers');
             const prevBtn = document.querySelector('.pagination-btn.prev');
             const nextBtn = document.querySelector('.pagination-btn.next');
-            const jobsPerPage = 3;
+            const jobsPerPage = 9;
             let totalJobsCount = 0;
             let currentPage = 1;
             let filteredJobCards = [];
@@ -1129,6 +1191,75 @@
             updateFilterCounts();
             filterJobs();
         });
+
+        // ===== AD BANNER SLIDER =====
+        const adSlides = document.querySelectorAll('.ad-slide');
+        const adDots = document.querySelectorAll('.ad-dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            adSlides.forEach(slide => slide.classList.remove('active'));
+            adDots.forEach(dot => dot.classList.remove('active'));
+            
+            if (index >= adSlides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = adSlides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+            
+            adSlides[currentSlide].classList.add('active');
+            adDots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function startAutoSlide() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(slideInterval);
+        }
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', function() {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            nextBtn.addEventListener('click', function() {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+        }
+
+        adDots.forEach((dot, index) => {
+            dot.addEventListener('click', function() {
+                showSlide(index);
+                stopAutoSlide();
+                startAutoSlide();
+            });
+        });
+
+        if (adSlides.length > 0) {
+            startAutoSlide();
+        }
+
+        document.querySelector('.ad-slider-container')?.addEventListener('mouseenter', stopAutoSlide);
+        document.querySelector('.ad-slider-container')?.addEventListener('mouseleave', startAutoSlide);
     </script>
 </body>
 

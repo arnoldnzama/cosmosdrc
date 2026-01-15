@@ -16,6 +16,19 @@
 </head>
 
 <body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="splash-logo-container">
+                <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP" class="splash-logo">
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+            <p class="splash-text">Chargement en cours...</p>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <nav class="navbar">
@@ -116,135 +129,11 @@
         </div>
     </section>
 
-    <!-- Filtres rapides -->
-    <section class="quick-filters">
-        <div class="container">
-            <h2>Recherche par type de contrat</h2>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="cdi">CDI</button>
-                <button class="filter-btn" data-filter="cdd">CDD</button>
-                <button class="filter-btn" data-filter="interim">Intérim</button>
-                <button class="filter-btn" data-filter="freelance">Freelance</button>
-                <button class="filter-btn" data-filter="stage">Stage</button>
-            </div>
-        </div>
-    </section>
+    
+    
 
-    <!-- Offres en vedette -->
-    <section class="featured-jobs">
-        <div class="container">
-            <div class="section-header">
-                <h2>Offres en vedette</h2>
-                <a href="offres.html" class="btn-link">Voir toutes les offres <i class="fas fa-arrow-right"></i></a>
-            </div>
-
-            <div class="jobs-grid">
-                <!-- Job Card 1 -->
-                <div class="job-card">
-                    <div class="job-header">
-                        <div class="company-logo">
-                            <img src="part/orange-150x150.png" alt="Orange">
-                        </div>
-                        <div class="job-badge">CDI</div>
-                    </div>
-                    <h3 class="job-title">Développeur Full Stack</h3>
-                    <p class="company-name">Orange Côte d'Ivoire</p>
-                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Kinshasa</p>
-                    <p class="job-salary">Salaire : 800 000 - 1 200 000 FC</p>
-                    <div class="job-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-date">Il y a 2 jours</span>
-                        <a href="offre-detail.html" class="btn-apply">Postuler</a>
-                    </div>
-                </div>
-
-                <!-- Job Card 2 -->
-                <div class="job-card">
-                    <div class="job-header">
-                        <div class="company-logo">
-                            <img src="part/fameco-150x150.jpg" alt="Fameco">
-                        </div>
-                        <div class="job-badge cdd">CDD</div>
-                    </div>
-                    <h3 class="job-title">Responsable Marketing Digital</h3>
-                    <p class="company-name">Fameco</p>
-                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Moanda</p>
-                    <p class="job-salary">Salaire : 600 000 - 900 000 FC</p>
-                    <div class="job-tags">
-                        <span class="tag">Marketing</span>
-                        <span class="tag">SEO</span>
-                        <span class="tag">Social Media</span>
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-date">Il y a 1 jour</span>
-                        <a href="offre-detail.html" class="btn-apply">Postuler</a>
-                    </div>
-                </div>
-
-                <!-- Job Card 3 -->
-                <div class="job-card">
-                    <div class="job-header">
-                        <div class="company-logo">
-                            <img src="part/GRB-300x300-PNG-150x150.png" alt="GRB">
-                        </div>
-                        <div class="job-badge">CDI</div>
-                    </div>
-                    <h3 class="job-title">Comptable Senior</h3>
-                    <p class="company-name">Groupe GRB</p>
-                    <p class="job-location"><i class="fas fa-map-marker-alt"></i> RDC, Katanga</p>
-                    <p class="job-salary">Salaire : 700 000 - 1 000 000 FC</p>
-                    <div class="job-tags">
-                        <span class="tag">Comptabilité</span>
-                        <span class="tag">Sage</span>
-                        <span class="tag">Fiscalité</span>
-                    </div>
-                    <div class="job-footer">
-                        <span class="job-date">Il y a 3 jours</span>
-                        <a href="offre-detail.html" class="btn-apply">Postuler</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Nos partenaires -->
-    <section class="partners">
-        <div class="container">
-            <h2>Nos entreprises partenaires</h2>
-            <div class="partners-grid">
-                <div class="partner-logo">
-                    <img src="part/orange-150x150.png" alt="Orange">
-                </div>
-                <div class="partner-logo">
-                    <img src="part/fameco-150x150.jpg" alt="Fameco">
-                </div>
-                <div class="partner-logo">
-                    <img src="part/GRB-300x300-PNG-150x150.png" alt="GRB">
-                </div>
-                <div class="partner-logo">
-                    <img src="part/GTS-150x150.jpg" alt="GTS">
-                </div>
-                <div class="partner-logo">
-                    <img src="part/img_baobab_page-0001-1-150x150.jpg" alt="Baobab">
-                </div>
-                <div class="partner-logo">
-                    <img src="part/img_seafish_page-0001-1-150x150.jpg" alt="Seafish">
-                </div>
-                <div class="partner-logo">
-                    <img src="part/img_socium_page-0001-150x150.jpg" alt="Socium">
-                </div>
-                <div class="partner-logo">
-                    <img src="part/img_vlisco_page-0001-1-150x150.jpg" alt="Vlisco">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
+   
+           <!-- Services -->
     <section class="services">
         <div class="container">
             <div class="section-header">
@@ -288,20 +177,83 @@
             </div>
         </div>
     </section>
+    
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    
+    <!-- Job Alerts CTA -->
+    <section class="job-alerts-cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Prêt à donner un nouvel élan à votre carrière ?</h2>
-                <p>Rejoignez des milliers de professionnels qui ont trouvé leur emploi idéal grâce à COSMOS GROUP</p>
-                <div class="cta-buttons">
-                    <a href="inscription.html?type=candidat" class="btn-primary">Je cherche un emploi</a>
-                    <a href="inscription.html?type=entreprise" class="btn-secondary">Je recrute</a>
+                <div class="cta-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="cta-text">
+                    <h3>Ne manquez aucune opportunité</h3>
+                    <p>Consultez des offres d'emploi et recevez l'accusée de réception  directement
+                        par email</p>
+                </div>
+                <a href="offres.html" class="btn-primary">Voir toutes les offres</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- La vitrine des marques -->
+    <section class="brand-showcase">
+        <div class="container">
+            <div class="showcase-content">
+                <div class="showcase-image">
+                    <img src="img/cosmos-academy.png" alt="Vitrine des marques">
+                </div>
+                <div class="showcase-text">
+                    <h2>La plateforme qui met en lumière les marques qui transforment leur territoire</h2>
+                    <p>
+
+Cosmos Group connecte, référence et valorise les entreprises ambitieuses, locales comme nationales, qui souhaitent renforcer leur visibilité, partager leur actualité et consolider leur positionnement sur leur marché. Grâce à une présence structurée et à des outils adaptés, chaque marque dispose d’un espace personnalisé où elle peut publier ses annonces, ses opportunités d’emploi, ses événements et ses nouveautés.
+
+Au-delà de la communication, Cosmos Group permet aux entreprises d’élargir leur influence en touchant un réseau ciblé de professionnels, de partenaires, d’investisseurs, de talents et d’acteurs économiques. Qu’il s’agisse d’une jeune marque en pleine croissance ou d’un acteur déjà établi, la plateforme offre à chacune l’opportunité de renforcer sa notoriété, d’attirer des candidats qualifiés, de développer de nouveaux partenariats et de créer des connexions utiles et durables.
+
+Cosmos Group devient ainsi un véritable accélérateur de visibilité, de recrutement et de relations professionnelles, au service de celles et ceux qui construisent, innovent et font évoluer le territoire.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Nos partenaires -->
+    <section class="partners">
+        <div class="container">
+            <h2>Nos entreprises partenaires</h2>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="part/orange-150x150.png" alt="Orange">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/fameco-150x150.jpg" alt="Fameco">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/GRB-300x300-PNG-150x150.png" alt="GRB">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/GTS-150x150.jpg" alt="GTS">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/img_baobab_page-0001-1-150x150.jpg" alt="Baobab">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/img_seafish_page-0001-1-150x150.jpg" alt="Seafish">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/img_socium_page-0001-150x150.jpg" alt="Socium">
+                </div>
+                <div class="partner-logo">
+                    <img src="part/img_vlisco_page-0001-1-150x150.jpg" alt="Vlisco">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    
 
     <!-- Footer -->
     <footer class="footer">
@@ -367,6 +319,19 @@
 
     <script src="js/main.js"></script>
     <script>
+        // Splash Screen
+        window.addEventListener('load', function() {
+            const splashScreen = document.getElementById('splash-screen');
+            
+            setTimeout(function() {
+                splashScreen.classList.add('hidden');
+                
+                setTimeout(function() {
+                    splashScreen.style.display = 'none';
+                }, 500);
+            }, 2000);
+        });
+
         // Animation des statistiques
         document.addEventListener('DOMContentLoaded', function() {
             const statNumbers = document.querySelectorAll('.about-stat-number');
