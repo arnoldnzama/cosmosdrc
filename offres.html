@@ -772,6 +772,28 @@
         </div>
     </div>
 
+    <!-- Cookie Popup -->
+    <div id="cookiePopup" class="cookie-popup">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h4><i class="fas fa-cookie-bite"></i> Nous utilisons des cookies</h4>
+                <p>
+                    Nous utilisons des cookies pour améliorer votre expérience sur notre site. 
+                    En continuant à naviguer, vous acceptez notre utilisation des cookies. 
+                    <a href="politique-confidentialite.html">En savoir plus</a>
+                </p>
+            </div>
+            <div class="cookie-actions">
+                <button class="btn-cookie btn-cookie-accept" id="acceptCookies">
+                    <i class="fas fa-check"></i> Accepter
+                </button>
+                <button class="btn-cookie btn-cookie-decline" id="declineCookies">
+                    <i class="fas fa-times"></i> Refuser
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -835,6 +857,51 @@
 
     <script src="js/main.js"></script>
     <script>
+        // ===== COOKIE POPUP =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookiePopup = document.getElementById('cookiePopup');
+            const acceptBtn = document.getElementById('acceptCookies');
+            const declineBtn = document.getElementById('declineCookies');
+            const splashScreen = document.querySelector('.splash-screen');
+
+            // Fonction pour afficher le popup de cookies après le splash screen
+            function showCookiePopup() {
+                const cookieConsent = localStorage.getItem('cookieConsent');
+                
+                if (!cookieConsent) {
+                    // Attendre que le splash screen disparaisse (2 secondes)
+                    setTimeout(function() {
+                        cookiePopup.classList.add('show');
+                    }, 2500); // 2.5 secondes après le chargement
+                }
+            }
+
+            // Accepter les cookies
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', function() {
+                    localStorage.setItem('cookieConsent', 'accepted');
+                    cookiePopup.classList.remove('show');
+                    setTimeout(function() {
+                        cookiePopup.classList.add('hidden');
+                    }, 400);
+                });
+            }
+
+            // Refuser les cookies
+            if (declineBtn) {
+                declineBtn.addEventListener('click', function() {
+                    localStorage.setItem('cookieConsent', 'declined');
+                    cookiePopup.classList.remove('show');
+                    setTimeout(function() {
+                        cookiePopup.classList.add('hidden');
+                    }, 400);
+                });
+            }
+
+            // Afficher le popup si nécessaire
+            showCookiePopup();
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             const modal = document.getElementById('applicationModal');
             const modalClose = document.querySelector('.modal-close');
@@ -1268,8 +1335,17 @@
         const nextBtnAd = document.querySelector('.ad-slider-wrapper .next-btn');
         let currentSlide = 0;
         let slideInterval;
+        let isMobile = window.innerWidth <= 480;
 
+        // Fonction pour détecter si on est en mobile
+        function checkMobile() {
+            isMobile = window.innerWidth <= 480;
+        }
+
+        // Fonction pour afficher le slide (desktop)
         function showSlide(index) {
+            if (isMobile) return; // Ne pas utiliser cette fonction en mobile
+
             adSlidePages.forEach(slide => slide.classList.remove('active'));
             adDots.forEach(dot => dot.classList.remove('active'));
             
@@ -1289,12 +1365,56 @@
             }
         }
 
+        // Fonction pour le slider mobile (une carte à la fois)
+        let mobileCurrentCard = 0;
+        const allCards = document.querySelectorAll('.ad-card');
+        const totalCards = allCards.length;
+
+        function showMobileCard(index) {
+            if (!isMobile) return;
+
+            if (index >= totalCards) {
+                mobileCurrentCard = 0;
+            } else if (index < 0) {
+                mobileCurrentCard = totalCards - 1;
+            } else {
+                mobileCurrentCard = index;
+            }
+
+            // Faire défiler vers la carte
+            const cardWidth = allCards[0].offsetWidth;
+            const gap = 16; // 1rem = 16px
+            const scrollPosition = mobileCurrentCard * (cardWidth + gap);
+            
+            const container = document.querySelector('.ad-cards-grid');
+            if (container) {
+                container.scrollTo({
+                    left: scrollPosition,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Mettre à jour les dots pour mobile
+            const dotIndex = Math.floor(mobileCurrentCard / 4);
+            adDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === dotIndex);
+            });
+        }
+
         function nextSlide() {
-            showSlide(currentSlide + 1);
+            if (isMobile) {
+                showMobileCard(mobileCurrentCard + 1);
+            } else {
+                showSlide(currentSlide + 1);
+            }
         }
 
         function prevSlide() {
-            showSlide(currentSlide - 1);
+            if (isMobile) {
+                showMobileCard(mobileCurrentCard - 1);
+            } else {
+                showSlide(currentSlide - 1);
+            }
         }
 
         function startAutoSlide() {
@@ -1321,13 +1441,22 @@
 
         adDots.forEach((dot, index) => {
             dot.addEventListener('click', function() {
-                showSlide(index);
+                if (isMobile) {
+                    showMobileCard(index * 4); // Aller au premier élément de la page
+                } else {
+                    showSlide(index);
+                }
                 stopAutoSlide();
                 startAutoSlide();
             });
         });
 
+        // Initialiser le slider
         if (adSlidePages.length > 0) {
+            checkMobile();
+            if (!isMobile) {
+                showSlide(0);
+            }
             startAutoSlide();
         }
 
@@ -1336,6 +1465,24 @@
             adSliderContainer.addEventListener('mouseenter', stopAutoSlide);
             adSliderContainer.addEventListener('mouseleave', startAutoSlide);
         }
+
+        // Réinitialiser lors du redimensionnement
+        window.addEventListener('resize', function() {
+            const wasMobile = isMobile;
+            checkMobile();
+            
+            if (wasMobile !== isMobile) {
+                stopAutoSlide();
+                if (isMobile) {
+                    mobileCurrentCard = 0;
+                    showMobileCard(0);
+                } else {
+                    currentSlide = 0;
+                    showSlide(0);
+                }
+                startAutoSlide();
+            }
+        });
     </script>
 </body>
 
