@@ -561,11 +561,13 @@ a:hover {
 .about-text h2 {
     color: var(--text-dark);
     margin-bottom: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .about-text p {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.8;
+    text-align: justify;
 }
 
 .about-image {
@@ -858,7 +860,7 @@ rs Section */
 
 .partner-logo:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-hover);
+    box-shadow: none;
     border-color: transparent;
 }
 
