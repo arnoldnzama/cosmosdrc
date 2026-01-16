@@ -429,3 +429,62 @@ window.utils = {
         };
     }
 };
+
+// ===== ANIMATION DES STATISTIQUES HERO =====
+function animateStats() {
+    const stats = document.querySelectorAll('.stat-modern');
+    
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+    };
+    
+    const statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                const statNumber = entry.target.querySelector('.stat-modern-number');
+                if (statNumber && !statNumber.classList.contains('animated')) {
+                    animateCounter(statNumber);
+                    statNumber.classList.add('animated');
+                }
+            }
+        });
+    }, observerOptions);
+    
+    stats.forEach(function(stat) {
+        statsObserver.observe(stat);
+    });
+}
+
+function animateCounter(element) {
+    const text = element.textContent;
+    const hasPlus = text.includes('+');
+    const number = parseInt(text.replace(/[^0-9]/g, ''));
+    const suffix = text.replace(/[0-9+]/g, '');
+    const duration = 2000;
+    const steps = 60;
+    const increment = number / steps;
+    let current = 0;
+    
+    const timer = setInterval(function() {
+        current += increment;
+        if (current >= number) {
+            current = number;
+            clearInterval(timer);
+        }
+        
+        let displayValue = Math.floor(current);
+        if (displayValue >= 1000) {
+            displayValue = (displayValue / 1000).toFixed(0) + 'K';
+        }
+        
+        element.textContent = (hasPlus ? '+' : '') + displayValue + suffix;
+    }, duration / steps);
+}
+
+// Initialiser l'animation des stats au chargement
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', animateStats);
+} else {
+    animateStats();
+}
