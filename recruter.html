@@ -13,46 +13,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .recruiter-hero {
-            background: linear-gradient(135deg, rgba(6, 71, 149, 0.95) 0%, rgba(63, 167, 222, 0.95) 100%);
-            padding: 140px 0 80px;
-            color: var(--white);
-            text-align: center;
-        }
-        .recruiter-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-        .recruiter-hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            opacity: 0.95;
-            text-align: center;
-        }
-        .recruiter-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .recruiter-stat-item {
-            text-align: center;
-        }
-        .recruiter-stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #ffd700;
-            display: block;
-        }
-        .recruiter-stat-label {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
         .recruiter-form-section {
             padding: 5rem 0;
             background-color: var(--light-gray);
@@ -246,24 +206,24 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="recruiter-hero">
+    <section class="page-hero hero-recruter">
         <div class="container">
-            <h1>Recrutez les meilleurs talents avec COSMOS GROUP</h1>
-            <p>Grâce à notre base de données de 100 000+ profils qualifiés et notre réseau international de chasseurs de têtes, nous accompagnons les entreprises dans l'identification et le recrutement de talents stratégiques.</p>
-            
-            <div class="recruiter-stats">
-                <div class="recruiter-stat-item">
-                    <span class="recruiter-stat-number">100K+</span>
-                    <span class="recruiter-stat-label">Profils qualifiés</span>
+            <div class="page-hero-inner">
+                <div class="page-hero-text">
+                    <div class="page-hero-badge"><i class="fas fa-building"></i> Espace recruteur</div>
+                    <h1>Recrutez les <span class="accent">meilleurs talents</span></h1>
+                    <p class="page-hero-desc">Grâce à notre base de 100 000+ profils qualifiés et notre réseau international de chasseurs de têtes, nous identifions vos talents stratégiques.</p>
+                    <div class="page-hero-actions">
+                        <a href="#recruiterForm" class="btn-hero-primary"><i class="fas fa-paper-plane"></i> Soumettre un besoin</a>
+                        <a href="contact.html" class="btn-hero-secondary"><i class="fas fa-phone"></i> Nous appeler</a>
+                    </div>
+                    <div class="page-hero-breadcrumb" style="margin-top:1.5rem; display:flex; gap:2rem; flex-wrap:wrap;">
+                        <span style="color:#fff; font-size:1rem;"><strong style="color:#7dd3fc; font-size:1.4rem;">100K+</strong> Profils qualifiés</span>
+                        <span style="color:#fff; font-size:1rem;"><strong style="color:#7dd3fc; font-size:1.4rem;">600+</strong> Recrutements réussis</span>
+                        <span style="color:#fff; font-size:1rem;"><strong style="color:#7dd3fc; font-size:1.4rem;">48h</strong> Délai moyen</span>
+                    </div>
                 </div>
-                <div class="recruiter-stat-item">
-                    <span class="recruiter-stat-number">600+</span>
-                    <span class="recruiter-stat-label">Recrutements réussis</span>
-                </div>
-                <div class="recruiter-stat-item">
-                    <span class="recruiter-stat-number">48h</span>
-                    <span class="recruiter-stat-label">Délai moyen de réponse</span>
-                </div>
+                <div class="page-hero-icon"><i class="fas fa-handshake"></i></div>
             </div>
         </div>
     </section>
