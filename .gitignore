@@ -1,0 +1,130 @@
+# ============================================
+# Cosmos Group - .gitignore
+# ============================================
+
+# ============================================
+# FICHIERS SENSIBLES - NE JAMAIS COMMITER
+# ============================================
+.env
+.env.local
+.env.production
+config/smtp.php.local
+
+# ============================================
+# UPLOADS ET FICHIERS UTILISATEURS
+# ============================================
+uploads/cv/*
+!uploads/cv/.gitkeep
+uploads/*.csv
+uploads/*.pdf
+uploads/*.doc
+uploads/*.docx
+
+# ============================================
+# LOGS
+# ============================================
+*.log
+error_log
+php_errors.log
+debug.log
+
+# ============================================
+# COMPOSER
+# ============================================
+/vendor/
+composer.phar
+composer.lock
+
+# ============================================
+# SYSTÈME D'EXPLOITATION
+# ============================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+
+# ============================================
+# IDE ET ÉDITEURS
+# ============================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PhpStorm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Notepad++
+*.bak
+
+# ============================================
+# FICHIERS TEMPORAIRES
+# ============================================
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ============================================
+# SAUVEGARDES
+# ============================================
+*.backup
+*.old
+*.orig
+backup/
+backups/
+
+# ============================================
+# ARCHIVES
+# ============================================
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+!cosmos_full_version.zip
+!cosmos_full_version_offre_ancienne.zip
+
+# ============================================
+# BASE DE DONNÉES
+# ============================================
+*.sql.gz
+*.sqlite
+*.db
+
+# ============================================
+# CACHE
+# ============================================
+cache/
+tmp/
+temp/
+
+# ============================================
+# NODE MODULES (si vous utilisez npm)
+# ============================================
+node_modules/
+package-lock.json
+yarn.lock
+
+# ============================================
+# FICHIERS DE CONFIGURATION LOCAUX
+# ============================================
+config.local.php
+database.local.php

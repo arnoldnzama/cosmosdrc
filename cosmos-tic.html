@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cosmos TIC - Services complets en Technologie de l'Information et de la Communication. Vidéosurveillance, géolocalisation, applications mobiles et sécurité.">
-    <title>Cosmos TIC - Services Technologie & Communication | COSMOS GROUP</title>
-    <link rel="icon" type="image/x-icon" href="ico/favcion.ico">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cosmos.emergencemag.net/cosmos-tic.html">
+    <meta property="og:title" content="Cosmos TIC - Services Technologie & Communication | Cosmos Group">
+    <meta property="og:description" content="Services complets en Technologie de l'Information et de la Communication. Vidéosurveillance, géolocalisation, applications mobiles et sécurité.">
+    <meta property="og:image" content="https://cosmos.emergencemag.net/img/cosmos-tic.png">
+    <meta property="og:locale" content="fr_CD">
+    
+    <title>Cosmos TIC - Services Technologie & Communication | Cosmos Group</title>
+    <link rel="icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon" href="ico/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -18,18 +26,25 @@
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP" class="logo">
+                    <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group" class="logo">
                 </div>
                 <div class="nav-menu">
                     <ul class="nav-links">
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="offres.html">Offres d'emploi</a></li>
-                       
+                        <li class="nav-dropdown">
+                            <a href="services.html" class="dropdown-toggle">Nos services <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cosmos-rh.html"><i class="fas fa-users" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS RH</a></li>
+                                <li><a href="cosmos-tic.html"><i class="fas fa-laptop-code" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS TIC</a></li>
+                                <li><a href="cosmos-sirh.html"><i class="fas fa-database" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS SIRH</a></li>
+                                <li><a href="cosmos-academy.html"><i class="fas fa-graduation-cap" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS Academy</a></li>
+                            </ul>
                         </li>
                         <li><a href="blog.html">Conseils carrière</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
-                    
+                    <a href="recruter.html" class="btn-recruter">Espace recruteur</a>
                 </div>
                 <div class="nav-toggle">
                     <span></span>
@@ -56,64 +71,135 @@
         </div>
     </section>
 
+    
+
     <!-- Services Section -->
-    <section class="services-section">
+    <section class="rh-services-section">
         <div class="container">
-            <div class="services-grid">
+
+            <!-- Intro -->
+            <div class="rh-intro">
+                <div class="rh-intro-badge">COSMOS TIC</div>
+                <h2 class="rh-intro-title">Des solutions technologiques pour sécuriser et moderniser votre entreprise</h2>
+                <p class="rh-intro-lead">COSMOS TIC accompagne les organisations dans la mise en place de solutions technologiques modernes destinées à améliorer la sécurité, la gestion des opérations et la performance des entreprises.</p>
+                <p class="rh-intro-text">Grâce à notre expertise et à notre réseau de partenaires technologiques, nous proposons des solutions innovantes et adaptées aux besoins spécifiques des organisations.</p>
+            </div>
+
+            <!-- Section title -->
+            <div class="rh-section-label">Nos solutions technologiques</div>
+
+            <!-- Service Cards -->
+            <div class="rh-cards-grid">
+
                 <!-- Vidéosurveillance -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-video"></i>
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-video"></i></div>
+                        <h3>Vidéosurveillance intelligente</h3>
                     </div>
-                    <h3>Vidéosurveillance</h3>
-                    <p>Surveillez vos espaces en temps réel grâce à des systèmes de vidéosurveillance modernes.</p>
+                    <p>Nous mettons en place des systèmes de vidéosurveillance modernes permettant de sécuriser les sites, contrôler les activités et surveiller les infrastructures en temps réel.</p>
+                    <p>Nos solutions incluent :</p>
+                    <ul class="rh-list">
+                        <li>Caméras de surveillance haute définition</li>
+                        <li>Surveillance à distance</li>
+                        <li>Enregistrement sécurisé des images</li>
+                        <li>Monitoring centralisé</li>
+                    </ul>
                 </div>
 
                 <!-- Géolocalisation -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3>Géolocalisation &amp; gestion de flotte</h3>
                     </div>
-                    <h3>Géolocalisation</h3>
-                    <p>Suivez vos biens et vos équipes avec précision grâce à nos solutions de géolocalisation avancées.</p>
+                    <p>Nos solutions de géolocalisation GPS permettent aux entreprises de suivre leurs véhicules et leurs équipes sur le terrain en temps réel.</p>
+                    <p>Avantages :</p>
+                    <ul class="rh-list">
+                        <li>Suivi en temps réel des véhicules</li>
+                        <li>Optimisation des trajets</li>
+                        <li>Contrôle de l'utilisation des véhicules</li>
+                        <li>Amélioration de la gestion logistique</li>
+                    </ul>
                 </div>
 
-                <!-- Application mobile -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                <!-- Contrôle d'accès -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-fingerprint"></i></div>
+                        <h3>Contrôle d'accès &amp; gestion des présences</h3>
                     </div>
-                    <h3>Application mobile</h3>
-                    <p>Transformez vos idées en applications mobiles sur mesure pour une expérience utilisateur unique.</p>
+                    <p>Nous proposons des solutions modernes de contrôle d'accès et de gestion des présences (Time &amp; Attendance).</p>
+                    <p>Nos systèmes permettent notamment :</p>
+                    <ul class="rh-list">
+                        <li>Badgeuses et systèmes biométriques</li>
+                        <li>Contrôle d'accès sécurisé</li>
+                        <li>Gestion des horaires de travail</li>
+                        <li>Suivi automatisé des présences</li>
+                    </ul>
                 </div>
 
                 <!-- Anti-intrusion & incendie -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Solutions anti-intrusion &amp; sécurité incendie</h3>
                     </div>
-                    <h3>Anti-intrusion & incendie</h3>
-                    <p>Protégez vos locaux avec des solutions d'alarme avancées contre les intrusions et les incendies.</p>
+                    <p>COSMOS TIC installe des systèmes de sécurité avancés pour protéger les infrastructures et les équipements des entreprises.</p>
+                    <p>Nos solutions incluent :</p>
+                    <ul class="rh-list">
+                        <li>Alarmes anti-intrusion</li>
+                        <li>Systèmes de détection incendie</li>
+                        <li>Capteurs de sécurité</li>
+                        <li>Alertes et surveillance centralisée</li>
+                    </ul>
                 </div>
 
-                <!-- Gestion d'accès -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-fingerprint"></i>
+                <!-- Solutions digitales -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Développement de solutions digitales</h3>
                     </div>
-                    <h3>Gestion d'accès</h3>
-                    <p>Contrôlez les accès avec des solutions biométriques et connectées fiables.</p>
+                    <p>Nous concevons des solutions technologiques sur mesure adaptées aux besoins des organisations.</p>
+                    <p>Nos services incluent :</p>
+                    <ul class="rh-list">
+                        <li>Développement d'applications mobiles</li>
+                        <li>Création de plateformes web professionnelles</li>
+                        <li>Solutions digitales pour la gestion des entreprises</li>
+                        <li>Intégration de systèmes technologiques</li>
+                    </ul>
                 </div>
 
-                <!-- 24/7 Support -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
+                <!-- Maintenance & support -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-headset"></i></div>
+                        <h3>Maintenance &amp; support technique</h3>
                     </div>
-                    <h3>24/7 Support</h3>
-                    <p>Notre support est disponible 24/7 pour répondre à vos questions et résoudre vos problèmes.</p>
+                    <p>Nos équipes assurent un accompagnement technique continu afin de garantir le bon fonctionnement des systèmes technologiques installés.</p>
+                    <p>Nos services incluent :</p>
+                    <ul class="rh-list">
+                        <li>Maintenance des équipements</li>
+                        <li>Assistance technique</li>
+                        <li>Suivi et optimisation des systèmes</li>
+                        <li>Support technique réactif</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Pourquoi nous choisir -->
+            <div class="rh-why">
+                <h3>Pourquoi choisir COSMOS TIC</h3>
+                <div class="rh-why-grid">
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Solutions technologiques modernes</span></div>
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Expertise en sécurité et systèmes intelligents</span></div>
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Solutions sur mesure adaptées aux entreprises</span></div>
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Accompagnement technique et support professionnel</span></div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -125,7 +211,7 @@
                 <p>Contactez-nous pour découvrir comment nos solutions technologiques peuvent sécuriser et optimiser votre entreprise.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn-primary">Nous contacter</a>
-                    <a href="inscription.html?type=entreprise" class="btn-secondary">Demander un audit</a>
+                    <a href="contact.html?sujet=audit" class="btn-secondary">Demander un audit</a>
                 </div>
             </div>
         </div>
@@ -138,7 +224,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP">
+                        <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group">
                     </div>
                     <p>La plateforme de recrutement de référence qui connecte les talents aux meilleures opportunités
                         professionnelles.</p>
@@ -172,7 +258,7 @@
                 <div class="footer-section">
                     <h4>À propos</h4>
                     <ul>
-                        <li><a href="index.html">Qui sommes-nous</a></li>
+                        <li><a href="propos.html">Qui sommes-nous</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         
                     </ul>
@@ -180,7 +266,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 COSMOS GROUP. Tous droits réservés.</p>
+                <p>&copy; 2026 Cosmos Group.  | Créé par <a href="https://wa.me/243810644455" target="_blank" style="color: inherit; text-decoration: underline;">Arnold Nzama</a></p>
                 <div class="footer-links">
                  
                     <a href="cookies.html">Cookies</a>

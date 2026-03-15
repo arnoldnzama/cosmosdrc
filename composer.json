@@ -1,0 +1,34 @@
+{
+    "name": "cosmos-group/recrutement",
+    "description": "Système de recrutement et gestion des candidatures - Cosmos Group",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Cosmos Group",
+            "email": "contact1@emergencemag.net"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-mbstring": "*",
+        "ext-fileinfo": "*",
+        "ext-json": "*",
+        "phpmailer/phpmailer": "^6.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "CosmosGroup\\": "includes/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "php test-config.php"
+    }
+}

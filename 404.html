@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page non trouvée - Cosmos Group</title>
+    <link rel="icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon" href="ico/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .error-content {
+            max-width: 600px;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .error-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-error {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-error:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+        }
+        .btn-primary-error {
+            background: #3b82f6;
+            border-color: #3b82f6;
+        }
+        .btn-primary-error:hover {
+            background: #2563eb;
+            border-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page non trouvée</h1>
+            <p class="error-description">
+                Désolé, la page que vous recherchez n'existe pas ou a été déplacée.
+                Retournez à l'accueil ou explorez nos offres d'emploi.
+            </p>
+            <div class="error-actions">
+                <a href="accueil.html" class="btn-error btn-primary-error">
+                    <i class="fas fa-home"></i>
+                    Retour à l'accueil
+                </a>
+                <a href="offres.html" class="btn-error">
+                    <i class="fas fa-briefcase"></i>
+                    Voir les offres
+                </a>
+                <a href="contact.html" class="btn-error">
+                    <i class="fas fa-envelope"></i>
+                    Nous contacter
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Redirection automatique après 10 secondes
+        setTimeout(() => {
+            window.location.href = 'accueil.html';
+        }, 10000);
+    </script>
+</body>
+</html>

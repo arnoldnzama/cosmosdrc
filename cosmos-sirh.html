@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cosmos SIRH - Services complets de digitalisation des ressources humaines. Solutions automatisées pour la gestion RH moderne.">
-    <title>Cosmos SIRH - Système d'Information RH | COSMOS GROUP</title>
-    <link rel="icon" type="image/x-icon" href="ico/favcion.ico">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cosmos.emergencemag.net/cosmos-sirh.html">
+    <meta property="og:title" content="Cosmos SIRH - Système d'Information RH | Cosmos Group">
+    <meta property="og:description" content="Services complets de digitalisation des ressources humaines. Solutions automatisées pour la gestion RH moderne.">
+    <meta property="og:image" content="https://cosmos.emergencemag.net/img/cosmos-sirh.png">
+    <meta property="og:locale" content="fr_CD">
+    
+    <title>Cosmos SIRH - Système d'Information RH | Cosmos Group</title>
+    <link rel="icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon" href="ico/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -18,18 +26,25 @@
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP" class="logo">
+                    <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group" class="logo">
                 </div>
                 <div class="nav-menu">
                     <ul class="nav-links">
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="offres.html">Offres d'emploi</a></li>
-                       
+                        <li class="nav-dropdown">
+                            <a href="services.html" class="dropdown-toggle">Nos services <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cosmos-rh.html"><i class="fas fa-users" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS RH</a></li>
+                                <li><a href="cosmos-tic.html"><i class="fas fa-laptop-code" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS TIC</a></li>
+                                <li><a href="cosmos-sirh.html"><i class="fas fa-database" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS SIRH</a></li>
+                                <li><a href="cosmos-academy.html"><i class="fas fa-graduation-cap" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS Academy</a></li>
+                            </ul>
                         </li>
                         <li><a href="blog.html">Conseils carrière</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
-                    
+                    <a href="recruter.html" class="btn-recruter">Espace recruteur</a>
                 </div>
                 <div class="nav-toggle">
                     <span></span>
@@ -50,52 +65,149 @@
                 <!-- CTA Buttons -->
                 <div class="hero-cta">
                     <a href="contact.html" class="btn-primary">Découvrir nos solutions</a>
-                    <a href="inscription.html?type=entreprise" class="btn-secondary">Demander une démo</a>
+                    <a href="contact.html?sujet=demo" class="btn-secondary">Demander une démo</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services-section">
+    <section class="rh-services-section">
         <div class="container">
-            <div class="services-grid">
-                <!-- Digitalisation -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-digital-tachograph"></i>
+
+            <!-- Intro -->
+            <div class="rh-intro">
+                <div class="rh-intro-badge">COSMOS SIRH</div>
+                <h2 class="rh-intro-title">Digitalisez et optimisez la gestion de vos ressources humaines</h2>
+                <p class="rh-intro-lead">COSMOS SIRH accompagne les entreprises dans la digitalisation et l'automatisation de la gestion des ressources humaines.</p>
+                <p class="rh-intro-text">Nos solutions technologiques permettent aux organisations de simplifier leurs processus RH, améliorer leur efficacité et disposer d'une meilleure visibilité sur leur capital humain. Grâce à des plateformes modernes et sécurisées, COSMOS SIRH aide les entreprises à centraliser, automatiser et optimiser l'ensemble de leurs opérations RH.</p>
+            </div>
+
+            <!-- Section title -->
+            <div class="rh-section-label">Nos solutions SIRH</div>
+
+            <!-- Service Cards -->
+            <div class="rh-cards-grid">
+
+                <!-- Digitalisation des processus RH -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-digital-tachograph"></i></div>
+                        <h3>Digitalisation des processus RH</h3>
                     </div>
-                    <h3>Digitalisation</h3>
-                    <p>Transformez vos opérations administratives avec notre solution automatisée efficace.</p>
+                    <p>Automatisation et centralisation de la gestion administrative des ressources humaines.</p>
+                    <p>Fonctionnalités :</p>
+                    <ul class="rh-list">
+                        <li>Gestion digitale des dossiers du personnel</li>
+                        <li>Gestion électronique des documents RH</li>
+                        <li>Centralisation des données RH</li>
+                        <li>Automatisation des processus administratifs</li>
+                    </ul>
+                    <p class="rh-card-objective"><strong>Objectif :</strong> réduire les tâches administratives et améliorer la productivité des équipes RH.</p>
                 </div>
 
-                <!-- Suivi des candidatures -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-check"></i>
+                <!-- Gestion des recrutements (ATS) -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-user-check"></i></div>
+                        <h3>Gestion des recrutements (ATS)</h3>
                     </div>
-                    <h3>Suivi des candidatures</h3>
-                    <p>Gagnez du temps en filtrant et présélectionnant les meilleurs talents avec notre ATS avancé.</p>
+                    <p>Une plateforme permettant de gérer l'ensemble du processus de recrutement.</p>
+                    <p>Fonctionnalités :</p>
+                    <ul class="rh-list">
+                        <li>Publication des offres d'emploi</li>
+                        <li>Gestion des candidatures</li>
+                        <li>Tri et présélection des candidats</li>
+                        <li>Suivi des étapes de recrutement</li>
+                        <li>Gestion d'une base de talents</li>
+                    </ul>
+                    <p class="rh-card-objective"><strong>Objectif :</strong> accélérer et structurer les processus de recrutement.</p>
                 </div>
 
-                <!-- Plateforme d'évaluation -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-bar"></i>
+                <!-- Plateforme d'évaluation des compétences -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Plateforme d'évaluation des compétences</h3>
                     </div>
-                    <h3>Plateforme d'évaluation</h3>
-                    <p>Évaluez les compétences de vos collaborateurs avec nos outils digitaux avancés.</p>
+                    <p>Outils digitaux permettant d'évaluer les candidats et les collaborateurs.</p>
+                    <p>Fonctionnalités :</p>
+                    <ul class="rh-list">
+                        <li>Évaluation des performances</li>
+                        <li>Tests de compétences professionnelles</li>
+                        <li>Tests informatiques</li>
+                        <li>Tests psychométriques</li>
+                        <li>Tests de gestion du stress</li>
+                        <li>Analyse des aptitudes professionnelles</li>
+                    </ul>
+                    <p class="rh-card-objective"><strong>Objectif :</strong> aider les entreprises à prendre des décisions RH basées sur des données fiables.</p>
                 </div>
 
-                <!-- Paie automatisée -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-coins"></i>
+                <!-- Gestion automatisée de la paie -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-coins"></i></div>
+                        <h3>Gestion automatisée de la paie</h3>
                     </div>
-                    <h3>Paie automatisée</h3>
-                    <p>Simplifiez la gestion salariale de votre société avec notre solution automatisée.</p>
+                    <p>Solution permettant d'automatiser le calcul et la gestion des salaires.</p>
+                    <p>Fonctionnalités :</p>
+                    <ul class="rh-list">
+                        <li>Calcul automatique des salaires</li>
+                        <li>Génération des bulletins de paie</li>
+                        <li>Gestion des primes et indemnités</li>
+                        <li>Conformité réglementaire</li>
+                    </ul>
+                    <p class="rh-card-objective"><strong>Objectif :</strong> sécuriser et simplifier la gestion salariale.</p>
+                </div>
+
+                <!-- Gestion du temps et des présences -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-clock"></i></div>
+                        <h3>Gestion du temps et des présences</h3>
+                    </div>
+                    <p>Outils permettant de suivre et analyser le temps de travail des collaborateurs.</p>
+                    <p>Fonctionnalités :</p>
+                    <ul class="rh-list">
+                        <li>Gestion des horaires</li>
+                        <li>Suivi des présences et absences</li>
+                        <li>Gestion des congés</li>
+                        <li>Intégration avec les badgeuses et systèmes biométriques</li>
+                    </ul>
+                    <p class="rh-card-objective"><strong>Objectif :</strong> améliorer le contrôle et l'organisation du travail.</p>
+                </div>
+
+                <!-- Archivage numérique et gestion documentaire RH -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-folder-open"></i></div>
+                        <h3>Archivage numérique &amp; gestion documentaire RH</h3>
+                    </div>
+                    <p>Solutions permettant de centraliser et sécuriser l'ensemble des documents RH.</p>
+                    <p>Fonctionnalités :</p>
+                    <ul class="rh-list">
+                        <li>Archivage numérique sécurisé</li>
+                        <li>Accès rapide aux dossiers RH</li>
+                        <li>Gestion électronique des documents</li>
+                        <li>Réduction des archives papier</li>
+                    </ul>
+                    <p class="rh-card-objective"><strong>Objectif :</strong> sécuriser et structurer la gestion administrative du personnel.</p>
+                </div>
+
+            </div>
+
+            <!-- Pourquoi nous choisir -->
+            <div class="rh-why">
+                <h3>Pourquoi choisir COSMOS SIRH</h3>
+                <div class="rh-why-grid">
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Automatisation des processus RH</span></div>
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Gain de temps et réduction des tâches administratives</span></div>
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Amélioration de la performance RH</span></div>
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Solutions digitales modernes et sécurisées</span></div>
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Intégration avec les outils RH existants</span></div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -107,7 +219,7 @@
                 <p>Contactez-nous pour découvrir comment notre SIRH peut transformer et automatiser vos processus RH.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn-primary">Nous contacter</a>
-                    <a href="inscription.html?type=entreprise" class="btn-secondary">Essai gratuit</a>
+                    <a href="contact.html?sujet=essai" class="btn-secondary">Essai gratuit</a>
                 </div>
             </div>
         </div>
@@ -120,7 +232,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP">
+                        <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group">
                     </div>
                     <p>La plateforme de recrutement de référence qui connecte les talents aux meilleures opportunités
                         professionnelles.</p>
@@ -154,7 +266,7 @@
                 <div class="footer-section">
                     <h4>À propos</h4>
                     <ul>
-                        <li><a href="index.html">Qui sommes-nous</a></li>
+                        <li><a href="propos.html">Qui sommes-nous</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         
                     </ul>
@@ -162,7 +274,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 COSMOS GROUP. Tous droits réservés.</p>
+                <p>&copy; 2026 Cosmos Group. Tous droits réservés. | Créé par <a href="https://wa.me/243810644455" target="_blank" style="color: inherit; text-decoration: underline;">Arnold Nzama</a></p>
                 <div class="footer-links">
                  
                     <a href="cookies.html">Cookies</a>

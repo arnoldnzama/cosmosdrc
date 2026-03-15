@@ -1,0 +1,41 @@
+User-agent: *
+Allow: /
+
+# Priorités pour les moteurs de recherche
+Allow: /offres.html
+Allow: /blog.html
+Allow: /cosmos-*.html
+
+# Bloquer les dossiers sensibles
+Disallow: /config/
+Disallow: /includes/
+Disallow: /database/
+Disallow: /vendor/
+Disallow: /uploads/cv/
+Disallow: /admin-*
+Disallow: /api-*
+Disallow: /install-system.php
+Disallow: /submit.php
+Disallow: /contact-submit.php
+Disallow: /newsletter-subscribe.php
+
+# Fichiers spécifiques
+Disallow: /*.php$
+Allow: /offres.html
+Allow: /blog.html
+
+# Sitemap
+Sitemap: https://cosmos.emergencemag.net/sitemap.xml
+
+# Crawl-delay pour éviter la surcharge
+Crawl-delay: 1
+
+# Spécifique à Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Spécifique à Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

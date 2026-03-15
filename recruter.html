@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recrutez les meilleurs talents avec COSMOS GROUP. Base de données de 100 000+ profils qualifiés et réseau international de chasseurs de têtes.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Recruter un talent | Cosmos Group">
+    <meta property="og:description" content="Recrutez les meilleurs talents avec notre base de données de 100 000+ profils qualifiés.">
+    <title>Recruter un talent | Cosmos Group</title>
+    <link rel="icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .recruiter-hero {
+            background: linear-gradient(135deg, rgba(6, 71, 149, 0.95) 0%, rgba(63, 167, 222, 0.95) 100%);
+            padding: 140px 0 80px;
+            color: var(--white);
+            text-align: center;
+        }
+        .recruiter-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        .recruiter-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            text-align: center;
+        }
+        .recruiter-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .recruiter-stat-item {
+            text-align: center;
+        }
+        .recruiter-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffd700;
+            display: block;
+        }
+        .recruiter-stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .recruiter-form-section {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+        .recruiter-form-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .recruiter-form-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .recruiter-form-header h2 {
+            color: var(--text-dark);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .recruiter-form-header p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .form-section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group-full {
+            grid-column: 1 / -1;
+        }
+        .form-group label {
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .required {
+            color: #e74c3c;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.9rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 0.95rem;
+            font-family: var(--font-family);
+            transition: var(--transition);
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(63, 167, 222, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .checkbox-item label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: 400;
+        }
+        .form-submit {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .btn-form-submit {
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+        .btn-form-submit:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(63, 167, 222, 0.3);
+        }
+        .success-message, .error-message {
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        @media (max-width: 768px) {
+            .recruiter-hero h1 {
+                font-size: 2rem;
+            }
+            .recruiter-hero p {
+                font-size: 1rem;
+            }
+            .recruiter-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .recruiter-form-wrapper {
+                padding: 2rem 1.5rem;
+            }
+            .btn-form-submit {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group" class="logo">
+                </div>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="offres.html">Offres d'emploi</a></li>
+                        <li class="nav-dropdown">
+                            <a href="services.html" class="dropdown-toggle">Nos services <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cosmos-rh.html"><i class="fas fa-users" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS RH</a></li>
+                                <li><a href="cosmos-tic.html"><i class="fas fa-laptop-code" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS TIC</a></li>
+                                <li><a href="cosmos-sirh.html"><i class="fas fa-database" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS SIRH</a></li>
+                                <li><a href="cosmos-academy.html"><i class="fas fa-graduation-cap" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS Academy</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Conseils carrière</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <a href="recruter.html" class="btn-recruter">Espace recruteur</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="recruiter-hero">
+        <div class="container">
+            <h1>Recrutez les meilleurs talents avec COSMOS GROUP</h1>
+            <p>Grâce à notre base de données de 100 000+ profils qualifiés et notre réseau international de chasseurs de têtes, nous accompagnons les entreprises dans l'identification et le recrutement de talents stratégiques.</p>
+            
+            <div class="recruiter-stats">
+                <div class="recruiter-stat-item">
+                    <span class="recruiter-stat-number">100K+</span>
+                    <span class="recruiter-stat-label">Profils qualifiés</span>
+                </div>
+                <div class="recruiter-stat-item">
+                    <span class="recruiter-stat-number">600+</span>
+                    <span class="recruiter-stat-label">Recrutements réussis</span>
+                </div>
+                <div class="recruiter-stat-item">
+                    <span class="recruiter-stat-number">48h</span>
+                    <span class="recruiter-stat-label">Délai moyen de réponse</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulaire Section -->
+    <section class="recruiter-form-section">
+        <div class="container">
+            <div class="recruiter-form-wrapper">
+                <div class="recruiter-form-header">
+                    <h2>Formulaire entreprise</h2>
+                    <p>Remplissez ce formulaire pour nous faire part de vos besoins en recrutement. Notre équipe vous contactera dans les plus brefs délais.</p>
+                </div>
+
+                <form id="recruiterForm" action="recruiter-submit.php" method="POST">
+                    <!-- Informations entreprise -->
+                    <h3 class="form-section-title"><i class="fas fa-building"></i> Informations entreprise</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="entreprise">Entreprise <span class="required">*</span></label>
+                            <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom_responsable">Nom du responsable <span class="required">*</span></label>
+                            <input type="text" id="nom_responsable" name="nom_responsable" placeholder="Votre nom complet" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fonction">Fonction <span class="required">*</span></label>
+                            <input type="text" id="fonction" name="fonction" placeholder="Ex: Directeur RH" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email professionnel <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telephone">Téléphone <span class="required">*</span></label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="+243 XXX XXX XXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ville_pays">Ville / Pays <span class="required">*</span></label>
+                            <input type="text" id="ville_pays" name="ville_pays" placeholder="Ex: Kinshasa, RDC" required>
+                        </div>
+                    </div>
+
+                    <!-- Informations sur le besoin -->
+                    <h3 class="form-section-title"><i class="fas fa-clipboard-list"></i> Informations sur le besoin</h3>
+                    
+                    <div class="form-group form-group-full">
+                        <label>Type de recrutement <span class="required">*</span></label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="recrutement_permanent" name="type_recrutement[]" value="recrutement_permanent">
+                                <label for="recrutement_permanent">Recrutement permanent</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="chasse_tete" name="type_recrutement[]" value="chasse_tete">
+                                <label for="chasse_tete">Chasse de têtes</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="externalisation_rh" name="type_recrutement[]" value="externalisation_rh">
+                                <label for="externalisation_rh">Externalisation RH</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="conseil_rh" name="type_recrutement[]" value="conseil_rh">
+                                <label for="conseil_rh">Conseil RH</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Informations sur le poste -->
+                    <h3 class="form-section-title"><i class="fas fa-briefcase"></i> Informations sur le poste</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="intitule_poste">Intitulé du poste <span class="required">*</span></label>
+                            <input type="text" id="intitule_poste" name="intitule_poste" placeholder="Ex: Responsable Marketing" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="secteur_activite">Secteur d'activité <span class="required">*</span></label>
+                            <input type="text" id="secteur_activite" name="secteur_activite" placeholder="Ex: Banque, IT, Commerce..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="localisation">Localisation <span class="required">*</span></label>
+                            <input type="text" id="localisation" name="localisation" placeholder="Lieu du poste" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="niveau_experience">Niveau d'expérience <span class="required">*</span></label>
+                            <select id="niveau_experience" name="niveau_experience" required>
+                                <option value="" disabled selected>Sélectionnez le niveau</option>
+                                <option value="junior">Junior (0-2 ans)</option>
+                                <option value="intermediaire">Intermédiaire (3-5 ans)</option>
+                                <option value="senior">Senior (5-10 ans)</option>
+                                <option value="expert">Expert (10+ ans)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre_postes">Nombre de postes <span class="required">*</span></label>
+                            <input type="number" id="nombre_postes" name="nombre_postes" min="1" placeholder="Ex: 1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-full">
+                        <label for="description_besoin">Description rapide du besoin <span class="required">*</span></label>
+                        <textarea id="description_besoin" name="description_besoin" placeholder="Décrivez les compétences recherchées, les missions principales, et toute autre information pertinente..." required></textarea>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn-form-submit">
+                            <i class="fas fa-paper-plane"></i> Soumettre ma demande
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group">
+                    </div>
+                    <p>La plateforme de recrutement de référence qui connecte les talents aux meilleures opportunités professionnelles.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Candidats</h4>
+                    <ul>
+                        <li><a href="offres.html">Rechercher un emploi</a></li>
+                        <li><a href="blog.html">Conseils carrière</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Entreprises</h4>
+                    <ul>
+                        <li><a href="cosmos-rh.html">Cosmos RH</a></li>
+                        <li><a href="cosmos-tic.html">Cosmos TIC</a></li>
+                        <li><a href="cosmos-sirh.html">Cosmos SIRH</a></li>
+                        <li><a href="cosmos-academy.html">Cosmos Academy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>À propos</h4>
+                    <ul>
+                        <li><a href="propos.html">Qui sommes-nous</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="mention-legale.html">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cosmos Group. Tous droits réservés. | Créé par <a href="https://wa.me/243810644455" target="_blank" style="color: inherit; text-decoration: underline;">Arnold Nzama</a></p>
+                <div class="footer-links">
+                    <a href="cookies.html">Cookies</a>
+                    <a href="mention-legale.html">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('recruiterForm');
+            const submitButton = form.querySelector('.btn-form-submit');
+            const originalButtonText = submitButton.innerHTML;
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Validation des checkboxes
+                const checkboxes = form.querySelectorAll('input[name="type_recrutement[]"]');
+                const isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+                
+                if (!isChecked) {
+                    alert('Veuillez sélectionner au moins un type de recrutement.');
+                    return;
+                }
+
+                // Disable button and show loading state
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+
+                const formData = new FormData(form);
+
+                fetch('recruiter-submit.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Show success message
+                        const successDiv = document.createElement('div');
+                        successDiv.className = 'success-message';
+                        successDiv.innerHTML = '<i class="fas fa-check-circle"></i> ' + data.message;
+                        form.insertBefore(successDiv, form.firstChild);
+                        
+                        // Reset form
+                        form.reset();
+                        
+                        // Scroll to message
+                        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        
+                        // Remove message after 5 seconds
+                        setTimeout(() => successDiv.remove(), 5000);
+                    } else {
+                        // Show error message
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'error-message';
+                        errorDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + data.message;
+                        form.insertBefore(errorDiv, form.firstChild);
+                        
+                        // Scroll to message
+                        errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        
+                        // Remove message after 5 seconds
+                        setTimeout(() => errorDiv.remove(), 5000);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'error-message';
+                    errorDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> Erreur de connexion. Veuillez réessayer.';
+                    form.insertBefore(errorDiv, form.firstChild);
+                    
+                    setTimeout(() => errorDiv.remove(), 5000);
+                })
+                .finally(() => {
+                    // Re-enable button
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

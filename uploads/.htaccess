@@ -1,0 +1,23 @@
+# Sécurité du dossier uploads
+# Empêcher l'exécution de scripts PHP
+
+<FilesMatch "\.(php|php3|php4|php5|phtml)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Autoriser uniquement le téléchargement de fichiers spécifiques
+<FilesMatch "\.(pdf|doc|docx)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Désactiver l'affichage du contenu du répertoire
+Options -Indexes
+
+# Protection contre les injections
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/uploads/cv/.*\.(pdf|doc|docx)$ [NC]
+    RewriteRule .* - [F,L]
+</IfModule>

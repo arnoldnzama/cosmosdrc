@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Cosmos RH - Services complets de gestion des ressources humaines. Recrutement, formation, payroll, team building et conseil RH.">
-    <title>Cosmos RH - Services Ressources Humaines | COSMOS GROUP</title>
-    <link rel="icon" type="image/x-icon" href="ico/favcion.ico">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cosmos.emergencemag.net/cosmos-rh.html">
+    <meta property="og:title" content="Cosmos RH - Services Ressources Humaines | Cosmos Group">
+    <meta property="og:description" content="Services complets de gestion des ressources humaines. Recrutement, formation, payroll, team building et conseil RH.">
+    <meta property="og:image" content="https://cosmos.emergencemag.net/logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png">
+    <meta property="og:locale" content="fr_CD">
+    
+    <title>Cosmos RH - Services Ressources Humaines | Cosmos Group</title>
+    <link rel="icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon" href="ico/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -21,18 +29,25 @@
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP" class="logo">
+                    <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group" class="logo">
                 </div>
                 <div class="nav-menu">
                     <ul class="nav-links">
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="offres.html">Offres d'emploi</a></li>
-                        
+                        <li class="nav-dropdown">
+                            <a href="services.html" class="dropdown-toggle">Nos services <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="cosmos-rh.html"><i class="fas fa-users" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS RH</a></li>
+                                <li><a href="cosmos-tic.html"><i class="fas fa-laptop-code" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS TIC</a></li>
+                                <li><a href="cosmos-sirh.html"><i class="fas fa-database" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS SIRH</a></li>
+                                <li><a href="cosmos-academy.html"><i class="fas fa-graduation-cap" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS Academy</a></li>
+                            </ul>
                         </li>
                         <li><a href="blog.html">Conseils carrière</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
-                    
+                    <a href="recruter.html" class="btn-recruter">Espace recruteur</a>
                 </div>
                 <div class="nav-toggle">
                     <span></span>
@@ -63,66 +78,160 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services-section">
+    <section class="rh-services-section">
         <div class="container">
-            <div class="services-grid">
+
+            <!-- Intro -->
+            <div class="rh-intro">
+                <div class="rh-intro-badge">COSMOS RH</div>
+                <h2 class="rh-intro-title">Des solutions complètes pour valoriser votre capital humain</h2>
+                <p class="rh-intro-lead">COSMOS RH accompagne les organisations dans l'identification, la gestion et le développement de leurs talents.</p>
+                <p class="rh-intro-text">Nous proposons des solutions RH complètes permettant aux entreprises d'optimiser leur performance organisationnelle et de renforcer leur compétitivité.</p>
+            </div>
+
+            <!-- Section title -->
+            <div class="rh-section-label">Nos services RH</div>
+
+            <!-- Service Cards -->
+            <div class="rh-cards-grid">
+
                 <!-- Recrutement -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users"></i>
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-users"></i></div>
+                        <h3>Recrutement &amp; Sélection de talents</h3>
                     </div>
-                    <h3>Recrutement</h3>
-                    <p>Nous identifions et engageons les meilleurs talents pour renforcer votre équipe.</p>
+                    <p>Nous accompagnons les entreprises dans l'identification et la sélection des meilleurs profils grâce à une méthodologie structurée incluant :</p>
+                    <ul class="rh-list">
+                        <li>Analyse des besoins</li>
+                        <li>Sourcing ciblé</li>
+                        <li>Présélection des candidats</li>
+                        <li>Entretiens et évaluation</li>
+                        <li>Accompagnement à l'intégration</li>
+                    </ul>
+                </div>
+
+                <!-- Executive Search -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-search"></i></div>
+                        <h3>Chasse de têtes (Executive Search)</h3>
+                    </div>
+                    <p>Grâce à notre réseau international de chasseurs de têtes, nous identifions et approchons des profils stratégiques et cadres dirigeants souvent absents des circuits classiques de recrutement.</p>
+                </div>
+
+                <!-- Capital humain -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-sitemap"></i></div>
+                        <h3>Gestion du capital humain</h3>
+                    </div>
+                    <p>COSMOS RH accompagne les organisations dans la gestion et l'optimisation de leur capital humain afin d'améliorer la performance globale des équipes. Nos interventions incluent notamment :</p>
+                    <ul class="rh-list">
+                        <li>Gestion des talents</li>
+                        <li>Structuration des équipes</li>
+                        <li>Accompagnement managérial</li>
+                        <li>Optimisation des ressources humaines</li>
+                        <li>Gestion du cycle de vie des collaborateurs</li>
+                    </ul>
+                </div>
+
+                <!-- Conseil RH -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Conseil RH &amp; Organisation</h3>
+                    </div>
+                    <p>Nos experts accompagnent les entreprises dans la structuration et l'amélioration de leurs politiques RH. Nos services incluent :</p>
+                    <ul class="rh-list">
+                        <li>Audit RH</li>
+                        <li>Élaboration de politiques RH</li>
+                        <li>Gestion des performances</li>
+                        <li>Gestion des talents</li>
+                        <li>Structuration organisationnelle</li>
+                    </ul>
                 </div>
 
                 <!-- Formation -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>Formation &amp; développement des compétences</h3>
                     </div>
-                    <h3>Formation</h3>
-                    <p>Nous enrichissons les compétences des collaborateurs avec des formations sur mesure.</p>
+                    <p>Nous concevons des programmes de formation sur mesure destinés à renforcer les compétences des équipes et améliorer la performance organisationnelle. Domaines de formation :</p>
+                    <ul class="rh-list">
+                        <li>Leadership et management</li>
+                        <li>Développement des compétences professionnelles</li>
+                        <li>Communication organisationnelle</li>
+                        <li>Culture d'entreprise</li>
+                        <li>Sécurité professionnelle</li>
+                    </ul>
                 </div>
 
                 <!-- Payroll -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-calculator"></i>
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-calculator"></i></div>
+                        <h3>Gestion de la paie (Payroll) &amp; conformité fiscale</h3>
                     </div>
-                    <h3>Payroll</h3>
-                    <p>Nous fournissons un traitement salarial exact et conforme pour vos collaborateurs.</p>
+                    <p>COSMOS RH assure la gestion complète de la paie des collaborateurs dans le respect des réglementations locales. Nos services incluent :</p>
+                    <ul class="rh-list">
+                        <li>Traitement des salaires</li>
+                        <li>Gestion des bulletins de paie</li>
+                        <li>Déclarations sociales et fiscales</li>
+                        <li>Conformité réglementaire</li>
+                        <li>Optimisation de la gestion administrative du personnel</li>
+                    </ul>
                 </div>
 
-                <!-- Team Building -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-handshake"></i>
+                <!-- Externalisation -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>Externalisation des services RH</h3>
                     </div>
-                    <h3>Team Building</h3>
-                    <p>Nous améliorons la solidarité de l'équipe avec nos activités dynamiques.</p>
+                    <p>Nous permettons aux entreprises d'externaliser tout ou partie de leur gestion RH afin de se concentrer sur leur cœur d'activité. Cela comprend notamment :</p>
+                    <ul class="rh-list">
+                        <li>Gestion administrative du personnel</li>
+                        <li>Gestion des contrats de travail</li>
+                        <li>Gestion des dossiers du personnel</li>
+                        <li>Suivi RH des collaborateurs</li>
+                    </ul>
                 </div>
 
-                <!-- Audit & Conseils -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
+                <!-- Avantages sociaux -->
+                <div class="rh-card">
+                    <div class="rh-card-header">
+                        <div class="rh-card-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h3>Gestion des avantages sociaux &amp; couverture santé</h3>
                     </div>
-                    <h3>Audit & Conseils</h3>
-                    <p>Nous améliorons vos processus et rendons vos méthodes plus efficaces grâce à notre expertise.</p>
+                    <p>COSMOS RH accompagne les organisations dans la mise en place et la gestion des avantages sociaux pour leurs collaborateurs. Grâce à notre réseau de partenaires, nous proposons notamment :</p>
+                    <ul class="rh-list">
+                        <li>Gestion des couvertures santé</li>
+                        <li>Mise en place de partenariats médicaux</li>
+                        <li>Coordination avec les structures hospitalières</li>
+                        <li>Suivi administratif des prestations de santé</li>
+                    </ul>
                 </div>
 
-                <!-- 24/7 Support -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Notre support est disponible 24/7 pour répondre à vos questions et résoudre vos problèmes.</p>
+            </div>
+
+            <!-- Pourquoi nous choisir -->
+            <div class="rh-why">
+                <h3>Pourquoi choisir COSMOS RH</h3>
+                <div class="rh-why-grid">
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Base de plus de 100 000 talents qualifiés</span></div>
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Réseau international de chasseurs de têtes</span></div>
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Solutions RH complètes</span></div>
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Expertise locale et internationale</span></div>
+                    <div class="rh-why-item"><i class="fas fa-check-circle"></i><span>Approche personnalisée et orientée résultats</span></div>
                 </div>
             </div>
+
         </div>
     </section>
 
+    
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -144,7 +253,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS GROUP">
+                        <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group">
                     </div>
                     <p>La plateforme de recrutement de référence qui connecte les talents aux meilleures opportunités
                         professionnelles.</p>
@@ -178,7 +287,7 @@
                 <div class="footer-section">
                     <h4>À propos</h4>
                     <ul>
-                        <li><a href="index.html">Qui sommes-nous</a></li>
+                        <li><a href="propos.html">Qui sommes-nous</a></li>
                         <li><a href="contact.html">Contact</a></li>
                         
                     </ul>
@@ -186,7 +295,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 COSMOS GROUP. Tous droits réservés.</p>
+                <p>&copy; 2026 Cosmos Group. Tous droits réservés. | Créé par <a href="https://wa.me/243810644455" target="_blank" style="color: inherit; text-decoration: underline;">Arnold Nzama</a></p>
                 <div class="footer-links">
                  
                     <a href="cookies.html">Cookies</a>
