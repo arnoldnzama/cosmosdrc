@@ -1200,7 +1200,7 @@ function handleContactSubmit(form) {
         })
         .catch(error => {
             console.error('Erreur:', error);
-            showNotification('Erreur de connexion. Veuillez réessayer ou nous contacter directement au +243 999 980 902.', 'error');
+            showNotification('Erreur de connexion. Veuillez réessayer ou nous contacter directement au +243 98 21 61 066.', 'error');
         })
         .finally(() => {
             // Réactiver le bouton

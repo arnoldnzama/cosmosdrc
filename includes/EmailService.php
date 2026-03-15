@@ -1316,7 +1316,7 @@ class EmailService {
                                     <strong>📞 Besoin d\'informations ?</strong><br>
                                     N\'hésitez pas à nous contacter :<br>
                                     Email : <a href="mailto:academie@emergencemag.net" style="color: #92400e; text-decoration: underline;">academie@emergencemag.net</a><br>
-                                    Téléphone : +243 999 980 902 / +243 820 707 070
+                                    Téléphone : +243 98 21 61 066 / +243 82 07 07 070
                                 </p>
                             </div>
                             
@@ -1613,7 +1613,7 @@ class EmailService {
                                     <strong>📞 Besoin d\'informations ?</strong><br>
                                     N\'hésitez pas à nous contacter :<br>
                                     Email : <a href="mailto:recruter@emergencemag.net" style="color: #92400e; text-decoration: underline;">recruter@emergencemag.net</a><br>
-                                    Téléphone : +243 999 980 902 / +243 820 707 070
+                                    Téléphone : +243 98 21 61 066 / +243 82 07 07 070
                                 </p>
                             </div>
                             

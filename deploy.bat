@@ -237,7 +237,7 @@ echo   - php verify-consistency.php  # Verifier la coherence
 echo.
 echo Support :
 echo   - Email : web@emergencemag.net
-echo   - Telephone : +243 999 980 902
+echo   - Telephone : +243 98 21 61 066
 echo.
 echo ============================================================================
 echo.
