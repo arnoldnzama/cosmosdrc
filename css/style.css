@@ -5878,7 +5878,7 @@ FRES.HTML SPECIFIC STYLES ===== */
 .application-btn,
 .btn-apply,
 .apply-btn {
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    background: var(--primary-color);
     color: white;
     border: none;
     padding: 12px 24px;
@@ -5897,15 +5897,16 @@ FRES.HTML SPECIFIC STYLES ===== */
 .btn-apply:hover,
 .apply-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    box-shadow: 0 8px 25px rgba(63, 167, 222, 0.4);
+    background: var(--primary-dark);
+    color: white;
 }
 
 .application-btn:active,
 .btn-apply:active,
 .apply-btn:active {
     transform: translateY(0);
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 15px rgba(63, 167, 222, 0.3);
 }
 
 /* Styles pour les cartes d'offres d'emploi */
