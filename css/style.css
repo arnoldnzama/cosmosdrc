@@ -8539,3 +8539,31 @@ FRES.HTML SPECIFIC STYLES ===== */
         font-size: 2.2rem;
     }
 }
+
+/* Solutions Section - titre sur une ligne (mobile & tablette) */
+@media (max-width: 1024px) {
+    .solutions-section .section-header-center h2 {
+        font-size: 1.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 768px) {
+    .solutions-section .section-header-center h2 {
+        font-size: 1.25rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 480px) {
+    .solutions-section .section-header-center h2 {
+        font-size: 1.05rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
