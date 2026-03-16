@@ -68,7 +68,7 @@
 }
 
 .job-badge {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, #064795, #3fa7de);
     color: white;
     padding: 6px 12px;
     border-radius: 20px;
@@ -87,7 +87,7 @@
 }
 
 .btn-apply {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, #064795, #3fa7de);
     color: white;
     padding: 10px 24px;
     border-radius: 6px;
@@ -99,7 +99,7 @@
 }
 
 .btn-apply:hover {
-    background: var(--primary-dark);
+    background: linear-gradient(135deg, #0a5ab5, #5bbfe8);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(63, 167, 222, 0.4);
 }
@@ -140,5 +140,139 @@
     .job-badge {
         font-size: 0.8rem;
         padding: 4px 10px;
+    }
+}
+
+/* Styles pour les offres expirées */
+.job-item.job-expired {
+    opacity: 0.7;
+    background: #f9fafb;
+}
+
+.job-item.job-expired:hover {
+    border-color: #e5e7eb;
+    box-shadow: none;
+    transform: none;
+    cursor: default;
+}
+
+.job-item.job-expired .job-title {
+    color: #6b7280;
+}
+
+.job-item.job-expired .btn-apply {
+    background: #9ca3af !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+}
+
+.job-item.job-expired .btn-apply i {
+    margin-right: 8px;
+}
+
+/* Offset pour le header fixe */
+.search-filters {
+    padding-top: 145px !important;
+}
+
+@media (max-width: 1024px) {
+    .search-filters {
+        padding-top: 130px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-filters {
+        padding-top: 115px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-filters {
+        padding-top: 105px !important;
+    }
+}
+
+/* ===== OFFRES HERO ===== */
+.offres-hero {
+    position: relative;
+    background: linear-gradient(135deg, #020817 0%, #0f172a 50%, #0c1a3a 100%);
+    padding: 80px 0 60px;
+    overflow: hidden;
+}
+
+.offres-hero-orbs {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.offres-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.offres-orb-1 {
+    width: 350px; height: 350px;
+    background: rgba(63,167,222,0.1);
+    top: -60px; left: 10%;
+}
+
+.offres-orb-2 {
+    width: 250px; height: 250px;
+    background: rgba(6,71,149,0.12);
+    bottom: 0; right: 15%;
+}
+
+.offres-hero-content {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.offres-hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0.5rem 0 1rem;
+    line-height: 1.2;
+}
+
+.offres-hero-content p {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+    .offres-hero {
+        padding: 60px 0 50px;
+    }
+    .offres-hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .offres-hero {
+        padding: 50px 0 40px;
+    }
+    .offres-hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .offres-hero-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .offres-hero {
+        padding: 40px 0 35px;
+    }
+    .offres-hero-content h1 {
+        font-size: 1.5rem;
     }
 }

@@ -202,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Navbar scroll effect
     var header = document.querySelector('.header');
-    var lastScrollTop = 0;
 
     window.addEventListener('scroll', function () {
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -213,14 +212,6 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 header.classList.remove('scrolled');
             }
-
-            if (scrollTop > lastScrollTop && scrollTop > 200) {
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                header.style.transform = 'translateY(0)';
-            }
-
-            lastScrollTop = scrollTop;
         }
     });
 

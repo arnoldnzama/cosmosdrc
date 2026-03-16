@@ -583,7 +583,7 @@ class EmailService {
                                             </tr>
                                             <tr>
                                                 <td style="padding: 8px 0; color: #4b5563; font-size: 14px; line-height: 1.6;">
-                                                    ✨ Événements et formations
+                                                     Événements et formations
                                                 </td>
                                             </tr>
                                         </table>
