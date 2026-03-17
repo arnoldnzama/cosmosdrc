@@ -1456,3 +1456,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// ===== BOUTON RETOUR EN HAUT =====
+(function () {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
+
+// ===== HEADER STICKY AU DÉFILEMENT =====
+(function () {
+    var header = document.querySelector('.header');
+    if (!header) return;
+
+    function onScroll() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // état initial
+})();

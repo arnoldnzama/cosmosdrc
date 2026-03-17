@@ -53,166 +53,408 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" style="background: linear-gradient(135deg, #020817 0%, #0f172a 50%, #0c1a3a 100%); padding: 80px 0 60px;">
+    <style>
+        .hero-inner {
+            position: relative;
+            background: linear-gradient(135deg, #020817 0%, #0f172a 50%, #0c1a3a 100%);
+            color: #fff;
+            padding: 110px 0 80px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        .hero-inner-orbs { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+        .hero-inner-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+        .hero-inner-orb-1 {
+            width: 380px; height: 380px;
+            background: rgba(63,167,222,0.12);
+            top: -10%; left: 10%;
+            animation: orbPulseInner 6s ease-in-out infinite;
+        }
+        .hero-inner-orb-2 {
+            width: 260px; height: 260px;
+            background: rgba(6,71,149,0.15);
+            bottom: -10%; right: 15%;
+            animation: orbPulseInner 8s ease-in-out infinite reverse;
+        }
+        .hero-inner-orb-3 {
+            width: 180px; height: 180px;
+            background: rgba(91,181,227,0.1);
+            top: 40%; right: 25%;
+            animation: orbPulseInner 5s ease-in-out infinite 2s;
+        }
+        @keyframes orbPulseInner {
+            0%,100% { transform: scale(1); opacity: 0.8; }
+            50%      { transform: scale(1.15); opacity: 1; }
+        }
+        .hero-inner-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .hero-inner-icon {
+            font-size: 4rem;
+            color: #7dd3fc;
+            margin-bottom: 1.2rem;
+            opacity: 0;
+            animation: fadeInUpInner 0.6s ease forwards 0.2s;
+            filter: drop-shadow(0 0 20px rgba(63,167,222,0.4));
+        }
+        .hero-inner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 18px;
+            border-radius: 999px;
+            background: rgba(63,167,222,0.12);
+            border: 1px solid rgba(63,167,222,0.3);
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #7dd3fc;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.2rem;
+            opacity: 0;
+            animation: fadeInUpInner 0.6s ease forwards 0.1s;
+        }
+        .hero-inner-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0 0 1rem 0;
+            line-height: 1.2;
+            opacity: 0;
+            animation: fadeInUpInner 0.6s ease forwards 0.35s;
+        }
+        .hero-inner-title .grad-text {
+            background: linear-gradient(90deg, #3fa7de, #7dd3fc, #3fa7de);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmerInner 3s linear infinite;
+        }
+        @keyframes shimmerInner { to { background-position: 200% center; } }
+        .hero-inner-sub {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.75;
+            opacity: 0;
+            animation: fadeInUpInner 0.6s ease forwards 0.5s;
+        }
+        .hero-inner-breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            opacity: 0;
+            animation: fadeInUpInner 0.6s ease forwards 0.65s;
+        }
+        .hero-inner-breadcrumb a { color: #7dd3fc; text-decoration: none; }
+        .hero-inner-breadcrumb a:hover { color: #fff; }
+        .hero-inner-breadcrumb i { font-size: 0.65rem; }
+        @keyframes fadeInUpInner {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            .hero-inner { padding: 100px 0 60px; }
+            .hero-inner-title { font-size: 1.9rem; }
+        }
+    </style>
+
+    <section class="hero-inner">
+        <div class="hero-inner-orbs">
+            <div class="hero-inner-orb hero-inner-orb-1"></div>
+            <div class="hero-inner-orb hero-inner-orb-2"></div>
+            <div class="hero-inner-orb hero-inner-orb-3"></div>
+        </div>
         <div class="container">
-            <div class="hero-content" style="text-align: center;">
-                <div style="font-size: 4rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem;">
+            <div class="hero-inner-content">
+                <span class="hero-inner-badge">
+                    <i class="fas fa-shield-alt"></i> Informations juridiques
+                </span>
+                <div class="hero-inner-icon">
                     <i class="fas fa-balance-scale"></i>
                 </div>
-                <h1 class="hero-title" style="font-size: 2.5rem;">Mentions Légales</h1>
-                <p class="hero-subtitle" style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
-                    Informations juridiques et droits d'auteur
-                </p>
+                <h1 class="hero-inner-title">
+                    <span class="grad-text">Mentions Légales</span>
+                </h1>
+                <p class="hero-inner-sub">Droits d'auteur, confidentialité et informations juridiques de COSMOS GROUP</p>
+                <nav class="hero-inner-breadcrumb" aria-label="Fil d'Ariane">
+                    <a href="index.html">Accueil</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Mentions légales</span>
+                </nav>
             </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <section style="padding: 5rem 0; background-color: var(--light-gray);">
+    <style>
+        .legal-section { padding: 5rem 0; background: var(--light-gray); }
+        .legal-wrap { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+
+        /* Alert banner */
+        .legal-alert {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 2rem 2.5rem;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #020817 0%, #0f172a 60%, #0c1a3a 100%);
+            border: 1px solid rgba(63,167,222,0.25);
+            box-shadow: 0 8px 32px rgba(2,8,23,0.35);
+        }
+        .legal-alert-icon {
+            flex-shrink: 0;
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: rgba(63,167,222,0.15);
+            border: 1px solid rgba(63,167,222,0.3);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: #7dd3fc;
+        }
+        .legal-alert-body h2 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .legal-alert-body p { color: #94a3b8; line-height: 1.8; margin: 0; font-size: 1rem; }
+
+        /* Cards */
+        .legal-card {
+            background: var(--white);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .legal-card:hover { box-shadow: var(--shadow-hover); }
+        .legal-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.6rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .legal-card-icon {
+            width: 52px; height: 52px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; color: #fff;
+            flex-shrink: 0;
+        }
+        .legal-card-icon.blue  { background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); }
+        .legal-card-icon.teal  { background: linear-gradient(135deg, #0d9488, #14b8a6); }
+        .legal-card-icon.red   { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .legal-card-header h3 { margin: 0; font-size: 1.25rem; color: var(--text-dark); font-weight: 700; }
+        .legal-card-body { padding: 2rem; }
+
+        /* Highlight box */
+        .legal-highlight {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.2rem 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.2rem;
+            font-size: 0.97rem;
+            line-height: 1.75;
+        }
+        .legal-highlight i { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+        .legal-highlight.blue  { background: #eff6ff; color: #1e40af; border-left: 4px solid var(--primary-color); }
+        .legal-highlight.teal  { background: #f0fdfa; color: #0f766e; border-left: 4px solid #14b8a6; }
+        .legal-highlight.red   { background: #fef2f2; color: #991b1b; border-left: 4px solid #ef4444; }
+        .legal-highlight.dark  { background: rgba(63,167,222,0.07); color: #334155; border-left: 4px solid var(--primary-color); }
+
+        /* Interdictions grid */
+        .legal-forbid-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .legal-forbid-item {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border-radius: 12px;
+            background: var(--light-gray);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .legal-forbid-item:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+        .legal-forbid-item i { font-size: 2rem; color: #dc2626; margin-bottom: 0.75rem; display: block; }
+        .legal-forbid-item span { font-size: 0.88rem; font-weight: 700; color: var(--text-dark); }
+
+        /* CTA contact */
+        .legal-cta {
+            border-radius: 14px;
+            background: linear-gradient(135deg, #020817 0%, #0f172a 60%, #0c1a3a 100%);
+            border: 1px solid rgba(63,167,222,0.2);
+            padding: 3rem 2.5rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(2,8,23,0.3);
+        }
+        .legal-cta-icon { font-size: 3rem; color: #7dd3fc; margin-bottom: 1rem; filter: drop-shadow(0 0 16px rgba(63,167,222,0.4)); }
+        .legal-cta h3 { color: #fff; font-size: 1.5rem; margin-bottom: 0.75rem; }
+        .legal-cta p { color: #94a3b8; line-height: 1.8; max-width: 620px; margin: 0 auto 2rem; font-size: 1rem; }
+        .legal-cta-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(63,167,222,0.15);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(8px);
+        }
+        .legal-cta-info-item { display: flex; align-items: center; gap: 0.6rem; color: #cbd5e1; font-size: 0.97rem; }
+        .legal-cta-info-item i { color: #7dd3fc; }
+        .legal-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 32px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+            background: linear-gradient(135deg, #7dd3fc, #3fa7de);
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 0 20px rgba(63,167,222,0.3);
+        }
+        .legal-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 0 32px rgba(63,167,222,0.5); color: #0f172a; }
+
+        /* Footer date */
+        .legal-date {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+        .legal-date i { color: var(--primary-color); margin-right: 0.4rem; }
+
+        @media (max-width: 600px) {
+            .legal-alert { flex-direction: column; gap: 1rem; padding: 1.5rem; }
+            .legal-card-body { padding: 1.5rem; }
+            .legal-cta { padding: 2rem 1.5rem; }
+        }
+    </style>
+
+    <section class="legal-section">
         <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
-                
-                <!-- Avertissement principal -->
-                <div style="background: linear-gradient(135deg, #ef4444, #dc2626); padding: 2.5rem; border-radius: 12px; box-shadow: var(--shadow-hover); margin-bottom: 3rem; border-left: 6px solid #991b1b;">
-                    <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
-                        <div style="font-size: 3rem; color: white; flex-shrink: 0;">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                        <div>
-                            <h2 style="color: white; font-size: 1.5rem; margin-bottom: 1rem;">
-                                <i class="fas fa-shield-alt"></i> Document Protégé
-                            </h2>
-                            <p style="color: rgba(255, 255, 255, 0.95); line-height: 1.8; font-size: 1.05rem; margin: 0;">
-                                Ce document est protégé par le droit d'auteur. Tous les droits sont réservés. Il contient des informations confidentielles et une mention de sécurité en raison de droits d'exploitation qui ne sont pas encore transférés.
-                            </p>
-                        </div>
+            <div class="legal-wrap">
+
+                <!-- Alerte document protégé -->
+                <div class="legal-alert">
+                    <div class="legal-alert-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="legal-alert-body">
+                        <h2><i class="fas fa-shield-alt"></i> Document Protégé</h2>
+                        <p>Ce document est protégé par le droit d'auteur. Tous les droits sont réservés. Il contient des informations confidentielles et une mention de sécurité en raison de droits d'exploitation qui ne sont pas encore transférés.</p>
                     </div>
                 </div>
 
                 <!-- Interdictions -->
-                <div style="background: var(--white); padding: 3rem; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 2rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 3px solid var(--primary-color);">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-color), var(--primary-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-ban" style="font-size: 1.8rem; color: white;"></i>
+                <div class="legal-card">
+                    <div class="legal-card-header">
+                        <div class="legal-card-icon red"><i class="fas fa-ban"></i></div>
+                        <h3>Interdictions Strictes</h3>
+                    </div>
+                    <div class="legal-card-body">
+                        <div class="legal-highlight red">
+                            <i class="fas fa-times-circle"></i>
+                            <span>Toute reproduction, diffusion, modification ou utilisation, même partielle, sans autorisation écrite préalable est strictement interdite.</span>
                         </div>
-                        <h3 style="color: var(--text-dark); font-size: 1.6rem; margin: 0;">Interdictions Strictes</h3>
-                    </div>
-
-                    <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
-                        <p style="color: #991b1b; font-weight: 600; margin: 0; line-height: 1.8; font-size: 1.05rem;">
-                            <i class="fas fa-times-circle" style="color: #dc2626; margin-right: 0.5rem;"></i>
-                            Toute reproduction, diffusion, modification ou utilisation, même partielle, sans autorisation écrite préalable est strictement interdite.
-                        </p>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                        <div style="text-align: center; padding: 1.5rem; background: var(--light-gray); border-radius: 10px;">
-                            <div style="font-size: 2.5rem; color: #dc2626; margin-bottom: 0.5rem;">
+                        <div class="legal-forbid-grid">
+                            <div class="legal-forbid-item">
                                 <i class="fas fa-copy"></i>
+                                <span>Reproduction interdite</span>
                             </div>
-                            <p style="color: var(--text-dark); font-weight: 600; margin: 0;">Reproduction interdite</p>
-                        </div>
-
-                        <div style="text-align: center; padding: 1.5rem; background: var(--light-gray); border-radius: 10px;">
-                            <div style="font-size: 2.5rem; color: #dc2626; margin-bottom: 0.5rem;">
+                            <div class="legal-forbid-item">
                                 <i class="fas fa-share-alt"></i>
+                                <span>Diffusion interdite</span>
                             </div>
-                            <p style="color: var(--text-dark); font-weight: 600; margin: 0;">Diffusion interdite</p>
-                        </div>
-
-                        <div style="text-align: center; padding: 1.5rem; background: var(--light-gray); border-radius: 10px;">
-                            <div style="font-size: 2.5rem; color: #dc2626; margin-bottom: 0.5rem;">
+                            <div class="legal-forbid-item">
                                 <i class="fas fa-edit"></i>
+                                <span>Modification interdite</span>
                             </div>
-                            <p style="color: var(--text-dark); font-weight: 600; margin: 0;">Modification interdite</p>
-                        </div>
-
-                        <div style="text-align: center; padding: 1.5rem; background: var(--light-gray); border-radius: 10px;">
-                            <div style="font-size: 2.5rem; color: #dc2626; margin-bottom: 0.5rem;">
+                            <div class="legal-forbid-item">
                                 <i class="fas fa-download"></i>
+                                <span>Utilisation interdite</span>
                             </div>
-                            <p style="color: var(--text-dark); font-weight: 600; margin: 0;">Utilisation interdite</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Droits d'auteur -->
-                <div style="background: var(--white); padding: 3rem; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 2rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 3px solid var(--secondary-color);">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary-color), #0a5cb8); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-copyright" style="font-size: 1.8rem; color: white;"></i>
-                        </div>
-                        <h3 style="color: var(--text-dark); font-size: 1.6rem; margin: 0;">Droits d'Auteur</h3>
+                <div class="legal-card">
+                    <div class="legal-card-header">
+                        <div class="legal-card-icon blue"><i class="fas fa-copyright"></i></div>
+                        <h3>Droits d'Auteur</h3>
                     </div>
-
-                    <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1.5rem; border-radius: 8px;">
-                        <p style="color: var(--text-dark); line-height: 1.8; margin: 0 0 1rem 0; font-size: 1.05rem;">
-                            <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 0.5rem;"></i>
-                            Tous les contenus présents sur ce site (textes, images, logos, graphiques, vidéos, etc.) sont la propriété exclusive de COSMOS GROUP ou de ses partenaires et sont protégés par les lois en vigueur sur la propriété intellectuelle.
-                        </p>
-                        <p style="color: var(--text-dark); line-height: 1.8; margin: 0; font-size: 1.05rem;">
-                            <i class="fas fa-lock" style="color: #3b82f6; margin-right: 0.5rem;"></i>
-                            Les droits d'exploitation ne sont pas encore transférés et restent la propriété de COSMOS GROUP.
-                        </p>
+                    <div class="legal-card-body">
+                        <div class="legal-highlight blue">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Tous les contenus présents sur ce site (textes, images, logos, graphiques, vidéos, etc.) sont la propriété exclusive de COSMOS GROUP ou de ses partenaires et sont protégés par les lois en vigueur sur la propriété intellectuelle.</span>
+                        </div>
+                        <div class="legal-highlight dark">
+                            <i class="fas fa-lock"></i>
+                            <span>Les droits d'exploitation ne sont pas encore transférés et restent la propriété de COSMOS GROUP.</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Confidentialité -->
-                <div style="background: var(--white); padding: 3rem; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 2rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 3px solid #10b981;">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #34d399); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-user-shield" style="font-size: 1.8rem; color: white;"></i>
-                        </div>
-                        <h3 style="color: var(--text-dark); font-size: 1.6rem; margin: 0;">Informations Confidentielles</h3>
+                <div class="legal-card">
+                    <div class="legal-card-header">
+                        <div class="legal-card-icon teal"><i class="fas fa-user-shield"></i></div>
+                        <h3>Informations Confidentielles</h3>
                     </div>
-
-                    <div style="background: #f0fdf4; border-left: 4px solid #10b981; padding: 1.5rem; border-radius: 8px;">
-                        <p style="color: var(--text-dark); line-height: 1.8; margin: 0; font-size: 1.05rem;">
-                            <i class="fas fa-shield-alt" style="color: #10b981; margin-right: 0.5rem;"></i>
-                            Ce document contient des informations confidentielles destinées uniquement à l'usage des personnes autorisées. Toute divulgation, distribution ou copie non autorisée est strictement prohibée et peut entraîner des poursuites judiciaires.
-                        </p>
+                    <div class="legal-card-body">
+                        <div class="legal-highlight teal">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Ce document contient des informations confidentielles destinées uniquement à l'usage des personnes autorisées. Toute divulgation, distribution ou copie non autorisée est strictement prohibée et peut entraîner des poursuites judiciaires.</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Autorisation -->
-                <div style="background: linear-gradient(135deg, var(--primary-color), var(--primary-light)); padding: 3rem; border-radius: 12px; box-shadow: var(--shadow-hover); color: white;">
-                    <div style="text-align: center; margin-bottom: 2rem;">
-                        <div style="font-size: 3.5rem; margin-bottom: 1rem; opacity: 0.9;">
-                            <i class="fas fa-file-signature"></i>
+                <!-- CTA Contact -->
+                <div class="legal-cta">
+                    <div class="legal-cta-icon"><i class="fas fa-file-signature"></i></div>
+                    <h3>Demande d'Autorisation</h3>
+                    <p>Pour toute demande d'autorisation d'utilisation, de reproduction ou de diffusion du contenu de ce site, veuillez nous contacter par écrit à l'adresse suivante :</p>
+                    <div class="legal-cta-info">
+                        <div class="legal-cta-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><strong style="color:#fff;">Email :</strong> hello@cosmosdrc.com</span>
                         </div>
-                        <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Demande d'Autorisation</h3>
-                        <p style="line-height: 1.8; opacity: 0.95; font-size: 1.05rem; max-width: 700px; margin: 0 auto;">
-                            Pour toute demande d'autorisation d'utilisation, de reproduction ou de diffusion du contenu de ce site, veuillez nous contacter par écrit à l'adresse suivante :
-                        </p>
+                        <div class="legal-cta-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong style="color:#fff;">Adresse :</strong> Immeuble Ancienne Galerie Présidentielle, 7ème Niveau, Gombe/Kinshasa — Réf. : Boulevard du 30 Juin</span>
+                        </div>
                     </div>
-
-                    <div style="background: rgba(255, 255, 255, 0.15); padding: 2rem; border-radius: 10px; backdrop-filter: blur(10px); text-align: center;">
-                        <p style="margin: 0 0 1rem 0; font-size: 1.1rem;">
-                            <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
-                            <strong>Email :</strong> hello@cosmosdrc.com
-                        </p>
-                        <p style="margin: 0; font-size: 1.1rem;">
-                            <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
-                            <strong>Adresse :</strong>Immeuble Ancienne Galerie Présidentielle, au 7ème Niveau
-                                , Gombe/Kinshasa. <br>
-                                Référence : Boulevard du 30 Juin
-                        </p>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <a href="contact.html" class="btn-secondary" style="background: white; color: var(--primary-color); border: none; padding: 1rem 2.5rem; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-paper-plane"></i>
-                            Nous contacter
-                        </a>
-                    </div>
+                    <a href="contact.html" class="legal-cta-btn">
+                        <i class="fas fa-paper-plane"></i> Nous contacter
+                    </a>
                 </div>
 
-                <!-- Date de mise à jour -->
-                <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--border-color);">
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">
-                        <i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i>
-                        Dernière mise à jour : Février 2026
-                    </p>
+                <!-- Date -->
+                <div class="legal-date">
+                    <i class="fas fa-calendar-alt"></i> Dernière mise à jour : Février 2026
                 </div>
 
             </div>

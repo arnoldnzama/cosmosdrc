@@ -39,12 +39,144 @@
         </nav>
     </header>
 
-    <section class="page-header">
+    <!-- Hero Section -->
+    <style>
+        .hero-inner {
+            position: relative;
+            background: linear-gradient(135deg, #020817 0%, #0f172a 50%, #0c1a3a 100%);
+            color: #fff;
+            padding: 110px 0 80px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        .hero-inner-orbs { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+        .hero-inner-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+        .hero-inner-orb-1 {
+            width: 380px; height: 380px;
+            background: rgba(63,167,222,0.12);
+            top: -10%; left: 10%;
+            animation: orbPulseInner 6s ease-in-out infinite;
+        }
+        .hero-inner-orb-2 {
+            width: 260px; height: 260px;
+            background: rgba(6,71,149,0.15);
+            bottom: -10%; right: 15%;
+            animation: orbPulseInner 8s ease-in-out infinite reverse;
+        }
+        .hero-inner-orb-3 {
+            width: 180px; height: 180px;
+            background: rgba(91,181,227,0.1);
+            top: 40%; right: 25%;
+            animation: orbPulseInner 5s ease-in-out infinite 2s;
+        }
+        @keyframes orbPulseInner {
+            0%,100% { transform: scale(1); opacity: 0.8; }
+            50%      { transform: scale(1.15); opacity: 1; }
+        }
+        .hero-inner-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .hero-inner-icon {
+            font-size: 4rem;
+            color: #7dd3fc;
+            margin-bottom: 1.2rem;
+            opacity: 0;
+            animation: fadeInUpInner 0.6s ease forwards 0.2s;
+            filter: drop-shadow(0 0 20px rgba(63,167,222,0.4));
+        }
+        .hero-inner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 18px;
+            border-radius: 999px;
+            background: rgba(63,167,222,0.12);
+            border: 1px solid rgba(63,167,222,0.3);
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #7dd3fc;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.2rem;
+            opacity: 0;
+            animation: fadeInUpInner 0.6s ease forwards 0.1s;
+        }
+        .hero-inner-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0 0 1rem 0;
+            line-height: 1.2;
+            opacity: 0;
+            animation: fadeInUpInner 0.6s ease forwards 0.35s;
+        }
+        .hero-inner-title .grad-text {
+            background: linear-gradient(90deg, #3fa7de, #7dd3fc, #3fa7de);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmerInner 3s linear infinite;
+        }
+        @keyframes shimmerInner { to { background-position: 200% center; } }
+        .hero-inner-sub {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.75;
+            opacity: 0;
+            animation: fadeInUpInner 0.6s ease forwards 0.5s;
+        }
+        .hero-inner-breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            opacity: 0;
+            animation: fadeInUpInner 0.6s ease forwards 0.65s;
+        }
+        .hero-inner-breadcrumb a { color: #7dd3fc; text-decoration: none; }
+        .hero-inner-breadcrumb a:hover { color: #fff; }
+        .hero-inner-breadcrumb i { font-size: 0.65rem; }
+        @keyframes fadeInUpInner {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            .hero-inner { padding: 100px 0 60px; }
+            .hero-inner-title { font-size: 1.9rem; }
+        }
+    </style>
+
+    <section class="hero-inner">
+        <div class="hero-inner-orbs">
+            <div class="hero-inner-orb hero-inner-orb-1"></div>
+            <div class="hero-inner-orb hero-inner-orb-2"></div>
+            <div class="hero-inner-orb hero-inner-orb-3"></div>
+        </div>
         <div class="container">
-            <div class="page-header-content">
-                <h1>Politique des cookies</h1>
-                <p>Informations sur l'utilisation des cookies sur cosmosdrc.com</p>
-                <nav class="breadcrumb">
+            <div class="hero-inner-content">
+                <span class="hero-inner-badge">
+                    <i class="fas fa-cookie-bite"></i> Transparence & confidentialité
+                </span>
+                <div class="hero-inner-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h1 class="hero-inner-title">
+                    <span class="grad-text">Politique des Cookies</span>
+                </h1>
+                <p class="hero-inner-sub">Informations sur l'utilisation des cookies sur cosmosdrc.com</p>
+                <nav class="hero-inner-breadcrumb" aria-label="Fil d'Ariane">
                     <a href="index.html">Accueil</a>
                     <i class="fas fa-chevron-right"></i>
                     <span>Cookies</span>

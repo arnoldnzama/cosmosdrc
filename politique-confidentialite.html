@@ -39,12 +39,91 @@
         </nav>
     </header>
 
-    <section class="page-header">
+    <!-- Hero Section -->
+    <style>
+        .hero-inner {
+            position: relative;
+            background: linear-gradient(135deg, #020817 0%, #0f172a 50%, #0c1a3a 100%);
+            color: #fff;
+            padding: 110px 0 80px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        .hero-inner-orbs { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+        .hero-inner-orb { position: absolute; border-radius: 50%; filter: blur(80px); }
+        .hero-inner-orb-1 { width: 380px; height: 380px; background: rgba(63,167,222,0.12); top: -10%; left: 10%; animation: orbPulseInner 6s ease-in-out infinite; }
+        .hero-inner-orb-2 { width: 260px; height: 260px; background: rgba(6,71,149,0.15); bottom: -10%; right: 15%; animation: orbPulseInner 8s ease-in-out infinite reverse; }
+        .hero-inner-orb-3 { width: 180px; height: 180px; background: rgba(91,181,227,0.1); top: 40%; right: 25%; animation: orbPulseInner 5s ease-in-out infinite 2s; }
+        @keyframes orbPulseInner { 0%,100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.15); opacity: 1; } }
+        .hero-inner-content { position: relative; z-index: 2; text-align: center; }
+        .hero-inner-icon { font-size: 4rem; color: #7dd3fc; margin-bottom: 1.2rem; opacity: 0; animation: fadeInUpInner 0.6s ease forwards 0.2s; filter: drop-shadow(0 0 20px rgba(63,167,222,0.4)); }
+        .hero-inner-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 18px; border-radius: 999px; background: rgba(63,167,222,0.12); border: 1px solid rgba(63,167,222,0.3); font-size: 0.78rem; font-weight: 600; color: #7dd3fc; letter-spacing: 0.5px; margin-bottom: 1.2rem; opacity: 0; animation: fadeInUpInner 0.6s ease forwards 0.1s; }
+        .hero-inner-title { font-size: 2.8rem; font-weight: 800; color: #fff; margin: 0 0 1rem 0; line-height: 1.2; opacity: 0; animation: fadeInUpInner 0.6s ease forwards 0.35s; }
+        .hero-inner-title .grad-text { background: linear-gradient(90deg, #3fa7de, #7dd3fc, #3fa7de); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmerInner 3s linear infinite; }
+        @keyframes shimmerInner { to { background-position: 200% center; } }
+        .hero-inner-sub { font-size: 1.1rem; color: #94a3b8; max-width: 600px; margin: 0 auto; line-height: 1.75; opacity: 0; animation: fadeInUpInner 0.6s ease forwards 0.5s; }
+        .hero-inner-breadcrumb { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 1.5rem; font-size: 0.85rem; color: #64748b; opacity: 0; animation: fadeInUpInner 0.6s ease forwards 0.65s; }
+        .hero-inner-breadcrumb a { color: #7dd3fc; text-decoration: none; }
+        .hero-inner-breadcrumb a:hover { color: #fff; }
+        .hero-inner-breadcrumb i { font-size: 0.65rem; }
+        @keyframes fadeInUpInner { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 600px) { .hero-inner { padding: 100px 0 60px; } .hero-inner-title { font-size: 1.9rem; } }
+
+        /* ── Content styles ── */
+        .legal-section { padding: 5rem 0; background: var(--light-gray); }
+        .legal-wrap { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        .legal-card { background: var(--white); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; transition: box-shadow 0.3s ease; }
+        .legal-card:hover { box-shadow: var(--shadow-hover); }
+        .legal-card-header { display: flex; align-items: center; gap: 1rem; padding: 1.6rem 2rem; border-bottom: 1px solid var(--border-color); }
+        .legal-card-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; flex-shrink: 0; }
+        .legal-card-icon.blue  { background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); }
+        .legal-card-icon.teal  { background: linear-gradient(135deg, #0d9488, #14b8a6); }
+        .legal-card-icon.violet { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
+        .legal-card-icon.amber { background: linear-gradient(135deg, #d97706, #fbbf24); }
+        .legal-card-header h3 { margin: 0; font-size: 1.25rem; color: var(--text-dark); font-weight: 700; }
+        .legal-card-body { padding: 2rem; }
+        .legal-highlight { display: flex; gap: 1rem; align-items: flex-start; padding: 1.2rem 1.5rem; border-radius: 10px; margin-bottom: 1rem; font-size: 0.97rem; line-height: 1.75; }
+        .legal-highlight:last-child { margin-bottom: 0; }
+        .legal-highlight i { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+        .legal-highlight.blue  { background: #eff6ff; color: #1e40af; border-left: 4px solid var(--primary-color); }
+        .legal-highlight.teal  { background: #f0fdfa; color: #0f766e; border-left: 4px solid #14b8a6; }
+        .legal-highlight.violet { background: #f5f3ff; color: #5b21b6; border-left: 4px solid #7c3aed; }
+        .legal-highlight.amber { background: #fffbeb; color: #92400e; border-left: 4px solid #d97706; }
+        .legal-highlight.dark  { background: rgba(63,167,222,0.07); color: #334155; border-left: 4px solid var(--primary-color); }
+        .legal-rights-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+        .legal-rights-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.97rem; color: var(--text-dark); padding: 0.75rem 1rem; border-radius: 8px; background: var(--light-gray); border: 1px solid var(--border-color); }
+        .legal-rights-list li i { color: var(--primary-color); font-size: 1rem; flex-shrink: 0; }
+        .legal-cta { border-radius: 14px; background: linear-gradient(135deg, #020817 0%, #0f172a 60%, #0c1a3a 100%); border: 1px solid rgba(63,167,222,0.2); padding: 3rem 2.5rem; text-align: center; box-shadow: 0 8px 32px rgba(2,8,23,0.3); }
+        .legal-cta-icon { font-size: 3rem; color: #7dd3fc; margin-bottom: 1rem; filter: drop-shadow(0 0 16px rgba(63,167,222,0.4)); }
+        .legal-cta h3 { color: #fff; font-size: 1.5rem; margin-bottom: 0.75rem; }
+        .legal-cta p { color: #94a3b8; line-height: 1.8; max-width: 620px; margin: 0 auto 1.5rem; font-size: 1rem; }
+        .legal-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 32px; border-radius: 10px; font-size: 0.95rem; font-weight: 700; color: #0f172a; background: linear-gradient(135deg, #7dd3fc, #3fa7de); text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 0 20px rgba(63,167,222,0.3); }
+        .legal-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 0 32px rgba(63,167,222,0.5); color: #0f172a; }
+        .legal-date { text-align: center; padding-top: 1.5rem; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.88rem; }
+        .legal-date i { color: var(--primary-color); margin-right: 0.4rem; }
+        @media (max-width: 600px) { .legal-card-body { padding: 1.5rem; } .legal-cta { padding: 2rem 1.5rem; } }
+    </style>
+
+    <section class="hero-inner">
+        <div class="hero-inner-orbs">
+            <div class="hero-inner-orb hero-inner-orb-1"></div>
+            <div class="hero-inner-orb hero-inner-orb-2"></div>
+            <div class="hero-inner-orb hero-inner-orb-3"></div>
+        </div>
         <div class="container">
-            <div class="page-header-content">
-                <h1>Politique de confidentialité</h1>
-                <p>Comment Cosmos Group protège vos données personnelles</p>
-                <nav class="breadcrumb">
+            <div class="hero-inner-content">
+                <span class="hero-inner-badge">
+                    <i class="fas fa-lock"></i> Protection des données
+                </span>
+                <div class="hero-inner-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h1 class="hero-inner-title">
+                    <span class="grad-text">Politique de Confidentialité</span>
+                </h1>
+                <p class="hero-inner-sub">Comment COSMOS GROUP protège et traite vos données personnelles</p>
+                <nav class="hero-inner-breadcrumb" aria-label="Fil d'Ariane">
                     <a href="index.html">Accueil</a>
                     <i class="fas fa-chevron-right"></i>
                     <span>Politique de confidentialité</span>
@@ -53,20 +132,113 @@
         </div>
     </section>
 
-    <section class="contact-section" style="padding: 3rem 0;">
+    <section class="legal-section">
         <div class="container">
-            <div class="contact-form-container" style="max-width: 800px; margin: 0 auto;">
-                <h2>Vos données et notre engagement</h2>
-                <p>Cosmos Group s'engage à protéger la vie privée des utilisateurs de son site et des candidats.</p>
-                <h3>Données collectées</h3>
-                <p>Nous collectons les données que vous nous communiquez volontairement (formulaires de contact, candidatures, newsletter) : nom, prénom, email, téléphone, CV, etc.</p>
-                <h3>Utilisation</h3>
-                <p>Ces données servent à traiter vos demandes, vos candidatures et à vous envoyer des informations relatives à nos services si vous y avez souscrit.</p>
-                <h3>Conservation et sécurité</h3>
-                <p>Vos données sont conservées pendant la durée nécessaire aux finalités indiquées et sont protégées par des mesures techniques et organisationnelles adaptées.</p>
-                <h3>Vos droits</h3>
-                <p>Vous disposez d'un droit d'accès, de rectification, de suppression et de limitation du traitement de vos données. Pour les exercer, contactez-nous via la <a href="contact.html">page Contact</a>.</p>
-                <p style="margin-top: 2rem;"><a href="index.html" class="btn-primary">Retour à l'accueil</a></p>
+            <div class="legal-wrap">
+
+                <!-- Engagement -->
+                <div class="legal-card">
+                    <div class="legal-card-header">
+                        <div class="legal-card-icon blue"><i class="fas fa-handshake"></i></div>
+                        <h3>Notre Engagement</h3>
+                    </div>
+                    <div class="legal-card-body">
+                        <div class="legal-highlight blue">
+                            <i class="fas fa-info-circle"></i>
+                            <span>COSMOS GROUP s'engage à protéger la vie privée des utilisateurs de son site et des candidats. Nous traitons vos données personnelles avec le plus grand soin, dans le respect des lois en vigueur.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Données collectées -->
+                <div class="legal-card">
+                    <div class="legal-card-header">
+                        <div class="legal-card-icon violet"><i class="fas fa-database"></i></div>
+                        <h3>Données Collectées</h3>
+                    </div>
+                    <div class="legal-card-body">
+                        <div class="legal-highlight violet">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Nous collectons uniquement les données que vous nous communiquez volontairement via nos formulaires (contact, candidatures, newsletter) :</span>
+                        </div>
+                        <ul class="legal-rights-list" style="margin-top: 1rem;">
+                            <li><i class="fas fa-user"></i> Nom et prénom</li>
+                            <li><i class="fas fa-envelope"></i> Adresse email</li>
+                            <li><i class="fas fa-phone"></i> Numéro de téléphone</li>
+                            <li><i class="fas fa-file-alt"></i> CV et documents de candidature</li>
+                            <li><i class="fas fa-comment"></i> Messages et demandes de contact</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Utilisation -->
+                <div class="legal-card">
+                    <div class="legal-card-header">
+                        <div class="legal-card-icon blue"><i class="fas fa-cogs"></i></div>
+                        <h3>Utilisation des Données</h3>
+                    </div>
+                    <div class="legal-card-body">
+                        <div class="legal-highlight blue">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ces données servent exclusivement à traiter vos demandes, vos candidatures et à vous envoyer des informations relatives à nos services si vous y avez souscrit.</span>
+                        </div>
+                        <div class="legal-highlight dark">
+                            <i class="fas fa-ban"></i>
+                            <span>Nous ne partageons jamais vos données personnelles avec des tiers à des fins commerciales ou publicitaires sans votre consentement explicite.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conservation -->
+                <div class="legal-card">
+                    <div class="legal-card-header">
+                        <div class="legal-card-icon teal"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Conservation et Sécurité</h3>
+                    </div>
+                    <div class="legal-card-body">
+                        <div class="legal-highlight teal">
+                            <i class="fas fa-lock"></i>
+                            <span>Vos données sont conservées pendant la durée nécessaire aux finalités indiquées et sont protégées par des mesures techniques et organisationnelles adaptées contre tout accès non autorisé, perte ou divulgation.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vos droits -->
+                <div class="legal-card">
+                    <div class="legal-card-header">
+                        <div class="legal-card-icon amber"><i class="fas fa-balance-scale"></i></div>
+                        <h3>Vos Droits</h3>
+                    </div>
+                    <div class="legal-card-body">
+                        <div class="legal-highlight amber" style="margin-bottom: 1.5rem;">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Conformément à la réglementation en vigueur, vous disposez des droits suivants sur vos données personnelles :</span>
+                        </div>
+                        <ul class="legal-rights-list">
+                            <li><i class="fas fa-eye"></i> Droit d'accès à vos données</li>
+                            <li><i class="fas fa-pen"></i> Droit de rectification des données inexactes</li>
+                            <li><i class="fas fa-trash-alt"></i> Droit à l'effacement (droit à l'oubli)</li>
+                            <li><i class="fas fa-pause-circle"></i> Droit à la limitation du traitement</li>
+                            <li><i class="fas fa-times-circle"></i> Droit d'opposition au traitement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CTA Contact -->
+                <div class="legal-cta">
+                    <div class="legal-cta-icon"><i class="fas fa-paper-plane"></i></div>
+                    <h3>Exercer vos droits</h3>
+                    <p>Pour exercer vos droits ou pour toute question relative à la protection de vos données personnelles, contactez-nous via notre page de contact.</p>
+                    <a href="contact.html" class="legal-cta-btn">
+                        <i class="fas fa-envelope"></i> Nous contacter
+                    </a>
+                </div>
+
+                <!-- Date -->
+                <div class="legal-date">
+                    <i class="fas fa-calendar-alt"></i> Dernière mise à jour : Février 2026
+                </div>
+
             </div>
         </div>
     </section>
@@ -117,6 +289,11 @@
             </div>
         </div>
     </footer>
+    <!-- Bouton retour en haut -->
+    <button id="backToTop" class="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script src="js/main.js"></script>
 </body>
 </html>
