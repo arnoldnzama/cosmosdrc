@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rejoignez le vivier de talents Cosmos Group. Déposez votre candidature spontanée et soyez contacté dès qu'une opportunité correspond à votre profil.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cosmos.emergencemag.net/candidature-spontanee.html">
+    <title>Candidature Spontanée | Rejoindre le vivier COSMOS</title>
+    <link rel="icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="ico/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/candidature-spontanee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group" class="logo">
+            </div>
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li class="nav-dropdown">
+                        <a href="offres.html" class="dropdown-toggle active">Offres d'emploi <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="offres.html"><i class="fas fa-briefcase" style="margin-right:8px;color:var(--primary-color)"></i>Toutes les offres</a></li>
+                            <li><a href="candidature-spontanee.html" class="active"><i class="fas fa-user-plus" style="margin-right:8px;color:var(--primary-color)"></i>Candidature spontanée</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="services.html" class="dropdown-toggle">Nos services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cosmos-rh.html"><i class="fas fa-users" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS RH</a></li>
+                            <li><a href="cosmos-tic.html"><i class="fas fa-laptop-code" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS TIC</a></li>
+                            <li><a href="cosmos-sirh.html"><i class="fas fa-database" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS SIRH</a></li>
+                            <li><a href="cosmos-academy.html"><i class="fas fa-graduation-cap" style="margin-right:8px;color:var(--primary-color)"></i>COSMOS Academy</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html">Conseils carrière</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="recruter.html" class="btn-recruter">Espace recruteur</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="cs-hero">
+    <div class="container">
+        <div class="cs-hero-badge"><i class="fas fa-user-plus"></i> Candidature spontanée</div>
+        <h1>Rejoindre le vivier <span style="opacity:0.85">COSMOS</span></h1>
+        <p>Nos équipes vous contacteront dès qu'une opportunité adaptée à votre profil se présente.</p>
+    </div>
+</section>
+
+<!-- Main -->
+<section class="cs-main">
+    <div class="container">
+        <div class="cs-layout">
+
+            <!-- Formulaire -->
+            <div class="cs-form-card">
+                <div class="cs-form-header">
+                    <h2><i class="fas fa-paper-plane" style="margin-right:0.5rem"></i>Déposez votre candidature</h2>
+                    <p>Tous les champs marqués d'un * sont obligatoires.</p>
+                </div>
+                <div class="cs-form-body">
+
+                    <div id="cs-notification" class="cs-notification"></div>
+
+                    <form id="cs-form" novalidate enctype="multipart/form-data">
+
+                        <!-- Vos informations -->
+                        <div class="cs-section">
+                            <div class="cs-section-title"><i class="fas fa-user"></i> Vos informations</div>
+                            <div class="cs-form-group" id="grp-nom">
+                                <label for="nom_complet">Nom complet <span class="required">*</span></label>
+                                <input type="text" id="nom_complet" name="nom_complet" placeholder="Ex : Jean Dupont" autocomplete="name">
+                                <div class="cs-error" id="err-nom"></div>
+                            </div>
+                            <div class="cs-form-row">
+                                <div class="cs-form-group" id="grp-email">
+                                    <label for="email">Email <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="votre@email.com" autocomplete="email">
+                                    <div class="cs-error" id="err-email"></div>
+                                </div>
+                                <div class="cs-form-group" id="grp-telephone">
+                                    <label for="telephone">Téléphone <span class="required">*</span></label>
+                                    <input type="tel" id="telephone" name="telephone" placeholder="+243 8XX XXX XXX" autocomplete="tel">
+                                    <div class="cs-error" id="err-telephone"></div>
+                                </div>
+                            </div>
+                            <div class="cs-form-group">
+                                <label for="whatsapp">WhatsApp <span style="color:#6b7280;font-weight:400">(optionnel)</span></label>
+                                <input type="tel" id="whatsapp" name="whatsapp" placeholder="+243 8XX XXX XXX">
+                            </div>
+                        </div>
+
+                        <!-- Profil professionnel -->
+                        <div class="cs-section">
+                            <div class="cs-section-title"><i class="fas fa-briefcase"></i> Profil professionnel</div>
+                            <div class="cs-form-row">
+                                <div class="cs-form-group" id="grp-domaine">
+                                    <label for="domaine">Domaine d'activité <span class="required">*</span></label>
+                                    <select id="domaine" name="domaine">
+                                        <option value="">-- Sélectionner --</option>
+                                        <option value="IT">IT / Informatique</option>
+                                        <option value="RH">Ressources Humaines</option>
+                                        <option value="Finance">Finance / Comptabilité</option>
+                                        <option value="Logistique">Logistique / Transport</option>
+                                        <option value="Sécurité">Sécurité</option>
+                                        <option value="Commercial">Commercial / Vente</option>
+                                        <option value="Juridique">Juridique</option>
+                                        <option value="Autre">Autre</option>
+                                    </select>
+                                    <div class="cs-error" id="err-domaine"></div>
+                                </div>
+                                <div class="cs-form-group" id="grp-poste">
+                                    <label for="poste">Poste recherché <span class="required">*</span></label>
+                                    <input type="text" id="poste" name="poste" placeholder="Ex : Développeur Web">
+                                    <div class="cs-error" id="err-poste"></div>
+                                </div>
+                            </div>
+                            <div class="cs-form-row">
+                                <div class="cs-form-group" id="grp-experience">
+                                    <label for="experience">Années d'expérience <span class="required">*</span></label>
+                                    <select id="experience" name="experience">
+                                        <option value="">-- Sélectionner --</option>
+                                        <option value="0-1">Moins d'1 an</option>
+                                        <option value="1-3">1 à 3 ans</option>
+                                        <option value="3-5">3 à 5 ans</option>
+                                        <option value="5-10">5 à 10 ans</option>
+                                        <option value="10+">Plus de 10 ans</option>
+                                    </select>
+                                    <div class="cs-error" id="err-experience"></div>
+                                </div>
+                                <div class="cs-form-group">
+                                    <label for="niveau_etude">Niveau d'étude <span style="color:#6b7280;font-weight:400">(optionnel)</span></label>
+                                    <select id="niveau_etude" name="niveau_etude">
+                                        <option value="">-- Sélectionner --</option>
+                                        <option value="CAP/BEP">CAP / BEP</option>
+                                        <option value="Bac">Baccalauréat</option>
+                                        <option value="Bac+2">Bac+2 (BTS, DUT)</option>
+                                        <option value="Bac+3">Bac+3 (Licence)</option>
+                                        <option value="Bac+5">Bac+5 (Master)</option>
+                                        <option value="Doctorat">Doctorat</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Informations clés -->
+                        <div class="cs-section">
+                            <div class="cs-section-title"><i class="fas fa-info-circle"></i> Informations clés</div>
+                            <div class="cs-form-row">
+                                <div class="cs-form-group">
+                                    <label for="salaire">Prétention salariale <span style="color:#6b7280;font-weight:400">(optionnel)</span></label>
+                                    <input type="text" id="salaire" name="salaire" placeholder="Ex : 1 500 USD / mois">
+                                </div>
+                                <div class="cs-form-group" id="grp-disponibilite">
+                                    <label for="disponibilite">Disponibilité / Préavis <span class="required">*</span></label>
+                                    <select id="disponibilite" name="disponibilite">
+                                        <option value="">-- Sélectionner --</option>
+                                        <option value="Immédiate">Immédiate</option>
+                                        <option value="15 jours">15 jours</option>
+                                        <option value="1 mois">1 mois</option>
+                                        <option value="2 mois">2 mois</option>
+                                        <option value="3 mois">3 mois</option>
+                                        <option value="Plus de 3 mois">Plus de 3 mois</option>
+                                    </select>
+                                    <div class="cs-error" id="err-disponibilite"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Documents -->
+                        <div class="cs-section">
+                            <div class="cs-section-title"><i class="fas fa-paperclip"></i> Documents</div>
+                            <div class="cs-form-group" id="grp-cv">
+                                <label>CV <span class="required">*</span> <span style="color:#6b7280;font-weight:400">(PDF, DOC, DOCX — max 5 Mo)</span></label>
+                                <div class="cs-file-wrapper">
+                                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+                                    <div class="cs-file-display" id="cv-display">
+                                        <i class="fas fa-file-upload"></i>
+                                        <span>Cliquez pour sélectionner votre CV</span>
+                                    </div>
+                                </div>
+                                <div class="cs-file-info" id="cv-info"></div>
+                                <div class="cs-error" id="err-cv"></div>
+                            </div>
+                            <div class="cs-form-group">
+                                <label>Lettre de motivation <span style="color:#6b7280;font-weight:400">(facultatif — PDF, DOC, DOCX — max 5 Mo)</span></label>
+                                <div class="cs-file-wrapper">
+                                    <input type="file" id="lettre" name="lettre" accept=".pdf,.doc,.docx">
+                                    <div class="cs-file-display" id="lettre-display">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>Cliquez pour sélectionner votre lettre</span>
+                                    </div>
+                                </div>
+                                <div class="cs-file-info" id="lettre-info"></div>
+                                <div class="cs-error" id="err-lettre"></div>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="cs-section">
+                            <div class="cs-section-title"><i class="fas fa-comment-alt"></i> Message <span style="color:#6b7280;font-weight:400;font-size:0.85rem">(optionnel)</span></div>
+                            <div class="cs-form-group">
+                                <label for="message">Parlez-nous brièvement de votre profil ou de votre projet professionnel</label>
+                                <textarea id="message" name="message" placeholder="Décrivez votre parcours, vos compétences clés, vos ambitions..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Consentement -->
+                        <div class="cs-form-group" id="grp-consent">
+                            <div class="cs-consent">
+                                <input type="checkbox" id="consent" name="consent">
+                                <label for="consent">J'accepte que mes données soient utilisées dans le cadre du recrutement par Cosmos Group, conformément à notre <a href="politique-confidentialite.html" target="_blank">politique de confidentialité</a>.</label>
+                            </div>
+                            <div class="cs-error" id="err-consent"></div>
+                        </div>
+
+                        <button type="submit" class="cs-submit-btn" id="cs-submit">
+                            <span class="btn-text"><i class="fas fa-paper-plane"></i> Soumettre ma candidature</span>
+                            <span class="btn-loading"><i class="fas fa-spinner"></i> Envoi en cours...</span>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="cs-sidebar">
+                <div class="cs-info-card">
+                    <h3><i class="fas fa-list-ol"></i> Comment ça marche ?</h3>
+                    <ul class="cs-steps">
+                        <li><span class="cs-step-num">1</span> Remplissez le formulaire et joignez votre CV.</li>
+                        <li><span class="cs-step-num">2</span> Votre profil est intégré dans notre vivier de talents.</li>
+                        <li><span class="cs-step-num">3</span> Nos recruteurs analysent votre candidature.</li>
+                        <li><span class="cs-step-num">4</span> Vous êtes contacté dès qu'une opportunité correspond.</li>
+                    </ul>
+                </div>
+                <div class="cs-info-card">
+                    <h3><i class="fas fa-th-large"></i> Domaines recherchés</h3>
+                    <div class="cs-domains">
+                        <span class="cs-domain-tag">IT</span>
+                        <span class="cs-domain-tag">Ressources Humaines</span>
+                        <span class="cs-domain-tag">Finance</span>
+                        <span class="cs-domain-tag">Logistique</span>
+                        <span class="cs-domain-tag">Sécurité</span>
+                        <span class="cs-domain-tag">Commercial</span>
+                        <span class="cs-domain-tag">Juridique</span>
+                    </div>
+                </div>
+                <div class="cs-info-card">
+                    <h3><i class="fas fa-headset"></i> Nous contacter</h3>
+                    <div class="cs-contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/243982161066" target="_blank">+243 98 21 61 066</a></div>
+                    <div class="cs-contact-item"><i class="fas fa-envelope"></i><a href="mailto:hello@cosmosdrc.com">hello@cosmosdrc.com</a></div>
+                    <div class="cs-contact-item"><i class="fas fa-map-marker-alt"></i> Kinshasa, RDC</div>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+</section>
+
+<!-- Cookie Popup -->
+<div id="cookiePopup" class="cookie-popup">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <h4><i class="fas fa-cookie-bite"></i> Nous utilisons des cookies</h4>
+            <p>Nous utilisons des cookies pour améliorer votre expérience. <a href="politique-confidentialite.html">En savoir plus</a></p>
+        </div>
+        <div class="cookie-actions">
+            <button class="btn-cookie btn-cookie-accept" id="acceptCookies"><i class="fas fa-check"></i> Accepter</button>
+            <button class="btn-cookie btn-cookie-decline" id="declineCookies"><i class="fas fa-times"></i> Refuser</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo"><img src="logo/footer.png" alt="Cosmos Group"></div>
+                <p>Nous aidons les organisations à identifier, recruter et développer les talents qui feront la performance de demain.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/cosmos-group-drc/posts/?feedView=all"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/243810644455" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Candidats</h4>
+                <ul>
+                    <li><a href="offres.html">Rechercher un emploi</a></li>
+                    <li><a href="candidature-spontanee.html">Candidature spontanée</a></li>
+                    <li><a href="blog.html">Conseils carrière</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Écosystèmes COSMOS</h4>
+                <ul>
+                    <li><a href="cosmos-rh.html">Cosmos RH</a></li>
+                    <li><a href="cosmos-tic.html">Cosmos TIC</a></li>
+                    <li><a href="cosmos-sirh.html">Cosmos SIRH</a></li>
+                    <li><a href="cosmos-academy.html">Cosmos Academy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>À propos</h4>
+                <ul>
+                    <li><a href="propos.html">Qui sommes-nous</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="mention-legale.html">Mentions légales</a></li>
+                    <li><a href="doc/FAQ_COSMOS_GROUP_20_questions.pdf" target="_blank">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Cosmos Group. Tous droits réservés. | Créé par GRB</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    // ===== COOKIE POPUP =====
+    const cookiePopup = document.getElementById('cookiePopup');
+    if (cookiePopup && !localStorage.getItem('cookieConsent')) {
+        setTimeout(() => cookiePopup.classList.add('show'), 2500);
+    }
+    document.getElementById('acceptCookies')?.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        cookiePopup.classList.remove('show');
+    });
+    document.getElementById('declineCookies')?.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        cookiePopup.classList.remove('show');
+    });
+
+    // ===== APERÇU FICHIERS =====
+    function setupFilePreview(inputId, displayId, infoId) {
+        const input = document.getElementById(inputId);
+        const display = document.getElementById(displayId);
+        const info = document.getElementById(infoId);
+        if (!input) return;
+        input.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const size = (file.size / 1024 / 1024).toFixed(2);
+                info.innerHTML = '<i class="fas fa-check-circle"></i> ' + file.name + ' (' + size + ' Mo)';
+                info.classList.add('show');
+                display.style.borderColor = '#28a745';
+            } else {
+                info.classList.remove('show');
+                display.style.borderColor = '';
+            }
+        });
+    }
+    setupFilePreview('cv', 'cv-display', 'cv-info');
+    setupFilePreview('lettre', 'lettre-display', 'lettre-info');
+
+    // ===== VALIDATION & SOUMISSION =====
+    const form = document.getElementById('cs-form');
+    const submitBtn = document.getElementById('cs-submit');
+    const notification = document.getElementById('cs-notification');
+
+    function showError(groupId, errId, msg) {
+        const grp = document.getElementById(groupId);
+        const err = document.getElementById(errId);
+        if (grp) grp.classList.add('has-error');
+        if (err) { err.textContent = msg; err.style.display = 'block'; }
+    }
+
+    function clearError(groupId, errId) {
+        const grp = document.getElementById(groupId);
+        const err = document.getElementById(errId);
+        if (grp) grp.classList.remove('has-error');
+        if (err) { err.textContent = ''; err.style.display = 'none'; }
+    }
+
+    function clearAllErrors() {
+        ['grp-nom','grp-email','grp-telephone','grp-domaine','grp-poste','grp-experience','grp-disponibilite','grp-cv','grp-consent'].forEach(id => {
+            const grp = document.getElementById(id);
+            if (grp) grp.classList.remove('has-error');
+        });
+        document.querySelectorAll('.cs-error').forEach(el => { el.textContent = ''; el.style.display = 'none'; });
+    }
+
+    function validateForm() {
+        clearAllErrors();
+        let valid = true;
+
+        const nom = document.getElementById('nom_complet').value.trim();
+        if (!nom) { showError('grp-nom','err-nom','Le nom complet est obligatoire.'); valid = false; }
+
+        const email = document.getElementById('email').value.trim();
+        if (!email) { showError('grp-email','err-email','L\'email est obligatoire.'); valid = false; }
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('grp-email','err-email','Adresse email invalide.'); valid = false; }
+
+        const tel = document.getElementById('telephone').value.trim();
+        if (!tel) { showError('grp-telephone','err-telephone','Le téléphone est obligatoire.'); valid = false; }
+
+        const domaine = document.getElementById('domaine').value;
+        if (!domaine) { showError('grp-domaine','err-domaine','Veuillez sélectionner un domaine.'); valid = false; }
+
+        const poste = document.getElementById('poste').value.trim();
+        if (!poste) { showError('grp-poste','err-poste','Le poste recherché est obligatoire.'); valid = false; }
+
+        const exp = document.getElementById('experience').value;
+        if (!exp) { showError('grp-experience','err-experience','Veuillez sélectionner votre expérience.'); valid = false; }
+
+        const dispo = document.getElementById('disponibilite').value;
+        if (!dispo) { showError('grp-disponibilite','err-disponibilite','Veuillez indiquer votre disponibilité.'); valid = false; }
+
+        const cvFile = document.getElementById('cv').files[0];
+        if (!cvFile) { showError('grp-cv','err-cv','Le CV est obligatoire.'); valid = false; }
+        else if (cvFile.size > 5 * 1024 * 1024) { showError('grp-cv','err-cv','Le fichier dépasse 5 Mo.'); valid = false; }
+
+        const consent = document.getElementById('consent').checked;
+        if (!consent) { showError('grp-consent','err-consent','Vous devez accepter les conditions.'); valid = false; }
+
+        return valid;
+    }
+
+    function setLoading(loading) {
+        submitBtn.disabled = loading;
+        submitBtn.querySelector('.btn-text').style.display = loading ? 'none' : 'flex';
+        submitBtn.querySelector('.btn-loading').style.display = loading ? 'flex' : 'none';
+    }
+
+    function showNotification(msg, type) {
+        notification.className = 'cs-notification ' + type;
+        notification.innerHTML = '<i class="fas fa-' + (type === 'success' ? 'check-circle' : 'exclamation-circle') + '"></i> ' + msg;
+        notification.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        if (!validateForm()) return;
+
+        setLoading(true);
+        notification.className = 'cs-notification';
+
+        const formData = new FormData(form);
+
+        try {
+            const res = await fetch('spontaneous-submit.php', { method: 'POST', body: formData });
+            const data = await res.json();
+
+            if (data.success) {
+                showNotification(data.message || 'Votre candidature a bien été reçue. Nous vous contacterons dès qu\'une opportunité se présente.', 'success');
+                form.reset();
+                document.querySelectorAll('.cs-file-info').forEach(el => el.classList.remove('show'));
+                document.querySelectorAll('.cs-file-display').forEach(el => el.style.borderColor = '');
+            } else {
+                showNotification(data.message || 'Une erreur est survenue. Veuillez réessayer.', 'error');
+            }
+        } catch (err) {
+            showNotification('Erreur de connexion. Vérifiez votre connexion internet et réessayez.', 'error');
+        } finally {
+            setLoading(false);
+        }
+    });
+
+});
+</script>
+</body>
+</html>

@@ -81,7 +81,13 @@
                 <div class="nav-menu">
                     <ul class="nav-links">
                         <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="offres.html">Offres d'emploi</a></li>
+                        <li class="nav-dropdown">
+                            <a href="offres.html" class="dropdown-toggle">Offres d'emploi <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="offres.html"><i class="fas fa-briefcase" style="margin-right:8px;color:var(--primary-color)"></i>Toutes les offres</a></li>
+                                <li><a href="candidature-spontanee.html"><i class="fas fa-user-plus" style="margin-right:8px;color:var(--primary-color)"></i>Candidature spontanée</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-dropdown">
                             <a href="services.html" class="dropdown-toggle">Nos services <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu">
@@ -1081,27 +1087,7 @@
         </div>
     </footer>
 
-    <!-- Cookie Popup -->
-    <div id="cookiePopup" class="cookie-popup">
-        <div class="cookie-content">
-            <div class="cookie-text">
-                <h4><i class="fas fa-cookie-bite"></i> Nous utilisons des cookies</h4>
-                <p>
-                    Nous utilisons des cookies pour améliorer votre expérience sur notre site.
-                    En continuant à naviguer, vous acceptez notre utilisation des cookies.
-                    <a href="politique-confidentialite.html">En savoir plus</a>
-                </p>
-            </div>
-            <div class="cookie-actions">
-                <button class="btn-cookie btn-cookie-accept" id="acceptCookies">
-                    <i class="fas fa-check"></i> Accepter
-                </button>
-                <button class="btn-cookie btn-cookie-decline" id="declineCookies">
-                    <i class="fas fa-times"></i> Refuser
-                </button>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Solutions Modal (DISABLED - NOW USING FAQ) -->
     <!--
@@ -1127,6 +1113,449 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- ===== POPUP CANDIDATURE SPONTANÉE — PAGE D'ACCUEIL ===== -->
+    <style>
+        /* Overlay */
+        .idx-popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(2,8,23,0.78);
+            backdrop-filter: blur(5px);
+            z-index: 9000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        .idx-popup-overlay.active { opacity: 1; visibility: visible; }
+
+        /* Modal */
+        .idx-popup-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -46%) scale(0.88);
+            z-index: 9001;
+            width: min(620px, 95vw);
+            max-height: 92vh;
+            overflow-y: auto;
+            border-radius: 22px;
+            background: #fff;
+            box-shadow: 0 40px 100px rgba(2,8,23,0.55), 0 0 0 1px rgba(102,126,234,0.12);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+            scrollbar-width: thin;
+            scrollbar-color: #667eea #f0f2ff;
+        }
+        .idx-popup-modal.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Header dégradé */
+        .idx-popup-header {
+            background: linear-gradient(135deg, #020817 0%, #0f172a 55%, #0c1a3a 100%);
+            padding: 2.2rem 2.2rem 1.8rem;
+            border-radius: 22px 22px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Orbs déco dans le header */
+        .idx-popup-header::before {
+            content: '';
+            position: absolute;
+            top: -50px; right: -50px;
+            width: 200px; height: 200px;
+            background: rgba(63,167,222,0.1);
+            border-radius: 50%;
+        }
+        .idx-popup-header::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; left: -30px;
+            width: 150px; height: 150px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+        }
+        /* Particules animées */
+        .idx-popup-particles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .idx-particle {
+            position: absolute;
+            width: 4px; height: 4px;
+            background: rgba(125,211,252,0.6);
+            border-radius: 50%;
+            animation: idxParticleFloat linear infinite;
+        }
+        .idx-particle:nth-child(1)  { left:10%; animation-duration:6s; animation-delay:0s;   top:80%; }
+        .idx-particle:nth-child(2)  { left:25%; animation-duration:8s; animation-delay:1s;   top:90%; width:3px; height:3px; }
+        .idx-particle:nth-child(3)  { left:50%; animation-duration:7s; animation-delay:2s;   top:85%; }
+        .idx-particle:nth-child(4)  { left:70%; animation-duration:5s; animation-delay:0.5s; top:75%; width:5px; height:5px; }
+        .idx-particle:nth-child(5)  { left:85%; animation-duration:9s; animation-delay:1.5s; top:88%; width:3px; height:3px; }
+        @keyframes idxParticleFloat {
+            0%   { transform: translateY(0) scale(1); opacity: 0.8; }
+            100% { transform: translateY(-120px) scale(0); opacity: 0; }
+        }
+
+        .idx-popup-close {
+            position: absolute;
+            top: 1.1rem; right: 1.1rem;
+            width: 36px; height: 36px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            color: #fff;
+            font-size: 0.95rem;
+            transition: background 0.2s, transform 0.25s;
+            z-index: 3;
+        }
+        .idx-popup-close:hover { background: rgba(255,255,255,0.22); transform: rotate(90deg); }
+
+        .idx-popup-live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(63,167,222,0.15);
+            border: 1px solid rgba(63,167,222,0.35);
+            color: #7dd3fc;
+            padding: 0.32rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            margin-bottom: 1rem;
+            position: relative; z-index: 2;
+        }
+        .idx-popup-live-dot {
+            width: 7px; height: 7px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: idxDotPulse 1.5s ease-in-out infinite;
+        }
+        @keyframes idxDotPulse {
+            0%,100% { opacity:1; transform:scale(1); }
+            50%      { opacity:0.4; transform:scale(0.7); }
+        }
+
+        .idx-popup-header h2 {
+            color: #fff;
+            font-size: 1.65rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin: 0 0 0.6rem 0;
+            position: relative; z-index: 2;
+        }
+        .idx-popup-header h2 .idx-grad {
+            background: linear-gradient(90deg, #7dd3fc, #3fa7de, #7dd3fc);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: idxShimmer 3s linear infinite;
+        }
+        @keyframes idxShimmer { to { background-position: 200% center; } }
+
+        .idx-popup-header p {
+            color: rgba(255,255,255,0.78);
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.55;
+            position: relative; z-index: 2;
+        }
+
+        /* Barre de stats rapides */
+        .idx-popup-stats {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .idx-popup-stat {
+            flex: 1;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            border-right: 1px solid #e9ecef;
+        }
+        .idx-popup-stat:last-child { border-right: none; }
+        .idx-popup-stat-num {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #020817, #3fa7de);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+        .idx-popup-stat-lbl {
+            font-size: 0.7rem;
+            color: #6b7280;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* Corps */
+        .idx-popup-body { padding: 1.8rem 2.2rem; }
+
+        /* Étapes */
+        .idx-popup-steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.9rem;
+            margin-bottom: 1.6rem;
+        }
+        .idx-popup-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            padding: 0.9rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1.5px solid #e9ecef;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .idx-popup-step:hover { border-color: #667eea; background: #f0f2ff; }
+        .idx-popup-step-num {
+            width: 28px; height: 28px;
+            background: linear-gradient(135deg, #020817, #0c1a3a);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #7dd3fc;
+            flex-shrink: 0;
+        }
+        .idx-popup-step strong {
+            display: block;
+            font-size: 0.82rem;
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+        .idx-popup-step span {
+            font-size: 0.74rem;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+
+        /* Domaines */
+        .idx-popup-domains-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.8rem;
+        }
+        .idx-popup-domain {
+            padding: 0.26rem 0.65rem;
+            background: #f0f2ff;
+            color: #667eea;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid #d0d5f5;
+            transition: background 0.2s, color 0.2s;
+        }
+        .idx-popup-domain:hover { background: #667eea; color: #fff; }
+
+        /* CTA */
+        .idx-popup-cta { display: flex; flex-direction: column; gap: 0.7rem; }
+
+        .idx-popup-btn-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, #020817 0%, #0f172a 55%, #0c1a3a 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: Verdana, Geneva, sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 20px rgba(2,8,23,0.35);
+            letter-spacing: 0.01em;
+            position: relative;
+            overflow: hidden;
+        }
+        .idx-popup-btn-main::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(63,167,222,0.15), transparent);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .idx-popup-btn-main:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(2,8,23,0.5); color: #fff; }
+        .idx-popup-btn-main:hover::after { opacity: 1; }
+
+        .idx-popup-btn-ghost {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            color: #667eea;
+            border: 1.5px solid #d0d5f5;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            font-family: Verdana, Geneva, sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .idx-popup-btn-ghost:hover { background: #f0f2ff; border-color: #667eea; color: #667eea; }
+
+        /* Footer */
+        .idx-popup-footer {
+            padding: 0.9rem 2.2rem 1.4rem;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+        }
+        .idx-popup-footer p {
+            font-size: 0.74rem;
+            color: #9ca3af;
+            margin: 0;
+            display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+        }
+        .idx-popup-footer i { color: #667eea; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .idx-popup-modal { width: 96vw; max-height: 94vh; }
+            .idx-popup-header { padding: 1.6rem 1.4rem 1.3rem; }
+            .idx-popup-header h2 { font-size: 1.3rem; }
+            .idx-popup-body { padding: 1.4rem; }
+            .idx-popup-steps { grid-template-columns: 1fr; }
+            .idx-popup-stats { flex-wrap: wrap; }
+            .idx-popup-stat { flex: 1 1 50%; border-bottom: 1px solid #e9ecef; }
+            .idx-popup-footer { padding: 0.8rem 1.4rem 1.2rem; }
+        }
+    </style>
+
+    <!-- Overlay -->
+    <div class="idx-popup-overlay" id="idxPopupOverlay"></div>
+
+    <!-- Modal -->
+    <div class="idx-popup-modal" id="idxPopupModal" role="dialog" aria-modal="true" aria-labelledby="idxPopupTitle">
+
+        <!-- Header -->
+        <div class="idx-popup-header">
+            <div class="idx-popup-particles">
+                <div class="idx-particle"></div>
+                <div class="idx-particle"></div>
+                <div class="idx-particle"></div>
+                <div class="idx-particle"></div>
+                <div class="idx-particle"></div>
+            </div>
+            <button class="idx-popup-close" id="idxPopupClose" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <div class="idx-popup-live-badge">
+                <span class="idx-popup-live-dot"></span>
+                Vivier de talents ouvert · Kinshasa, RDC
+            </div>
+            <h2 id="idxPopupTitle">
+                Rejoignez notre vivier<br>
+                <span class="idx-grad">de talents COSMOS</span>
+            </h2>
+            <p>Déposez votre candidature spontanée et soyez contacté dès qu'une opportunité correspond à votre profil.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="idx-popup-stats">
+            <div class="idx-popup-stat">
+                <span class="idx-popup-stat-num">100K+</span>
+                <span class="idx-popup-stat-lbl">Talents dans la base</span>
+            </div>
+            <div class="idx-popup-stat">
+                <span class="idx-popup-stat-num">600+</span>
+                <span class="idx-popup-stat-lbl">Recrutements réalisés</span>
+            </div>
+            <div class="idx-popup-stat">
+                <span class="idx-popup-stat-num">96%</span>
+                <span class="idx-popup-stat-lbl">Taux de satisfaction</span>
+            </div>
+            <div class="idx-popup-stat">
+                <span class="idx-popup-stat-num">7</span>
+                <span class="idx-popup-stat-lbl">Domaines couverts</span>
+            </div>
+        </div>
+
+        <!-- Corps -->
+        <div class="idx-popup-body">
+
+            <!-- Étapes -->
+            <div class="idx-popup-steps">
+                <div class="idx-popup-step">
+                    <div class="idx-popup-step-num">1</div>
+                    <div>
+                        <strong>Déposez votre CV</strong>
+                        <span>PDF, DOC ou DOCX — max 5 Mo</span>
+                    </div>
+                </div>
+                <div class="idx-popup-step">
+                    <div class="idx-popup-step-num">2</div>
+                    <div>
+                        <strong>Intégration vivier</strong>
+                        <span>Votre profil est analysé par nos recruteurs</span>
+                    </div>
+                </div>
+                <div class="idx-popup-step">
+                    <div class="idx-popup-step-num">3</div>
+                    <div>
+                        <strong>Matching d'offres</strong>
+                        <span>Nous cherchons l'opportunité idéale</span>
+                    </div>
+                </div>
+                <div class="idx-popup-step">
+                    <div class="idx-popup-step-num">4</div>
+                    <div>
+                        <strong>Prise de contact</strong>
+                        <span>Vous êtes contacté dès qu'un poste correspond</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Domaines -->
+            <div class="idx-popup-domains-row">
+                <span class="idx-popup-domain"><i class="fas fa-laptop-code" style="margin-right:4px"></i>IT</span>
+                <span class="idx-popup-domain"><i class="fas fa-users" style="margin-right:4px"></i>Ressources Humaines</span>
+                <span class="idx-popup-domain"><i class="fas fa-chart-line" style="margin-right:4px"></i>Finance</span>
+                <span class="idx-popup-domain"><i class="fas fa-truck" style="margin-right:4px"></i>Logistique</span>
+                <span class="idx-popup-domain"><i class="fas fa-shield-alt" style="margin-right:4px"></i>Sécurité</span>
+                <span class="idx-popup-domain"><i class="fas fa-handshake" style="margin-right:4px"></i>Commercial</span>
+                <span class="idx-popup-domain"><i class="fas fa-balance-scale" style="margin-right:4px"></i>Juridique</span>
+            </div>
+
+            <!-- CTA -->
+            <div class="idx-popup-cta">
+                <a href="candidature-spontanee.html" class="idx-popup-btn-main">
+                    <i class="fas fa-paper-plane"></i> Déposer ma candidature spontanée
+                </a>
+                <a href="offres.html" class="idx-popup-btn-ghost">
+                    <i class="fas fa-briefcase"></i> Voir toutes les offres d'emploi
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="idx-popup-footer">
+            <p><i class="fas fa-lock"></i> Vos données sont protégées — candidature 100% gratuite</p>
+        </div>
+
+    </div>
+
     <script src="js/main.js"></script>
     <script>
         document.querySelectorAll('.entity-card .faq-toggle').forEach(btn => {
@@ -1138,47 +1567,38 @@
                 btn.querySelector('i').style.transform = isOpen ? '' : 'rotate(180deg)';
             });
         });
+
+        // ===== POPUP ACCUEIL =====
+        (function () {
+            const overlay  = document.getElementById('idxPopupOverlay');
+            const modal    = document.getElementById('idxPopupModal');
+            const closeBtn = document.getElementById('idxPopupClose');
+
+            function openPopup() {
+                overlay.classList.add('active');
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            function closePopup() {
+                overlay.classList.remove('active');
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            closeBtn.addEventListener('click', closePopup);
+            overlay.addEventListener('click', closePopup);
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+
+            // Ouverture auto après 3s, une seule fois par session
+            if (!sessionStorage.getItem('idx-popup-seen')) {
+                setTimeout(() => {
+                    openPopup();
+                    sessionStorage.setItem('idx-popup-seen', '1');
+                }, 3000);
+            }
+        })();
     </script>
-    <script>
-        // ===== COOKIE POPUP =====
-        document.addEventListener('DOMContentLoaded', function () {
-            const cookiePopup = document.getElementById('cookiePopup');
-            const acceptBtn = document.getElementById('acceptCookies');
-            const declineBtn = document.getElementById('declineCookies');
 
-            function showCookiePopup() {
-                const cookieConsent = localStorage.getItem('cookieConsent');
-
-                if (!cookieConsent) {
-                    setTimeout(function () {
-                        cookiePopup.classList.add('show');
-                    }, 2500);
-                }
-            }
-
-            if (acceptBtn) {
-                acceptBtn.addEventListener('click', function () {
-                    localStorage.setItem('cookieConsent', 'accepted');
-                    cookiePopup.classList.remove('show');
-                    setTimeout(function () {
-                        cookiePopup.classList.add('hidden');
-                    }, 400);
-                });
-            }
-
-            if (declineBtn) {
-                declineBtn.addEventListener('click', function () {
-                    localStorage.setItem('cookieConsent', 'declined');
-                    cookiePopup.classList.remove('show');
-                    setTimeout(function () {
-                        cookiePopup.classList.add('hidden');
-                    }, 400);
-                });
-            }
-
-            showCookiePopup();
-        });
-    </script>
 </body>
 
 </html>

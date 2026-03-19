@@ -1,0 +1,1001 @@
+/**
+ * Styles pour la page Candidature Spontanée
+ * Cosmos Group
+ */
+
+/* Hero */
+.cs-hero {
+    background: linear-gradient(135deg, #020817 0%, #0f172a 50%, #0c1a3a 100%);
+    padding: 4rem 0 3rem;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.cs-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+}
+
+.cs-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -40px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+}
+
+.cs-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+}
+
+.cs-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.cs-hero p {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    max-width: 600px;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+/* Section principale */
+.cs-main {
+    padding: 3rem 0 4rem;
+    background: #f8f9fa;
+}
+
+.cs-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* Formulaire */
+.cs-form-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.cs-form-header {
+    background: linear-gradient(135deg, #020817 0%, #0f172a 50%, #0c1a3a 100%);
+    padding: 1.8rem 2rem;
+    color: #fff;
+}
+
+.cs-form-header h2 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.cs-form-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    color: #fff;
+}
+
+.cs-form-body {
+    padding: 2rem;
+}
+
+/* Sections du formulaire */
+.cs-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.cs-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cs-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1.2rem;
+}
+
+.cs-section-title i {
+    color: #667eea;
+    font-size: 1rem;
+}
+
+/* Groupes de champs */
+.cs-form-group {
+    margin-bottom: 1.2rem;
+}
+
+.cs-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.cs-form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.45rem;
+}
+
+.cs-form-group label .required {
+    color: #e53e3e;
+    margin-left: 2px;
+}
+
+.cs-form-group input[type="text"],
+.cs-form-group input[type="email"],
+.cs-form-group input[type="tel"],
+.cs-form-group select,
+.cs-form-group textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #2c3e50;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cs-form-group input:focus,
+.cs-form-group select:focus,
+.cs-form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.12);
+}
+
+.cs-form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    padding-right: 2.5rem;
+}
+
+.cs-form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Upload fichiers */
+.cs-file-wrapper {
+    position: relative;
+}
+
+.cs-file-wrapper input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.cs-file-display {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.2rem;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cs-file-display:hover {
+    border-color: #667eea;
+    background: #f0f2ff;
+}
+
+.cs-file-display i {
+    font-size: 1.3rem;
+    color: #667eea;
+    flex-shrink: 0;
+}
+
+.cs-file-display span {
+    font-size: 0.88rem;
+    color: #6b7280;
+}
+
+.cs-file-info {
+    display: none;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #155724;
+}
+
+.cs-file-info.show {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Erreurs */
+.cs-error {
+    display: none;
+    color: #dc3545;
+    font-size: 0.82rem;
+    margin-top: 0.4rem;
+    padding: 0.35rem 0.6rem;
+    background: #f8d7da;
+    border-left: 3px solid #dc3545;
+    border-radius: 4px;
+}
+
+.cs-form-group.has-error input,
+.cs-form-group.has-error select,
+.cs-form-group.has-error textarea,
+.cs-form-group.has-error .cs-file-display {
+    border-color: #dc3545;
+}
+
+/* Consentement */
+.cs-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1.5px solid #e9ecef;
+}
+
+.cs-consent input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: #667eea;
+    cursor: pointer;
+}
+
+.cs-consent label {
+    font-size: 0.88rem;
+    color: #4b5563;
+    cursor: pointer;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Bouton submit */
+.cs-submit-btn {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    background: linear-gradient(135deg, #020817 0%, #0f172a 50%, #0c1a3a 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: Verdana, Geneva, sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.cs-submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102,126,234,0.35);
+}
+
+.cs-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.cs-submit-btn .btn-loading {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cs-submit-btn .btn-loading i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Notification résultat */
+.cs-notification {
+    display: none;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.92rem;
+}
+
+.cs-notification.success {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.cs-notification.error {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* Sidebar */
+.cs-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cs-info-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.cs-info-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cs-info-card h3 i {
+    color: #667eea;
+}
+
+.cs-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cs-steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    color: #4b5563;
+}
+
+.cs-steps li:last-child {
+    margin-bottom: 0;
+}
+
+.cs-step-num {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.cs-domains {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.cs-domain-tag {
+    padding: 0.3rem 0.75rem;
+    background: #f0f2ff;
+    color: #667eea;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid #d0d5f5;
+}
+
+.cs-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: #4b5563;
+    margin-bottom: 0.75rem;
+}
+
+.cs-contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.cs-contact-item i {
+    color: #667eea;
+    width: 16px;
+    text-align: center;
+}
+
+.cs-contact-item a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.cs-contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .cs-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-sidebar {
+        order: -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .cs-hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .cs-form-body {
+        padding: 1.2rem;
+    }
+
+    .cs-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-sidebar {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== POPUP CANDIDATURE SPONTANÉE ===== */
+
+/* Bouton flottant déclencheur */
+.cs-popup-trigger {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 8000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    animation: cs-pulse-ring 2.5s ease-in-out infinite;
+}
+
+.cs-popup-trigger-btn {
+    width: 62px;
+    height: 62px;
+    background: linear-gradient(135deg, #020817 0%, #0f172a 55%, #0c1a3a 100%);
+    border: 2px solid rgba(102,126,234,0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(2,8,23,0.55), 0 0 0 0 rgba(102,126,234,0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+}
+
+.cs-popup-trigger-btn i {
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.cs-popup-trigger-btn::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid rgba(102,126,234,0.3);
+    animation: cs-ripple 2.5s ease-out infinite;
+}
+
+.cs-popup-trigger-btn::after {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(102,126,234,0.15);
+    animation: cs-ripple 2.5s ease-out 0.5s infinite;
+}
+
+.cs-popup-trigger:hover .cs-popup-trigger-btn {
+    transform: scale(1.1);
+    box-shadow: 0 10px 32px rgba(2,8,23,0.7), 0 0 0 8px rgba(102,126,234,0.15);
+}
+
+.cs-popup-trigger-label {
+    background: linear-gradient(135deg, #020817, #0c1a3a);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+    box-shadow: 0 2px 8px rgba(2,8,23,0.4);
+    border: 1px solid rgba(102,126,234,0.3);
+}
+
+/* Badge notification */
+.cs-popup-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 18px;
+    height: 18px;
+    background: #e53e3e;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #fff;
+    animation: cs-badge-bounce 1.8s ease-in-out infinite;
+}
+
+/* Overlay */
+.cs-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 8, 23, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 9000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.cs-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal */
+.cs-popup-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -48%) scale(0.92);
+    z-index: 9001;
+    width: min(560px, 95vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 30px 80px rgba(2,8,23,0.5), 0 0 0 1px rgba(102,126,234,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    scrollbar-width: thin;
+    scrollbar-color: #667eea #f0f2ff;
+}
+
+.cs-popup-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Header du modal */
+.cs-popup-header {
+    background: linear-gradient(135deg, #020817 0%, #0f172a 55%, #0c1a3a 100%);
+    padding: 2rem 2rem 1.6rem;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cs-popup-header::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    background: rgba(102,126,234,0.12);
+    border-radius: 50%;
+}
+
+.cs-popup-header::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+}
+
+.cs-popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 34px;
+    height: 34px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 2;
+}
+
+.cs-popup-close:hover {
+    background: rgba(255,255,255,0.22);
+    transform: rotate(90deg);
+}
+
+.cs-popup-header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    margin-bottom: 0.9rem;
+    position: relative;
+    z-index: 2;
+}
+
+.cs-popup-header-badge i {
+    font-size: 0.75rem;
+    color: #ffd700;
+}
+
+.cs-popup-header h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.25;
+    position: relative;
+    z-index: 2;
+}
+
+.cs-popup-header p {
+    color: rgba(255,255,255,0.82);
+    font-size: 0.88rem;
+    margin: 0;
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+}
+
+/* Avantages visuels */
+.cs-popup-perks {
+    display: flex;
+    gap: 0.6rem;
+    padding: 1.2rem 2rem;
+    background: #f8f9ff;
+    border-bottom: 1px solid #e9ecef;
+    flex-wrap: wrap;
+}
+
+.cs-popup-perk {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.cs-popup-perk i {
+    color: #667eea;
+    font-size: 0.8rem;
+}
+
+/* Corps du modal */
+.cs-popup-body {
+    padding: 1.8rem 2rem;
+}
+
+/* Étapes visuelles */
+.cs-popup-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+.cs-popup-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1.5px solid #e9ecef;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.cs-popup-step:hover {
+    border-color: #667eea;
+    background: #f0f2ff;
+}
+
+.cs-popup-step-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #020817, #0c1a3a);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cs-popup-step-icon i {
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.cs-popup-step-text strong {
+    display: block;
+    font-size: 0.82rem;
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.cs-popup-step-text span {
+    font-size: 0.76rem;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+/* Domaines tags */
+.cs-popup-domains-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.cs-popup-domains-label i {
+    color: #667eea;
+}
+
+.cs-popup-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 1.8rem;
+}
+
+.cs-popup-tag {
+    padding: 0.28rem 0.7rem;
+    background: #f0f2ff;
+    color: #667eea;
+    border-radius: 20px;
+    font-size: 0.76rem;
+    font-weight: 500;
+    border: 1px solid #d0d5f5;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cs-popup-tag:hover {
+    background: #667eea;
+    color: #fff;
+}
+
+/* CTA principal */
+.cs-popup-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.cs-popup-btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.5rem;
+    background: linear-gradient(135deg, #020817 0%, #0f172a 55%, #0c1a3a 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.97rem;
+    font-weight: 700;
+    font-family: Verdana, Geneva, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(2,8,23,0.35);
+    letter-spacing: 0.01em;
+}
+
+.cs-popup-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(2,8,23,0.5);
+    color: #fff;
+}
+
+.cs-popup-btn-primary i {
+    font-size: 1rem;
+}
+
+.cs-popup-btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: #667eea;
+    border: 1.5px solid #d0d5f5;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    font-family: Verdana, Geneva, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.cs-popup-btn-secondary:hover {
+    background: #f0f2ff;
+    border-color: #667eea;
+    color: #667eea;
+}
+
+/* Footer du modal */
+.cs-popup-footer {
+    padding: 1rem 2rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+.cs-popup-footer p {
+    font-size: 0.76rem;
+    color: #9ca3af;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.cs-popup-footer i {
+    color: #667eea;
+}
+
+/* Animations */
+@keyframes cs-ripple {
+    0%   { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes cs-badge-bounce {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.25); }
+}
+
+@keyframes cs-pulse-ring {
+    0%, 100% { filter: drop-shadow(0 0 0px rgba(102,126,234,0)); }
+    50%       { filter: drop-shadow(0 0 10px rgba(102,126,234,0.45)); }
+}
+
+/* Responsive popup */
+@media (max-width: 600px) {
+    .cs-popup-trigger {
+        bottom: 1.2rem;
+        right: 1.2rem;
+    }
+
+    .cs-popup-trigger-btn {
+        width: 54px;
+        height: 54px;
+    }
+
+    .cs-popup-modal {
+        width: 96vw;
+        max-height: 92vh;
+    }
+
+    .cs-popup-header {
+        padding: 1.5rem 1.4rem 1.2rem;
+    }
+
+    .cs-popup-body {
+        padding: 1.4rem 1.4rem;
+    }
+
+    .cs-popup-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-popup-perks {
+        padding: 1rem 1.4rem;
+    }
+
+    .cs-popup-footer {
+        padding: 0.8rem 1.4rem 1.2rem;
+    }
+}
