@@ -1755,6 +1755,10 @@ rs Section */
     .footer-links {
         justify-content: center;
     }
+
+    .footer-logo img {
+        height: 120px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1788,6 +1792,10 @@ rs Section */
 
     .service-card {
         padding: 1.5rem;
+    }
+
+    .footer-logo img {
+        height: 80px;
     }
 }
 
