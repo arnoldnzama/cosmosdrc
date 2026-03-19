@@ -350,14 +350,15 @@
 }
 
 .btn-submit {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #020817 0%, #0f172a 50%, #0c1a3a 100%);
     color: white;
     min-width: 220px;
 }
 
 .btn-submit:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.4);
+    background: linear-gradient(135deg, #0f172a 0%, #0c1a3a 50%, #3fa7de 100%);
 }
 
 .btn-submit:disabled {
@@ -544,4 +545,148 @@ body.modal-open {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ===== Infos RH : Salaire ===== */
+.salary-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.salary-input-wrapper input[type="number"] {
+    width: 100%;
+    padding: 12px 56px 12px 16px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    -moz-appearance: textfield;
+}
+
+.salary-input-wrapper input[type="number"]::-webkit-outer-spin-button,
+.salary-input-wrapper input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.salary-input-wrapper input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.salary-currency {
+    position: absolute;
+    right: 14px;
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+.field-hint {
+    margin: 6px 0 0 0;
+    font-size: 0.82rem;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.field-hint i {
+    color: #667eea;
+    font-size: 0.8rem;
+}
+
+/* Select disponibilité */
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: #fff;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23667eea' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group select.error,
+.form-group.has-error select {
+    border-color: #dc3545;
+}
+
+/* ===== Consentement ===== */
+.consent-group {
+    margin-bottom: 16px;
+}
+
+.consent-label {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    margin-bottom: 0 !important;
+    font-weight: 400 !important;
+}
+
+.consent-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    margin-top: 2px;
+    accent-color: #667eea;
+    cursor: pointer;
+}
+
+.consent-text {
+    font-size: 0.9rem;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.consent-text a {
+    color: #667eea;
+    text-decoration: underline;
+}
+
+.consent-text a:hover {
+    color: #764ba2;
+}
+
+.form-group.has-error .consent-label input[type="checkbox"] {
+    outline: 2px solid #dc3545;
+    border-radius: 3px;
+}
+
+/* ===== Badge salaire dans le modal ===== */
+.modal-salary-badge {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 0 0;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #d4f5e2, #a8edca);
+    border: 1px solid #6fcf97;
+    border-radius: 20px;
+    color: #1a7a45;
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.modal-salary-badge i {
+    color: #27ae60;
+    font-size: 0.85rem;
 }

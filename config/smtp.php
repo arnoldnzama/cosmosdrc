@@ -161,7 +161,7 @@ return [
     'port'       => (int)(getenv('SMTP_PORT') ?: 587),
     'encryption' => getenv('SMTP_ENCRYPTION') ?: 'tls',
     'username'   => getenv('SMTP_USERNAME') ?: 'contact1@emergencemag.net',
-    'password'   => getenv('SMTP_PASSWORD') ?: '',
+    'password'   => getenv('SMTP_PASSWORD') ?: 'd(4(K7hnwYU94V',
     
     // Rétrocompatibilité (lecture directe)
     'admin_email'   => $providers['candidature']['to_email'],

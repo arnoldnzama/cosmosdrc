@@ -31,6 +31,21 @@ class Validator {
         $this->validateRequired('email', 'Email');
         $this->validateEmail('email');
         
+        // Validation des champs RH
+        $this->validateRequired('disponibilite', 'Disponibilité / Préavis');
+        
+        // Prétention salariale : optionnelle, mais si renseignée doit être un nombre positif
+        if (!empty($this->data['pretention_salariale'])) {
+            if (!is_numeric($this->data['pretention_salariale']) || (float)$this->data['pretention_salariale'] < 0) {
+                $this->errors['pretention_salariale'] = "La prétention salariale doit être un montant valide.";
+            }
+        }
+        
+        // Consentement obligatoire
+        if (empty($this->data['consent_data']) || $this->data['consent_data'] != '1') {
+            $this->errors['consent_data'] = "Vous devez accepter le traitement de vos données personnelles.";
+        }
+        
         // Validation des fichiers obligatoires
         $this->validateCVFile();
         $this->validateLettreFile();

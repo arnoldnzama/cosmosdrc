@@ -38,6 +38,9 @@ class ApplicationModalSimple {
                             <h3 id="modal-job-title">Titre du poste</h3>
                             <p id="modal-job-company"><i class="fas fa-building"></i> Entreprise</p>
                             <p id="modal-job-location"><i class="fas fa-map-marker-alt"></i> Localisation</p>
+                            <p id="modal-job-salary" class="modal-salary-badge" style="display:none;">
+                                <i class="fas fa-dollar-sign"></i> <span id="modal-job-salary-value"></span>
+                            </p>
                         </div>
 
                         <!-- Description complète de l'offre -->
@@ -67,6 +70,43 @@ class ApplicationModalSimple {
                                             <i class="fas fa-envelope"></i> Email *
                                         </label>
                                         <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                                        <span class="error-message"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h4><i class="fas fa-briefcase"></i> Infos RH</h4>
+                                <p class="form-section-subtitle">Informations complémentaires pour le recruteur</p>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="pretention_salariale">
+                                            <i class="fas fa-dollar-sign"></i> Prétention salariale (optionnel)
+                                        </label>
+                                        <div class="salary-input-wrapper">
+                                            <input type="number" id="pretention_salariale" name="pretention_salariale"
+                                                placeholder="ex: 2000" min="0" step="50">
+                                            <span class="salary-currency">USD</span>
+                                        </div>
+                                        <p class="field-hint"><i class="fas fa-info-circle"></i> Exemple : 2 000 $</p>
+                                        <span class="error-message"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="disponibilite">
+                                            <i class="fas fa-calendar-alt"></i> Disponibilité / Préavis *
+                                        </label>
+                                        <select id="disponibilite" name="disponibilite" required>
+                                            <option value="">-- Sélectionnez --</option>
+                                            <option value="Immédiatement">Immédiatement</option>
+                                            <option value="1 semaine">1 semaine</option>
+                                            <option value="2 semaines">2 semaines</option>
+                                            <option value="1 mois">1 mois</option>
+                                            <option value="2 mois">2 mois</option>
+                                            <option value="3 mois">3 mois</option>
+                                            <option value="Plus de 3 mois">Plus de 3 mois</option>
+                                        </select>
                                         <span class="error-message"></span>
                                     </div>
                                 </div>
@@ -104,6 +144,31 @@ class ApplicationModalSimple {
                                     </div>
                                     <div class="file-info-lettre"></div>
                                     <span class="error-message"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h4><i class="fas fa-shield-alt"></i> Consentement</h4>
+                                <p class="form-section-subtitle">Veuillez lire et accepter les conditions ci-dessous</p>
+
+                                <div class="form-group consent-group">
+                                    <label class="consent-label">
+                                        <input type="checkbox" id="consent_data" name="consent_data" value="1" required>
+                                        <span class="consent-text">
+                                            J'accepte que mes données personnelles soient traitées par Cosmos Group dans le cadre de ma candidature, conformément à notre
+                                            <a href="politique-confidentialite.html" target="_blank">politique de confidentialité</a>. *
+                                        </span>
+                                    </label>
+                                    <span class="error-message"></span>
+                                </div>
+
+                                <div class="form-group consent-group">
+                                    <label class="consent-label">
+                                        <input type="checkbox" id="consent_contact" name="consent_contact" value="1">
+                                        <span class="consent-text">
+                                            J'accepte d'être contacté(e) par Cosmos Group pour d'autres opportunités correspondant à mon profil. (optionnel)
+                                        </span>
+                                    </label>
                                 </div>
                             </div>
 
@@ -240,6 +305,7 @@ class ApplicationModalSimple {
             title: button.dataset.jobTitle || button.getAttribute('data-job-title'),
             company: button.dataset.jobCompany || button.getAttribute('data-job-company'),
             location: button.dataset.jobLocation || button.getAttribute('data-job-location'),
+            salary: button.dataset.jobSalary || button.getAttribute('data-job-salary') || '',
             description: button.dataset.jobDescription || button.getAttribute('data-job-description') || 'Description non disponible'
         };
 
@@ -250,6 +316,16 @@ class ApplicationModalSimple {
         document.getElementById('modal-job-company').innerHTML = `<i class="fas fa-building"></i> ${this.currentJobData.company}`;
         document.getElementById('modal-job-location').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${this.currentJobData.location}`;
         document.getElementById('modal-job-description').textContent = this.currentJobData.description;
+
+        // Afficher le salaire si disponible
+        const salaryEl = document.getElementById('modal-job-salary');
+        const salaryValEl = document.getElementById('modal-job-salary-value');
+        if (this.currentJobData.salary) {
+            salaryValEl.textContent = this.currentJobData.salary;
+            salaryEl.style.display = 'flex';
+        } else {
+            salaryEl.style.display = 'none';
+        }
 
         // Remplir les champs cachés
         document.getElementById('job_title').value = this.currentJobData.title;
@@ -299,6 +375,18 @@ class ApplicationModalSimple {
                 lettreInfo.classList.remove('success');
             }
         }
+
+        // Réinitialiser les champs Infos RH
+        const disponibiliteField = document.getElementById('disponibilite');
+        if (disponibiliteField) disponibiliteField.value = '';
+        const pretentionField = document.getElementById('pretention_salariale');
+        if (pretentionField) pretentionField.value = '';
+
+        // Réinitialiser les cases de consentement
+        const consentData = document.getElementById('consent_data');
+        if (consentData) consentData.checked = false;
+        const consentContact = document.getElementById('consent_contact');
+        if (consentContact) consentContact.checked = false;
     }
 
     async submitApplication() {
@@ -330,6 +418,12 @@ class ApplicationModalSimple {
             console.log('📎 Fichiers:', {
                 cv: formData.get('cv') ? formData.get('cv').name : 'aucun',
                 lettre: formData.get('lettre') ? formData.get('lettre').name : 'aucun'
+            });
+            console.log('💼 Infos RH:', {
+                pretention_salariale: formData.get('pretention_salariale') || 'non renseigné',
+                disponibilite: formData.get('disponibilite'),
+                consent_data: formData.get('consent_data'),
+                consent_contact: formData.get('consent_contact') || '0'
             });
 
             // URL du script
@@ -442,6 +536,22 @@ class ApplicationModalSimple {
                 errors.push('Lettre de motivation invalide');
                 isValid = false;
             }
+        }
+
+        // Validation de la disponibilité (OBLIGATOIRE)
+        const disponibiliteField = document.getElementById('disponibilite');
+        if (!disponibiliteField || !disponibiliteField.value) {
+            this.showFieldError(disponibiliteField, 'Veuillez indiquer votre disponibilité');
+            errors.push('Disponibilité manquante');
+            isValid = false;
+        }
+
+        // Validation du consentement (OBLIGATOIRE)
+        const consentDataField = document.getElementById('consent_data');
+        if (!consentDataField || !consentDataField.checked) {
+            this.showFieldError(consentDataField, 'Vous devez accepter le traitement de vos données');
+            errors.push('Consentement manquant');
+            isValid = false;
         }
 
         if (!isValid) {

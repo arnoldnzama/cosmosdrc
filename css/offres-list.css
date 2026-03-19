@@ -87,7 +87,7 @@
 }
 
 .btn-apply {
-    background: linear-gradient(135deg, #064795, #3fa7de);
+    background: linear-gradient(135deg, #020817 0%, #0f172a 50%, #0c1a3a 100%);
     color: white;
     padding: 10px 24px;
     border-radius: 6px;
@@ -96,10 +96,11 @@
     font-size: 0.95rem;
     transition: all 0.3s ease;
     white-space: nowrap;
+    box-shadow: 0 0 16px rgba(63,167,222,0.2);
 }
 
 .btn-apply:hover {
-    background: linear-gradient(135deg, #0a5ab5, #5bbfe8);
+    background: linear-gradient(135deg, #0f172a 0%, #0c1a3a 50%, #3fa7de 100%);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(63, 167, 222, 0.4);
 }

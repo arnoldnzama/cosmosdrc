@@ -181,6 +181,11 @@ try {
         'job_location' => $sanitizedData['job_location'],
         'job_description' => $sanitizedData['job_description'] ?? null,
         
+        // Infos RH
+        'pretention_salariale' => !empty($sanitizedData['pretention_salariale']) ? (float)$sanitizedData['pretention_salariale'] : null,
+        'disponibilite' => $sanitizedData['disponibilite'],
+        'consent_contact' => !empty($sanitizedData['consent_contact']) && $sanitizedData['consent_contact'] == '1' ? 1 : 0,
+        
         // Métadonnées techniques
         'ip_address' => $_SERVER['REMOTE_ADDR'] ?? null,
         'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? null
