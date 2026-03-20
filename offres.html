@@ -111,13 +111,8 @@
                 <div class="nav-menu">
                     <ul class="nav-links">
                         <li><a href="index.html">Accueil</a></li>
-                        <li class="nav-dropdown">
-                            <a href="offres.html" class="dropdown-toggle active">Offres d'emploi <i class="fas fa-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="offres.html"><i class="fas fa-briefcase" style="margin-right:8px;color:var(--primary-color)"></i>Toutes les offres</a></li>
-                                <li><a href="candidature-spontanee.html"><i class="fas fa-user-plus" style="margin-right:8px;color:var(--primary-color)"></i>Candidature spontanée</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="offres.html" class="active">Offres d'emploi</a></li>
+                        <li><a href="candidature-spontanee.html">Candidature spontanée</a></li>
                         <li class="nav-dropdown">
                             <a href="services.html" class="dropdown-toggle">Nos services <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu">
@@ -175,15 +170,175 @@
         </div>
     </section>
 
+    <div class="section-heading-wrapper">
+        <!-- Légende des statuts -->
+        <div class="status-legend">
+            <div class="status-legend-item">
+                <span class="status-dot status-active"></span>
+                <span class="status-label-text">En cours</span>
+            </div>
+            <div class="status-legend-item">
+                <span class="status-dot status-urgent"></span>
+                <span class="status-label-text">Moins de 3 jours</span>
+            </div>
+            <div class="status-legend-item">
+                <span class="status-dot status-expired"></span>
+                <span class="status-label-text">Expirée</span>
+            </div>
+        </div>
+        <h2 class="section-heading">Offres d'emploi</h2>
+        <div class="section-heading-line"></div>
+    </div>
+    
     <!-- Results Section -->
     <section class="jobs-results">
         <div class="container">
             <!-- Jobs List -->
             <div class="jobs-list" id="jobs-container">
+                <!-- Job Item 0 - Assistant Administratif -->
+                <div class="job-item" data-contract="cdi" data-experience="junior" data-sector="rh"
+                     data-description="Dans le cadre du renforcement de ses équipes, COSMOS recrute 2 Assistants Administratifs basés à Kenge. Missions : traitement administratif courant, gestion des documents et suivi des dossiers, gestion des mails et communication interne, appui au manager de zone, participation à certaines tâches commerciales, appui aux activités RH. Profil : bonne maîtrise des outils bureautiques (Word, Excel, e-mail), sens de l'organisation et rigueur, bonne capacité de communication, polyvalence, résider à Kenge (obligatoire). Atout : savoir conduire une moto."
+                     data-deadline="2026-04-04">
+                    <div class="job-item-content">
+                        <div class="job-item-left">
+                            <h3 class="job-title">Assistant Administratif (H/F)</h3>
+                            <p class="company-name">COSMOS RH</p>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Kenge, RDC</p>
+                        </div>
+                        <div class="job-item-right">
+                            <span class="job-status-badge"></span>
+                            <div class="job-badge">CDI</div>
+                            <span class="job-date"><i class="fas fa-clock"></i> 20/03/2026</span>
+                            <a href="#" class="btn-apply"
+                               data-job-title="Assistant Administratif (H/F)"
+                               data-job-company="COSMOS RH"
+                               data-job-location="Kenge, RDC"
+                               data-job-salary="300 USD / mois"
+                               data-job-sector="Ressources Humaines (COSMOS)"
+                               data-job-headcount="2 profils recherchés"
+                               data-job-description="Dans le cadre du renforcement de ses équipes, COSMOS recrute 2 Assistants Administratifs basés à Kenge. Missions : traitement administratif courant, gestion des documents et suivi des dossiers, gestion des mails et communication interne, appui au manager de zone, participation à certaines tâches commerciales, appui aux activités RH. Profil : bonne maîtrise des outils bureautiques (Word, Excel, e-mail), sens de l'organisation et rigueur, bonne capacité de communication, polyvalence, résider à Kenge (obligatoire). Atout : savoir conduire une moto.">
+                                Postuler
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Item - Adjoint Administratif / Superviseur -->
+                <div class="job-item" data-contract="cdi" data-experience="intermediate" data-sector="securite"
+                     data-description="Dans le cadre du renforcement des activités de l'un de ses partenaires évoluant dans le secteur de la sécurité, COSMOS recrute un Adjoint Administratif / Superviseur basé à Isiro. Missions : gestion administrative quotidienne (documents, suivi, organisation), appui à la coordination et supervision des équipes, gestion RH (suivi du personnel, dossiers, présences), participation à l'organisation et optimisation des opérations, reporting régulier auprès de la hiérarchie, respect des procédures internes. Profil : formation en administration, gestion ou RH, expérience en gestion administrative et encadrement d'équipe, bonne maîtrise des outils bureautiques (Word, Excel), rigueur, sens de l'organisation et discrétion professionnelle, bon relationnel et capacité à travailler sous pression. Atouts : expérience dans le secteur de la sécurité, bonne connaissance des pratiques RH, capacité à gérer plusieurs tâches simultanément."
+                     data-deadline="2026-04-04">
+                    <div class="job-item-content">
+                        <div class="job-item-left">
+                            <h3 class="job-title">Adjoint Administratif / Superviseur (H/F)</h3>
+                            <p class="company-name">COSMOS RH</p>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Isiro, RDC</p>
+                        </div>
+                        <div class="job-item-right">
+                            <span class="job-status-badge"></span>
+                            <div class="job-badge">CDI</div>
+                            <span class="job-date"><i class="fas fa-clock"></i> 20/03/2026</span>
+                            <a href="#" class="btn-apply"
+                               data-job-title="Adjoint Administratif / Superviseur (H/F)"
+                               data-job-company="COSMOS RH"
+                               data-job-location="Isiro, RDC"
+                               data-job-salary="500 – 800 USD / mois (selon profil)"
+                               data-job-sector="Sécurité"
+                               data-job-headcount="1 profil recherché"
+                               data-job-description="Dans le cadre du renforcement des activités de l'un de ses partenaires évoluant dans le secteur de la sécurité, COSMOS recrute un Adjoint Administratif / Superviseur basé à Isiro. Missions : gestion administrative quotidienne (documents, suivi, organisation), appui à la coordination et supervision des équipes, gestion RH (suivi du personnel, dossiers, présences), participation à l'organisation et optimisation des opérations, reporting régulier auprès de la hiérarchie, respect des procédures internes. Profil : formation en administration, gestion ou RH, expérience en gestion administrative et encadrement d'équipe, bonne maîtrise des outils bureautiques (Word, Excel), rigueur, sens de l'organisation et discrétion professionnelle, bon relationnel et capacité à travailler sous pression. Atouts : expérience dans le secteur de la sécurité, bonne connaissance des pratiques RH, capacité à gérer plusieurs tâches simultanément.">
+                                Postuler
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Item - Superviseur Commercial / Team Leader -->
+                <div class="job-item" data-contract="cdi" data-experience="intermediate" data-sector="commercial"
+                     data-description="Dans le cadre du développement des activités de l'un de ses partenaires, COSMOS recrute 2 Superviseurs Commerciaux / Team Leaders chargés d'encadrer, piloter et booster la performance des équipes de commerciaux et ambassadeurs de vente. Missions : encadrer, animer et motiver une équipe de commerciaux en télétravail, suivre les performances individuelles et collectives, participer activement à la prospection et à la vente, définir et déployer des stratégies commerciales efficaces, accompagner, coacher et former les équipes, assurer un reporting régulier des activités, veiller à la qualité des interactions commerciales. Profil : expérience en supervision commerciale avec une forte capacité de vente, excellentes compétences en négociation et closing, leadership, rigueur et orientation résultats, capacité à travailler en autonomie et à driver une équipe à distance, bonne maîtrise des outils digitaux (WhatsApp, CRM, reporting…), connexion internet stable. Atouts : expérience en télévente ou gestion d'équipes à distance, bonne connaissance des services de streaming (Netflix, Prime Video, IPTV, etc.), capacité à structurer, organiser et faire monter en performance une équipe commerciale."
+                     data-deadline="2026-04-04">
+                    <div class="job-item-content">
+                        <div class="job-item-left">
+                            <h3 class="job-title">Superviseur Commercial / Team Leader (H/F)</h3>
+                            <p class="company-name">COSMOS RH</p>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Kinshasa & Lubumbashi, RDC</p>
+                        </div>
+                        <div class="job-item-right">
+                            <span class="job-status-badge"></span>
+                            <div class="job-badge">Télétravail</div>
+                            <span class="job-date"><i class="fas fa-clock"></i> 20/03/2026</span>
+                            <a href="#" class="btn-apply"
+                               data-job-title="Superviseur Commercial / Team Leader (H/F)"
+                               data-job-company="COSMOS RH"
+                               data-job-location="Kinshasa & Lubumbashi, RDC (100% Télétravail)"
+                               data-job-salary="Commissions attractives + bonus de performance"
+                               data-job-sector="Commercial"
+                               data-job-headcount="2 profils recherchés (1 par ville)"
+                               data-job-description="Dans le cadre du développement des activités de l'un de ses partenaires, COSMOS recrute 2 Superviseurs Commerciaux / Team Leaders chargés d'encadrer, piloter et booster la performance des équipes de commerciaux et ambassadeurs de vente. Missions : encadrer, animer et motiver une équipe de commerciaux en télétravail, suivre les performances individuelles et collectives, participer activement à la prospection et à la vente, définir et déployer des stratégies commerciales efficaces, accompagner, coacher et former les équipes, assurer un reporting régulier des activités, veiller à la qualité des interactions commerciales. Profil : expérience en supervision commerciale avec une forte capacité de vente, excellentes compétences en négociation et closing, leadership, rigueur et orientation résultats, capacité à travailler en autonomie et à driver une équipe à distance, bonne maîtrise des outils digitaux (WhatsApp, CRM, reporting…), connexion internet stable. Atouts : expérience en télévente ou gestion d'équipes à distance, bonne connaissance des services de streaming (Netflix, Prime Video, IPTV, etc.), capacité à structurer, organiser et faire monter en performance une équipe commerciale.">
+                                Postuler
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Item - Commercial / Ambassadeur de Vente -->
+                <div class="job-item" data-contract="freelance" data-experience="junior" data-sector="commercial"
+                     data-description="Dans le cadre du développement des activités de l'un de ses partenaires, COSMOS recrute 20 Commerciaux / Ambassadeurs de Vente en télétravail pour la promotion et la commercialisation de services de télédistribution et de plateformes de streaming. Ta mission : prospecter et convaincre de nouveaux clients, présenter et vendre des offres de streaming et de divertissement, transformer les prospects en clients fidèles, assurer le suivi client et développer ton portefeuille, atteindre et dépasser les objectifs de vente. Pourquoi nous rejoindre ? Travail 100% à distance (flexibilité totale), revenus évolutifs selon tes performances, bonus et incentives pour les meilleurs profils, opportunité de croissance rapide. Profil recherché : fibre commerciale et goût du challenge, excellente communication et sens de persuasion, autonomie et discipline en télétravail, à l'aise avec WhatsApp, appels et réseaux sociaux, connexion internet stable. Atouts : expérience en vente de services digitaux ou abonnements, bonne connaissance des plateformes de streaming (Netflix, Prime Video, IPTV, etc.), expérience en télévente ou vente à distance."
+                     data-deadline="2026-04-04">
+                    <div class="job-item-content">
+                        <div class="job-item-left">
+                            <h3 class="job-title">Commercial / Ambassadeur de Vente (H/F)</h3>
+                            <p class="company-name">COSMOS RH</p>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Lubumbashi, Matadi, Kolwezi, Kinshasa et autres villes, RDC</p>
+                        </div>
+                        <div class="job-item-right">
+                            <span class="job-status-badge"></span>
+                            <div class="job-badge">Télétravail</div>
+                            <span class="job-date"><i class="fas fa-clock"></i> 20/03/2026</span>
+                            <a href="#" class="btn-apply"
+                               data-job-title="Commercial / Ambassadeur de Vente (H/F)"
+                               data-job-company="COSMOS RH"
+                               data-job-location="RDC – 100% Télétravail (Lubumbashi, Matadi, Kolwezi, Kinshasa et autres villes)"
+                               data-job-salary="Commissions attractives + bonus de performance"
+                               data-job-sector="Commercial"
+                               data-job-headcount="20 profils recherchés"
+                               data-job-description="Dans le cadre du développement des activités de l'un de ses partenaires, COSMOS recrute 20 Commerciaux / Ambassadeurs de Vente en télétravail pour la promotion et la commercialisation de services de télédistribution et de plateformes de streaming. Ta mission : prospecter et convaincre de nouveaux clients, présenter et vendre des offres de streaming et de divertissement, transformer les prospects en clients fidèles, assurer le suivi client et développer ton portefeuille, atteindre et dépasser les objectifs de vente. Pourquoi nous rejoindre ? Travail 100% à distance (flexibilité totale), revenus évolutifs selon tes performances, bonus et incentives pour les meilleurs profils, opportunité de croissance rapide. Profil recherché : fibre commerciale et goût du challenge, excellente communication et sens de persuasion, autonomie et discipline en télétravail, à l'aise avec WhatsApp, appels et réseaux sociaux, connexion internet stable. Atouts : expérience en vente de services digitaux ou abonnements, bonne connaissance des plateformes de streaming (Netflix, Prime Video, IPTV, etc.), expérience en télévente ou vente à distance.">
+                                Postuler
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Item - Superviseur Commercial Isiro/Durba -->
+                <div class="job-item" data-contract="cdi" data-experience="intermediate" data-sector="commercial"
+                     data-description="Dans le cadre du renforcement de ses activités, COSMOS recrute deux Superviseurs Commerciaux chargés de piloter et dynamiser les opérations commerciales dans leurs zones respectives. Le titulaire du poste aura pour mission principale de superviser les équipes de vente, assurer l'atteinte des objectifs commerciaux et contribuer au développement du portefeuille clients. Missions principales : encadrer, motiver et accompagner l'équipe commerciale, assurer l'atteinte des objectifs de vente, développer et fidéliser le portefeuille clients, suivre les performances et produire des reportings réguliers, veiller à la bonne exécution de la stratégie commerciale sur le terrain. Profil recherché : expérience en supervision commerciale ou vente terrain, leadership, sens de l'organisation et orientation résultats, excellentes capacités de communication et de négociation, bonne connaissance du terrain et mobilité requise."
+                     data-deadline="2026-04-04">
+                    <div class="job-item-content">
+                        <div class="job-item-left">
+                            <h3 class="job-title">Superviseur Commercial (H/F)</h3>
+                            <p class="company-name">COSMOS RH</p>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i> Isiro & Durba, Haut-Uélé, RDC</p>
+                        </div>
+                        <div class="job-item-right">
+                            <span class="job-status-badge"></span>
+                            <div class="job-badge">CDI</div>
+                            <span class="job-date"><i class="fas fa-clock"></i> 20/03/2026</span>
+                            <a href="#" class="btn-apply"
+                               data-job-title="Superviseur Commercial (H/F)"
+                               data-job-company="COSMOS RH"
+                               data-job-location="Isiro & Durba, Haut-Uélé, RDC"
+                               data-job-salary="À définir selon profil"
+                               data-job-sector="Commercial"
+                               data-job-headcount="2 profils recherchés"
+                               data-job-description="Dans le cadre du renforcement de ses activités, COSMOS recrute deux Superviseurs Commerciaux chargés de piloter et dynamiser les opérations commerciales dans leurs zones respectives. Le titulaire du poste aura pour mission principale de superviser les équipes de vente, assurer l'atteinte des objectifs commerciaux et contribuer au développement du portefeuille clients. Missions principales : encadrer, motiver et accompagner l'équipe commerciale, assurer l'atteinte des objectifs de vente, développer et fidéliser le portefeuille clients, suivre les performances et produire des reportings réguliers, veiller à la bonne exécution de la stratégie commerciale sur le terrain. Profil recherché : expérience en supervision commerciale ou vente terrain, leadership, sens de l'organisation et orientation résultats, excellentes capacités de communication et de négociation, bonne connaissance du terrain et mobilité requise.">
+                                Postuler
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Job Item 1 - Opérateur du pont-bascule 1 -->
                 <div class="job-item" data-contract="cdi" data-experience="intermediate" data-sector="construction"
                      data-description="Dans le cadre du renforcement de ses équipes, Cosmos Group recrute un Opérateur du pont-bascule. Expérience professionnelle minimum 2 ans requise. Bonne condition physique, rigueur, sens de l'organisation et intégrité exigés."
-                     data-deadline="2026-03-30">
+                     data-deadline="2026-03-01">
                     <div class="job-item-content">
                         <div class="job-item-left">
                             <h3 class="job-title">Opérateur du pont-bascule (Weighbridge Operator)</h3>
@@ -191,6 +346,7 @@
                             <p class="job-location"><i class="fas fa-map-marker-alt"></i> Kinshasa, RDC</p>
                         </div>
                         <div class="job-item-right">
+                            <span class="job-status-badge"></span>
                             <div class="job-badge">CDI</div>
                             <span class="job-date"><i class="fas fa-clock"></i> 23/01/2026</span>
                             <a href="#" class="btn-apply" 
@@ -206,7 +362,7 @@
                 </div>
 
                 <!-- Job Item 2 - Opérateur du pont-bascule 2 -->
-                <div class="job-item" data-deadline="2026-03-30">
+                <div class="job-item" data-deadline="2026-03-01">
                     <div class="job-item-content">
                         <div class="job-item-left">
                             <h3 class="job-title">Opérateur du pont-bascule (Weighbridge Operator)</h3>
@@ -214,6 +370,7 @@
                             <p class="job-location"><i class="fas fa-map-marker-alt"></i> Kinshasa, RDC</p>
                         </div>
                         <div class="job-item-right">
+                            <span class="job-status-badge"></span>
                             <div class="job-badge">CDI</div>
                             <span class="job-date"><i class="fas fa-clock"></i> 23/01/2026</span>
                             <a href="#" class="btn-apply" 
@@ -229,7 +386,7 @@
                 </div>
 
                 <!-- Job Item 3 - Chauffeur de camion 1 -->
-                <div class="job-item" data-deadline="2026-02-15">
+                <div class="job-item" data-deadline="2026-03-01">
                     <div class="job-item-content">
                         <div class="job-item-left">
                             <h3 class="job-title">Chauffeur de camion (Truck Driver)</h3>
@@ -237,6 +394,7 @@
                             <p class="job-location"><i class="fas fa-map-marker-alt"></i> Kinshasa, RDC</p>
                         </div>
                         <div class="job-item-right">
+                            <span class="job-status-badge"></span>
                             <div class="job-badge">CDI</div>
                             <span class="job-date"><i class="fas fa-clock"></i> 23/01/2026</span>
                             <a href="#" class="btn-apply" 
@@ -252,7 +410,7 @@
                 </div>
 
                 <!-- Job Item 4 - Chauffeur de camion 2 -->
-                <div class="job-item" data-deadline="2026-04-10">
+                <div class="job-item" data-deadline="2026-03-01">
                     <div class="job-item-content">
                         <div class="job-item-left">
                             <h3 class="job-title">Chauffeur de camion (Truck Driver)</h3>
@@ -260,6 +418,7 @@
                             <p class="job-location"><i class="fas fa-map-marker-alt"></i> Kinshasa, RDC</p>
                         </div>
                         <div class="job-item-right">
+                            <span class="job-status-badge"></span>
                             <div class="job-badge">CDI</div>
                             <span class="job-date"><i class="fas fa-clock"></i> 23/01/2026</span>
                             <a href="#" class="btn-apply" 
@@ -275,7 +434,7 @@
                 </div>
 
                 <!-- Job Item 5 - Chauffeur de JCB -->
-                <div class="job-item" data-deadline="2026-03-25">
+                <div class="job-item" data-deadline="2026-03-01">
                     <div class="job-item-content">
                         <div class="job-item-left">
                             <h3 class="job-title">Chauffeur de JCB</h3>
@@ -283,6 +442,7 @@
                             <p class="job-location"><i class="fas fa-map-marker-alt"></i> Kinshasa, RDC</p>
                         </div>
                         <div class="job-item-right">
+                            <span class="job-status-badge"></span>
                             <div class="job-badge">CDI</div>
                             <span class="job-date"><i class="fas fa-clock"></i> 23/01/2026</span>
                             <a href="#" class="btn-apply" 
@@ -298,7 +458,7 @@
                 </div>
 
                 <!-- Job Item 6 - Escorteur 1 -->
-                <div class="job-item" data-deadline="2026-03-20">
+                <div class="job-item" data-deadline="2026-03-01">
                     <div class="job-item-content">
                         <div class="job-item-left">
                             <h3 class="job-title">Escorteur (Escort)</h3>
@@ -306,6 +466,7 @@
                             <p class="job-location"><i class="fas fa-map-marker-alt"></i> Kinshasa, RDC</p>
                         </div>
                         <div class="job-item-right">
+                            <span class="job-status-badge"></span>
                             <div class="job-badge">CDI</div>
                             <span class="job-date"><i class="fas fa-clock"></i> 23/01/2026</span>
                             <a href="#" class="btn-apply" 
@@ -321,7 +482,7 @@
                 </div>
 
                 <!-- Job Item 7 - Escorteur 2 -->
-                <div class="job-item" data-deadline="2026-03-18">
+                <div class="job-item" data-deadline="2026-03-01">
                     <div class="job-item-content">
                         <div class="job-item-left">
                             <h3 class="job-title">Escorteur (Escort)</h3>
@@ -329,6 +490,7 @@
                             <p class="job-location"><i class="fas fa-map-marker-alt"></i> Kinshasa, RDC</p>
                         </div>
                         <div class="job-item-right">
+                            <span class="job-status-badge"></span>
                             <div class="job-badge">CDI</div>
                             <span class="job-date"><i class="fas fa-clock"></i> 23/01/2026</span>
                             <a href="#" class="btn-apply" 
@@ -533,7 +695,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Écosystèmes Cosmos</h4>
+                    <h4>Écosystèmes COSMOS</h4>
                     <ul>
                         <li><a href="cosmos-rh.html">Cosmos RH</a></li>
                         <li><a href="cosmos-tic.html">Cosmos TIC</a></li>
@@ -560,6 +722,35 @@
     </footer>
 
 
+    <script>
+        // ===== STATUS BADGES =====
+        (function() {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            document.querySelectorAll('.job-item[data-deadline]').forEach(function(item) {
+                const deadlineStr = item.getAttribute('data-deadline');
+                const badge = item.querySelector('.job-status-badge');
+                if (!badge || !deadlineStr) return;
+
+                const deadline = new Date(deadlineStr);
+                deadline.setHours(0, 0, 0, 0);
+                const diffDays = Math.round((deadline - today) / (1000 * 60 * 60 * 24));
+
+                if (diffDays < 0) {
+                    badge.className = 'job-status-badge status-expired-badge';
+                    badge.innerHTML = '<span class="status-dot-inline status-expired"></span> Expirée';
+                    item.classList.add('job-expired');
+                } else if (diffDays <= 3) {
+                    badge.className = 'job-status-badge status-urgent-badge';
+                    badge.innerHTML = '<span class="status-dot-inline status-urgent"></span> Moins de 3 jours';
+                } else {
+                    badge.className = 'job-status-badge status-active-badge';
+                    badge.innerHTML = '<span class="status-dot-inline status-active"></span> En cours';
+                }
+            });
+        })();
+    </script>
     <script src="js/main.js"></script>
     <script src="js/application-modal-simple.js"></script>
     <script>
@@ -643,8 +834,8 @@
             const paginationNumbers = document.querySelector('.pagination-numbers');
             const prevBtn = document.querySelector('.pagination-btn.prev');
             const nextBtn = document.querySelector('.pagination-btn.next');
-            const jobsPerPage = 9;
-            let totalJobsCount = 7;
+            const jobsPerPage = 30;
+            let totalJobsCount = 9;
             let currentPage = 1;
             let filteredJobItems = [];
 
@@ -780,63 +971,7 @@
             filterJobs();
         });
 
-        // ===== GESTION DES OFFRES EXPIRÉES =====
-        document.addEventListener('DOMContentLoaded', function() {
-            function checkJobDeadlines() {
-                const today = new Date();
-                today.setHours(0, 0, 0, 0); // Réinitialiser l'heure pour comparer uniquement les dates
-                
-                const jobItems = document.querySelectorAll('.job-item');
-                
-                jobItems.forEach(function(jobItem) {
-                    const deadlineStr = jobItem.getAttribute('data-deadline');
-                    
-                    if (!deadlineStr) {
-                        console.warn('Aucune date limite trouvée pour cette offre:', jobItem);
-                        return;
-                    }
-                    
-                    const deadline = new Date(deadlineStr);
-                    deadline.setHours(0, 0, 0, 0);
-                    
-                    const applyBtn = jobItem.querySelector('.btn-apply');
-                    
-                    if (!applyBtn) {
-                        console.warn('Bouton de candidature non trouvé pour cette offre:', jobItem);
-                        return;
-                    }
-                    
-                    // Si la date limite est dépassée
-                    if (deadline < today) {
-                        // Désactiver le bouton
-                        applyBtn.style.pointerEvents = 'none';
-                        applyBtn.style.opacity = '0.6';
-                        applyBtn.style.cursor = 'not-allowed';
-                        applyBtn.style.backgroundColor = '#999';
-                        
-                        // Changer le texte du bouton
-                        applyBtn.innerHTML = '<i class="fas fa-times-circle"></i> Offre expirée';
-                        
-                        // Empêcher le clic
-                        applyBtn.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                        });
-                        
-                        // Ajouter une classe pour identifier les offres expirées
-                        jobItem.classList.add('job-expired');
-                        
-                        console.log('Offre expirée:', jobItem.querySelector('.job-title').textContent);
-                    } else {
-                        // L'offre est encore valide
-                        console.log('Offre valide:', jobItem.querySelector('.job-title').textContent);
-                    }
-                });
-            }
-            
-            // Exécuter la vérification au chargement de la page
-            checkJobDeadlines();
-        });
+
 
         // ===== AD BANNER SLIDER =====
         const adSlidePages = document.querySelectorAll('.ad-slide-page');
@@ -997,3 +1132,4 @@
 </body>
 
 </html>
+

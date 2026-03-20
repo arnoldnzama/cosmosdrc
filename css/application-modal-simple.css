@@ -670,23 +670,23 @@ body.modal-open {
     border-radius: 3px;
 }
 
-/* ===== Badge salaire dans le modal ===== */
-.modal-salary-badge {
-    display: inline-flex !important;
+/* ===== Salaire, Secteur, Effectif dans le modal ===== */
+.modal-salary-badge,
+#modal-job-sector,
+#modal-job-headcount {
+    display: flex !important;
     align-items: center;
-    gap: 8px;
-    margin: 10px 0 0 0;
-    padding: 6px 14px;
-    background: linear-gradient(135deg, #d4f5e2, #a8edca);
-    border: 1px solid #6fcf97;
-    border-radius: 20px;
-    color: #1a7a45;
-    font-size: 0.9rem;
-    font-weight: 600;
-    width: fit-content;
+    margin: 6px 0 !important;
+    color: #6c757d;
+    font-size: 0.95rem;
 }
 
-.modal-salary-badge i {
-    color: #27ae60;
-    font-size: 0.85rem;
+.modal-salary-badge i,
+#modal-job-sector i,
+#modal-job-headcount i {
+    margin-right: 8px;
+    color: #667eea;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
 }

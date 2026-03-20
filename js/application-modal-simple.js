@@ -41,6 +41,12 @@ class ApplicationModalSimple {
                             <p id="modal-job-salary" class="modal-salary-badge" style="display:none;">
                                 <i class="fas fa-dollar-sign"></i> <span id="modal-job-salary-value"></span>
                             </p>
+                            <p id="modal-job-sector" style="display:none;">
+                                <i class="fas fa-industry"></i> <span id="modal-job-sector-value"></span>
+                            </p>
+                            <p id="modal-job-headcount" style="display:none;">
+                                <i class="fas fa-users"></i> <span id="modal-job-headcount-value"></span>
+                            </p>
                         </div>
 
                         <!-- Description complète de l'offre -->
@@ -306,6 +312,8 @@ class ApplicationModalSimple {
             company: button.dataset.jobCompany || button.getAttribute('data-job-company'),
             location: button.dataset.jobLocation || button.getAttribute('data-job-location'),
             salary: button.dataset.jobSalary || button.getAttribute('data-job-salary') || '',
+            sector: button.dataset.jobSector || button.getAttribute('data-job-sector') || '',
+            headcount: button.dataset.jobHeadcount || button.getAttribute('data-job-headcount') || '',
             description: button.dataset.jobDescription || button.getAttribute('data-job-description') || 'Description non disponible'
         };
 
@@ -325,6 +333,26 @@ class ApplicationModalSimple {
             salaryEl.style.display = 'flex';
         } else {
             salaryEl.style.display = 'none';
+        }
+
+        // Afficher le secteur si disponible
+        const sectorEl = document.getElementById('modal-job-sector');
+        const sectorValEl = document.getElementById('modal-job-sector-value');
+        if (this.currentJobData.sector) {
+            sectorValEl.textContent = this.currentJobData.sector;
+            sectorEl.style.display = 'flex';
+        } else {
+            sectorEl.style.display = 'none';
+        }
+
+        // Afficher l'effectif recherché si disponible
+        const headcountEl = document.getElementById('modal-job-headcount');
+        const headcountValEl = document.getElementById('modal-job-headcount-value');
+        if (this.currentJobData.headcount) {
+            headcountValEl.textContent = this.currentJobData.headcount;
+            headcountEl.style.display = 'flex';
+        } else {
+            headcountEl.style.display = 'none';
         }
 
         // Remplir les champs cachés

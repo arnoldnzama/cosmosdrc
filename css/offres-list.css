@@ -146,30 +146,21 @@
 
 /* Styles pour les offres expirées */
 .job-item.job-expired {
-    opacity: 0.7;
+    opacity: 0.85;
     background: #f9fafb;
 }
 
 .job-item.job-expired:hover {
-    border-color: #e5e7eb;
-    box-shadow: none;
-    transform: none;
-    cursor: default;
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+    transform: translateY(-2px);
 }
 
 .job-item.job-expired .job-title {
     color: #6b7280;
 }
 
-.job-item.job-expired .btn-apply {
-    background: #9ca3af !important;
-    cursor: not-allowed !important;
-    pointer-events: none !important;
-}
-
-.job-item.job-expired .btn-apply i {
-    margin-right: 8px;
-}
+/* Le bouton reste identique aux autres pour les offres expirées */
 
 /* Offset pour le header fixe */
 .search-filters {
@@ -275,5 +266,144 @@
     }
     .offres-hero-content h1 {
         font-size: 1.5rem;
+    }
+}
+
+/* ===== Section Heading ===== */
+.section-heading-wrapper {
+    text-align: center;
+    padding: 48px 0 8px;
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.section-heading-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #3fa7de, #7dd3fc);
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+/* ===== STATUS LEGEND ===== */
+.status-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.status-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+/* ===== STATUS DOTS (legend + inline) ===== */
+.status-dot,
+.status-dot-inline {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.status-dot.status-active,
+.status-dot-inline.status-active {
+    background-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+    animation: blink-green 1.4s ease-in-out infinite;
+}
+
+.status-dot.status-urgent,
+.status-dot-inline.status-urgent {
+    background-color: #ea580c;
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.2);
+    animation: blink-orange 1.4s ease-in-out infinite;
+}
+
+.status-dot.status-expired,
+.status-dot-inline.status-expired {
+    background-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+    animation: blink-red 1.4s ease-in-out infinite;
+}
+
+/* ===== BLINK ANIMATIONS ===== */
+@keyframes blink-green {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.25); }
+    50%       { opacity: 0.4; box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.08); }
+}
+
+@keyframes blink-orange {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.25); }
+    50%       { opacity: 0.4; box-shadow: 0 0 0 6px rgba(234, 88, 12, 0.08); }
+}
+
+@keyframes blink-red {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25); }
+    50%       { opacity: 0.4; box-shadow: 0 0 0 6px rgba(220, 38, 38, 0.08); }
+}
+
+/* ===== STATUS BADGE PILL ===== */
+.job-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+}
+
+.status-active-badge {
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+.status-urgent-badge {
+    background-color: #ffedd5;
+    color: #c2410c;
+    border: 1px solid #fed7aa;
+}
+
+.status-expired-badge {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .status-legend {
+        gap: 16px;
+    }
+    .job-status-badge {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .status-legend {
+        gap: 12px;
+    }
+    .status-legend-item {
+        font-size: 0.82rem;
     }
 }

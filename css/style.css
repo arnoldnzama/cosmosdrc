@@ -211,13 +211,13 @@ a:hover {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.2rem;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.2rem;
     margin: 0;
 }
 
@@ -228,11 +228,13 @@ a:hover {
 .nav-links a {
     color: var(--text-dark);
     font-weight: 500;
+    font-size: 0.88rem;
     padding: 0.5rem 0;
     position: relative;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -5383,6 +5385,41 @@ FRES.HTML SPECIFIC STYLES ===== */
 .partner-logo-modern:hover img {
     filter: grayscale(0%) opacity(1);
     transform: scale(1.12);
+}
+
+/* Logo avec fond sombre (ex: Advans dont les couleurs sont claires) */
+.partner-logo-dark-bg {
+    background-color: #1a1a2e;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
+.partner-logo-dark-bg img {
+    filter: grayscale(0%) opacity(1) !important;
+}
+
+.partner-logo-dark-bg:hover img {
+    filter: grayscale(0%) opacity(1) !important;
+}
+
+/* Logos agrandis (Socium, Vlisco, GTS) */
+.partner-logo-lg img {
+    max-height: 200px !important;
+    max-width: 320px !important;
+}
+
+@media (max-width: 768px) {
+    .partner-logo-lg img {
+        max-height: 160px !important;
+        max-width: 240px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .partner-logo-lg img {
+        max-height: 130px !important;
+        max-width: 200px !important;
+    }
 }
 
 /* Responsive Design */
