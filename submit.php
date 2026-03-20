@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Alias pour application-submit.php
- * Cosmos Group - Système de recrutement
+ * COSMOS Group - Système de recrutement
  * 
  * Ce fichier existe pour maintenir la compatibilité avec les formulaires
  * qui utilisent submit.php comme action. Il redirige simplement vers

@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Script de traitement du formulaire de contact
- * Cosmos Group - Système de contact
+ * COSMOS Group - Système de contact
  * Destinataire : contact1@emergencemag.net
  */
 
@@ -85,10 +85,10 @@ try {
     
     // Définir les constantes nécessaires si elles n'existent pas déjà
     if (!defined('SITE_NAME')) {
-        define('SITE_NAME', 'Cosmos Group');
+        define('SITE_NAME', 'COSMOS Group');
     }
     if (!defined('SITE_URL')) {
-        define('SITE_URL', 'https://cosmos.emergencemag.net');
+        define('SITE_URL', 'https://COSMOS.emergencemag.net');
     }
     
     error_log("✅ Tous les fichiers chargés");

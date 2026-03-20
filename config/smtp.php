@@ -1,12 +1,12 @@
-<?php
+﻿<?php
 /**
  * Configuration SMTP multi-fournisseur avancée
- * Cosmos Group - Chaque canal peut utiliser différents fournisseurs avec basculement automatique
+ * COSMOS Group - Chaque canal peut utiliser différents fournisseurs avec basculement automatique
  */
 
 $defaultFrom = [
     'from_email' => getenv('SMTP_FROM_EMAIL') ?: 'contact1@emergencemag.net',
-    'from_name'  => getenv('SMTP_FROM_NAME') ?: 'Cosmos Group',
+    'from_name'  => getenv('SMTP_FROM_NAME') ?: 'COSMOS Group',
 ];
 
 // Configuration des fournisseurs disponibles

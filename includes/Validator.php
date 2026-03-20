@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Classe Validator pour la validation et la sécurité des données
- * Cosmos Group - Système de recrutement
+ * COSMOS Group - Système de recrutement
  */
 
 require_once __DIR__ . '/../config/database.php';

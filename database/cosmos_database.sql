@@ -1,5 +1,5 @@
 -- ============================================================================
--- Base de données Cosmos Group - Système de recrutement
+-- Base de données COSMOS Group - Système de recrutement
 -- Version: 3.0 Simplifié
 -- Date: 11 février 2026
 -- Description: Schéma adapté au formulaire modal simplifié
@@ -48,6 +48,10 @@ CREATE TABLE IF NOT EXISTS `job_applications` (
   
   -- Statut et suivi
   `status` enum('nouveau','en_cours','accepte','refuse') NOT NULL DEFAULT 'nouveau' COMMENT 'Statut de la candidature',
+  
+  -- Informations RH complémentaires
+  `disponibilite` varchar(50) DEFAULT NULL COMMENT 'Disponibilité / préavis du candidat',
+  `pretention_salariale` decimal(10,2) DEFAULT NULL COMMENT 'Prétention salariale en USD',
   
   -- Informations techniques
   `ip_address` varchar(45) DEFAULT NULL COMMENT 'Adresse IP du candidat',
@@ -206,8 +210,8 @@ ORDER BY total_candidatures DESC;
 -- ) VALUES (
 --     'cv_jean_kabongo.pdf', 'uploads/cv/cv_1234567890_abc123.pdf',
 --     'lettre_jean_kabongo.pdf', 'uploads/cv/lettre_1234567890_def456.pdf',
---     'Opérateur du pont-bascule (Weighbridge Operator)', 'Cosmos Group', 'Kinshasa, RDC',
---     'Dans le cadre du renforcement de ses équipes, Cosmos Group recrute un Opérateur du pont-bascule.',
+--     'Opérateur du pont-bascule (Weighbridge Operator)', 'COSMOS Group', 'Kinshasa, RDC',
+--     'Dans le cadre du renforcement de ses équipes, COSMOS Group recrute un Opérateur du pont-bascule.',
 --     'nouveau', '127.0.0.1'
 -- );
 

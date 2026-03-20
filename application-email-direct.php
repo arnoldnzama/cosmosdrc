@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Script d'envoi direct d'emails pour les candidatures
- * Cosmos Group - Système de recrutement
+ * COSMOS Group - Système de recrutement
  * Version: Email Direct (sans base de données)
  * Destinataire: web@emergencemag.net
  */

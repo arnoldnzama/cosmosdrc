@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Script de configuration de la base de données
- * Cosmos Group - Installation
+ * COSMOS Group - Installation
  */
 
 error_reporting(E_ALL);

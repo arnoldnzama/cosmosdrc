@@ -1,4 +1,4 @@
-// Logique Offres d'emploi simplifiée (toutes les offres visibles)
+﻿// Logique Offres d'emploi simplifiée (toutes les offres visibles)
 // - Charge toutes les offres depuis api-offres.php
 // - Ouvre un modal de détail (api-offre.php)
 // - Déclenche le modal de candidature (main.js) avec offer_id
@@ -78,7 +78,7 @@
 
   function renderOfferCard(offer) {
     const title = offer.title || 'Offre';
-    const company = offer.company || 'Cosmos Group';
+    const company = offer.company || 'COSMOS Group';
     const location = offer.location || '';
     const contract = (offer.contract_type || '').toUpperCase();
     const created = offer.created_at ? formatDateFr(offer.created_at) : '';
@@ -394,7 +394,7 @@
 
         const tags = toArray(o.tags).slice(0, 10).map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join(' ');
         const metaLines = [
-          `<p><strong>Entreprise:</strong> ${escapeHtml(o.company || 'Cosmos Group')}</p>`,
+          `<p><strong>Entreprise:</strong> ${escapeHtml(o.company || 'COSMOS Group')}</p>`,
           `<p><strong>Lieu:</strong> ${escapeHtml(o.location || '')}</p>`,
           o.contract_type ? `<p><strong>Contrat:</strong> ${escapeHtml(String(o.contract_type).toUpperCase())}</p>` : '',
           o.experience_level ? `<p><strong>Expérience:</strong> ${escapeHtml(o.experience_level)}</p>` : '',
@@ -422,7 +422,7 @@
           if (modalApply.disabled) return;
           modalApi.close();
           if (typeof window.openApplicationModal === 'function') {
-            window.openApplicationModal(o.title || '', o.company || 'Cosmos Group', o.location || '', o.description || '', toArray(o.tags));
+            window.openApplicationModal(o.title || '', o.company || 'COSMOS Group', o.location || '', o.description || '', toArray(o.tags));
           } else {
             alert("Le formulaire de candidature n'est pas disponible.");
           }

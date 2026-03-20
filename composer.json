@@ -1,11 +1,11 @@
 {
     "name": "cosmos-group/recrutement",
-    "description": "Système de recrutement et gestion des candidatures - Cosmos Group",
+    "description": "Système de recrutement et gestion des candidatures - COSMOS Group",
     "type": "project",
     "license": "proprietary",
     "authors": [
         {
-            "name": "Cosmos Group",
+            "name": "COSMOS Group",
             "email": "contact1@emergencemag.net"
         }
     ],

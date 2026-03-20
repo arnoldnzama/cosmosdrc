@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Configuration de la base de données
- * Cosmos Group - Système de recrutement
+ * COSMOS Group - Système de recrutement
  */
 
 // Charger les variables d'environnement depuis .env
@@ -18,8 +18,8 @@ define('DB_PASS', getenv('COSMOS_DB_PASS') ?: 'F@mille123');
 define('DB_CHARSET', getenv('COSMOS_DB_CHARSET') ?: 'utf8mb4');
 
 // Configuration du site
-define('SITE_NAME', 'Cosmos Group');
-define('SITE_URL', 'https://cosmos.emergencemag.net/');
+define('SITE_NAME', 'COSMOS Group');
+define('SITE_URL', 'https://COSMOS.emergencemag.net/');
 
 // Configuration des emails (depuis .env)
 define('ADMIN_EMAIL', getenv('ADMIN_EMAIL') ?: 'web@emergencemag.net');

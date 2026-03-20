@@ -1,6 +1,6 @@
-/**
+﻿/**
  * Styles pour la liste des offres d'emploi
- * Cosmos Group - Version Liste
+ * COSMOS Group - Version Liste
  */
 
 /* Liste des offres */
@@ -329,8 +329,8 @@
 
 .status-dot.status-urgent,
 .status-dot-inline.status-urgent {
-    background-color: #ea580c;
-    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.2);
+    background-color: #eab308;
+    box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.2);
     animation: blink-orange 1.4s ease-in-out infinite;
 }
 
@@ -348,8 +348,8 @@
 }
 
 @keyframes blink-orange {
-    0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.25); }
-    50%       { opacity: 0.4; box-shadow: 0 0 0 6px rgba(234, 88, 12, 0.08); }
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.25); }
+    50%       { opacity: 0.4; box-shadow: 0 0 0 6px rgba(234, 179, 8, 0.08); }
 }
 
 @keyframes blink-red {
@@ -377,8 +377,8 @@
 }
 
 .status-urgent-badge {
-    background-color: #ffedd5;
-    color: #c2410c;
+    background-color: #fefce8;
+    color: #854d0e;
     border: 1px solid #fed7aa;
 }
 

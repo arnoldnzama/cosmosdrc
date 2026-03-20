@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Classe Database pour la gestion de la connexion à la base de données
- * Cosmos Group - Système de recrutement
+ * COSMOS Group - Système de recrutement
  */
 
 require_once __DIR__ . '/../config/database.php';
@@ -106,16 +106,30 @@ class Database {
         $sql = "INSERT INTO job_applications (
             cv_filename, cv_path, lettre_filename, lettre_path, 
             job_title, job_company, job_location, job_description,
+            disponibilite, pretention_salariale,
             ip_address, user_agent, created_at
         ) VALUES (
             :cv_filename, :cv_path, :lettre_filename, :lettre_path,
             :job_title, :job_company, :job_location, :job_description,
+            :disponibilite, :pretention_salariale,
             :ip_address, :user_agent, NOW()
         )";
 
+        // Ensure only expected keys are passed
+        $allowed = ['cv_filename','cv_path','lettre_filename','lettre_path',
+                    'job_title','job_company','job_location','job_description',
+                    'disponibilite','pretention_salariale','ip_address','user_agent'];
+        $filtered = array_intersect_key($data, array_flip($allowed));
+        // Fill missing optional fields with null
+        foreach ($allowed as $key) {
+            if (!array_key_exists($key, $filtered)) {
+                $filtered[$key] = null;
+            }
+        }
+
         try {
             $stmt = $this->connection->prepare($sql);
-            $stmt->execute($data);
+            $stmt->execute($filtered);
             return $this->connection->lastInsertId();
         } catch (PDOException $e) {
             $this->lastError = $e->getMessage();

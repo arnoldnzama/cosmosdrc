@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Interface d'administration des candidatures
- * Cosmos Group - Système de candidature
+ * COSMOS Group - Système de candidature
  */
 
 // Démarrer la session avant toute utilisation de $_SESSION
@@ -31,7 +31,7 @@ if (!$isAuthenticated) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Administration - Cosmos Group</title>
+        <title>Administration - COSMOS Group</title>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="bg-gray-100 min-h-screen flex items-center justify-center">
@@ -57,31 +57,48 @@ if (!$isAuthenticated) {
 
 // Traitement des actions (nécessite une BDD fonctionnelle)
 if (isset($_POST['action'])) {
-    try {
-        $db = Database::getInstance();
-    } catch (Exception $e) {
-        $dbError = $e->getMessage();
-        $db = null;
-    }
-    if ($db) {
-        switch ($_POST['action']) {
-        case 'update_status':
-            if (isset($_POST['application_id']) && isset($_POST['status'])) {
-                $sql = "UPDATE job_applications SET status = :status WHERE id = :id";
-                $db->executeQuery($sql, [
-                    'status' => $_POST['status'],
-                    'id' => $_POST['application_id']
-                ]);
+    $jsonFile = __DIR__ . '/data/applications.json';
+
+    // Mise à jour du statut dans le JSON
+    if ($_POST['action'] === 'update_status' && isset($_POST['application_id'], $_POST['status'])) {
+        $validStatuses = ['nouveau', 'en_cours', 'accepte', 'refuse'];
+        if (in_array($_POST['status'], $validStatuses)) {
+            $apps = file_exists($jsonFile) ? (json_decode(file_get_contents($jsonFile), true) ?: []) : [];
+            foreach ($apps as &$app) {
+                if ((int)$app['id'] === (int)$_POST['application_id']) {
+                    $app['status'] = $_POST['status'];
+                    $app['updated_at'] = date('Y-m-d H:i:s');
+                    break;
+                }
             }
-            break;
-            
-        case 'delete':
-            if (isset($_POST['application_id'])) {
-                $sql = "DELETE FROM job_applications WHERE id = :id";
-                $db->executeQuery($sql, ['id' => $_POST['application_id']]);
-            }
-            break;
+            unset($app);
+            file_put_contents($jsonFile, json_encode($apps, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
         }
+    }
+
+    // Suppression dans le JSON
+    if ($_POST['action'] === 'delete' && isset($_POST['application_id'])) {
+        $apps = file_exists($jsonFile) ? (json_decode(file_get_contents($jsonFile), true) ?: []) : [];
+        $apps = array_values(array_filter($apps, fn($a) => (int)$a['id'] !== (int)$_POST['application_id']));
+        file_put_contents($jsonFile, json_encode($apps, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    }
+
+    // Tenter aussi la mise à jour en BDD (best-effort)
+    try {
+        require_once __DIR__ . '/config/database.php';
+        require_once __DIR__ . '/includes/Database.php';
+        $db = Database::getInstance();
+        if ($_POST['action'] === 'update_status' && isset($_POST['application_id'], $_POST['status'])) {
+            $db->executeQuery("UPDATE job_applications SET status = :status WHERE id = :id", [
+                'status' => $_POST['status'],
+                'id' => $_POST['application_id']
+            ]);
+        }
+        if ($_POST['action'] === 'delete' && isset($_POST['application_id'])) {
+            $db->executeQuery("DELETE FROM job_applications WHERE id = :id", ['id' => $_POST['application_id']]);
+        }
+    } catch (Exception $e) {
+        error_log("admin-applications: BDD action error - " . $e->getMessage());
     }
 }
 
@@ -126,7 +143,6 @@ if ($applications === null) {
         $applications = []; // Tableau vide si les deux sources échouent
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -318,7 +334,7 @@ if ($applications === null) {
                                     <i class="fas fa-info-circle mr-1"></i>Voir documents
                                 </div>
                                 <div class="text-sm text-gray-400 text-xs">
-                                    Infos dans CV/Lettre
+                                    <?= !empty($app['disponibilite']) ? htmlspecialchars($app['disponibilite']) : 'Infos dans CV/Lettre' ?>
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -641,6 +657,8 @@ if ($applications === null) {
                         <p><strong>Entreprise:</strong> ${application.job_company}</p>
                         <p><strong>Lieu:</strong> ${application.job_location}</p>
                         ${application.job_description ? '<p><strong>Description:</strong> ' + application.job_description.substring(0, 200) + '...</p>' : ''}
+                        ${application.disponibilite ? '<p><strong>Disponibilité:</strong> ' + application.disponibilite + '</p>' : ''}
+                        ${application.pretention_salariale ? '<p><strong>Prétention salariale:</strong> ' + application.pretention_salariale + ' USD</p>' : ''}
                     </div>
                     
                     <div>

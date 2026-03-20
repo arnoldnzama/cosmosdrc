@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Script de soumission de candidature avec base de données
- * Cosmos Group - Système de recrutement
+ * COSMOS Group - Système de recrutement
  * Version: Database Integration
  * Conforme au schéma cosmos_database.sql
  */
@@ -181,10 +181,9 @@ try {
         'job_location' => $sanitizedData['job_location'],
         'job_description' => $sanitizedData['job_description'] ?? null,
         
-        // Infos RH
+        // Informations RH complémentaires
+        'disponibilite' => $sanitizedData['disponibilite'] ?? null,
         'pretention_salariale' => !empty($sanitizedData['pretention_salariale']) ? (float)$sanitizedData['pretention_salariale'] : null,
-        'disponibilite' => $sanitizedData['disponibilite'],
-        'consent_contact' => !empty($sanitizedData['consent_contact']) && $sanitizedData['consent_contact'] == '1' ? 1 : 0,
         
         // Métadonnées techniques
         'ip_address' => $_SERVER['REMOTE_ADDR'] ?? null,
@@ -212,6 +211,21 @@ try {
     }
     
     error_log("✅ Candidature enregistrée avec ID: " . $applicationId);
+
+    // Synchroniser avec le fichier JSON (pour le dashboard admin)
+    $jsonFile = __DIR__ . '/data/applications.json';
+    $jsonRecord = array_merge($dbData, [
+        'id' => (int)$applicationId,
+        'status' => 'nouveau',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => null
+    ]);
+    $existing = [];
+    if (file_exists($jsonFile)) {
+        $existing = json_decode(file_get_contents($jsonFile), true) ?: [];
+    }
+    array_unshift($existing, $jsonRecord);
+    file_put_contents($jsonFile, json_encode($existing, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
     // Envoyer les emails
     $emailService = new EmailService();

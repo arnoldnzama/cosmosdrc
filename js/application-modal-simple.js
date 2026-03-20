@@ -1,5 +1,5 @@
-/**
- * Modal de candidature simplifié - Cosmos Group
+﻿/**
+ * Modal de candidature simplifié - COSMOS Group
  * Version: 3.0 - 2026
  * Description de l'offre + Upload CV et Lettre de motivation uniquement
  */
@@ -161,7 +161,7 @@ class ApplicationModalSimple {
                                     <label class="consent-label">
                                         <input type="checkbox" id="consent_data" name="consent_data" value="1" required>
                                         <span class="consent-text">
-                                            J'accepte que mes données personnelles soient traitées par Cosmos Group dans le cadre de ma candidature, conformément à notre
+                                            J'accepte que mes données personnelles soient traitées par COSMOS Group dans le cadre de ma candidature, conformément à notre
                                             <a href="politique-confidentialite.html" target="_blank">politique de confidentialité</a>. *
                                         </span>
                                     </label>
@@ -172,7 +172,7 @@ class ApplicationModalSimple {
                                     <label class="consent-label">
                                         <input type="checkbox" id="consent_contact" name="consent_contact" value="1">
                                         <span class="consent-text">
-                                            J'accepte d'être contacté(e) par Cosmos Group pour d'autres opportunités correspondant à mon profil. (optionnel)
+                                            J'accepte d'être contacté(e) par COSMOS Group pour d'autres opportunités correspondant à mon profil. (optionnel)
                                         </span>
                                     </label>
                                 </div>

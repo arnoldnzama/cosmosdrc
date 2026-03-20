@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Classe EmailService pour l'envoi d'emails
- * Cosmos Group - Système de recrutement
+ * COSMOS Group - Système de recrutement
  * Multi-fournisseur SMTP : Gmail, Outlook, Yahoo, serveur custom, etc.
  */
 
@@ -419,7 +419,7 @@ class EmailService {
      */
     public function sendCandidateConfirmation($applicationData) {
         $to = $applicationData['email'];
-        $subject = 'Confirmation de votre candidature - Cosmos Group';
+        $subject = 'Confirmation de votre candidature - COSMOS Group';
         $bodyHtml = $this->buildCandidateConfirmationMessage($applicationData);
         $bodyText = strip_tags(str_replace(['<br>', '<br/>', '<br />'], "\n", $bodyHtml));
         
@@ -465,7 +465,7 @@ class EmailService {
      */
     public function sendContactConfirmation($contactData) {
         $to = $contactData['email'];
-        $subject = 'Confirmation de réception - Cosmos Group';
+        $subject = 'Confirmation de réception - COSMOS Group';
         $bodyHtml = $this->buildContactConfirmationMessage($contactData);
         $bodyText = strip_tags(str_replace(['<br>', '<br/>', '<br />'], "\n", $bodyHtml));
         
@@ -488,7 +488,7 @@ class EmailService {
     public function sendNewsletterEmail($email) {
         $provider = $this->getProviderConfig(self::CHANNEL_NEWSLETTER);
         $to = $provider['to_email'];
-        $subject = 'Nouvel abonnement newsletter - Cosmos Group';
+        $subject = 'Nouvel abonnement newsletter - COSMOS Group';
         $bodyText = "Nouvel abonnement à la newsletter\n\nEmail: " . $email . "\nDate: " . date('d/m/Y H:i:s') . "\n";
         
         error_log("📧 [Fournisseur newsletter] Envoi email vers: " . $to);
@@ -510,7 +510,7 @@ class EmailService {
     public function sendNewsletterConfirmation($email) {
         $provider = $this->getProviderConfig(self::CHANNEL_NEWSLETTER);
         $to = $email;
-        $subject = 'Confirmation d\'abonnement - Newsletter Cosmos Group';
+        $subject = 'Confirmation d\'abonnement - Newsletter COSMOS Group';
         
         $emailSafe = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
         $newsletterEmail = htmlspecialchars($provider['to_email'], ENT_QUOTES, 'UTF-8');
@@ -531,8 +531,8 @@ class EmailService {
                     <!-- Header -->
                     <tr>
                         <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px 30px; text-align: center;">
-                            <img src="' . SITE_URL . '/logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group" style="height: 42px; margin-bottom: 15px;" />
-                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">Cosmos Group</h1>
+                            <img src="' . SITE_URL . '/logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS Group" style="height: 42px; margin-bottom: 15px;" />
+                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">COSMOS Group</h1>
                             <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 14px; opacity: 0.9;">Newsletter</p>
                         </td>
                     </tr>
@@ -556,7 +556,7 @@ class EmailService {
                             </p>
                             
                             <p style="margin: 0 0 25px 0; color: #4b5563; font-size: 16px; line-height: 1.6;">
-                                Merci pour votre inscription à la newsletter Cosmos Group ! Vous recevrez désormais nos dernières offres d\'emploi et actualités directement dans votre boîte mail.
+                                Merci pour votre inscription à la newsletter COSMOS Group ! Vous recevrez désormais nos dernières offres d\'emploi et actualités directement dans votre boîte mail.
                             </p>
                             
                             <!-- Benefits Box -->
@@ -610,7 +610,7 @@ class EmailService {
                     <tr>
                         <td style="background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
                             <p style="margin: 0 0 10px 0; color: #1f2937; font-size: 16px; font-weight: 600;">
-                                L\'équipe Cosmos Group
+                                L\'équipe COSMOS Group
                             </p>
                             <p style="margin: 0 0 15px 0; color: #6b7280; font-size: 14px;">
                                 39 Boulevard du 30 juin, Gombe/Kinshasa
@@ -707,8 +707,8 @@ class EmailService {
                     <!-- Header -->
                     <tr>
                         <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px 30px; text-align: center;">
-                            <img src="' . SITE_URL . '/logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group" style="height: 42px; margin-bottom: 15px;" />
-                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">Cosmos Group</h1>
+                            <img src="' . SITE_URL . '/logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS Group" style="height: 42px; margin-bottom: 15px;" />
+                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">COSMOS Group</h1>
                             <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 14px; opacity: 0.9;">Votre partenaire RH de confiance</p>
                         </td>
                     </tr>
@@ -790,6 +790,10 @@ class EmailService {
                             <p style="margin: 25px 0 0 0; color: #4b5563; font-size: 16px; line-height: 1.6;">
                                 Nous vous remercions de l\'intérêt que vous portez à notre entreprise et vous souhaitons bonne chance pour la suite du processus de recrutement.
                             </p>
+                            
+                            <p style="margin: 20px 0 0 0; color: #6b7280; font-size: 14px; line-height: 1.6; font-style: italic;">
+                                Passé un délai de trois (3) semaines après la soumission de votre candidature, sans retour de notre part, vous pouvez considérer que celle-ci n\'a pas été retenue.
+                            </p>
                         </td>
                     </tr>
                     
@@ -797,7 +801,7 @@ class EmailService {
                     <tr>
                         <td style="background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
                             <p style="margin: 0 0 10px 0; color: #1f2937; font-size: 16px; font-weight: 600;">
-                                L\'équipe RH de Cosmos Group
+                                L\'équipe RH de COSMOS Group
                             </p>
                             <p style="margin: 0 0 15px 0; color: #6b7280; font-size: 14px;">
                                 39 Boulevard du 30 juin, Gombe/Kinshasa
@@ -862,8 +866,8 @@ class EmailService {
                     <!-- Header -->
                     <tr>
                         <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px 30px; text-align: center;">
-                            <img src="' . SITE_URL . '/logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group" style="height: 42px; margin-bottom: 15px;" />
-                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">Cosmos Group</h1>
+                            <img src="' . SITE_URL . '/logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS Group" style="height: 42px; margin-bottom: 15px;" />
+                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">COSMOS Group</h1>
                             <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 14px; opacity: 0.9;">Votre partenaire RH de confiance</p>
                         </td>
                     </tr>
@@ -946,7 +950,7 @@ class EmailService {
                     <tr>
                         <td style="background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
                             <p style="margin: 0 0 10px 0; color: #1f2937; font-size: 16px; font-weight: 600;">
-                                L\'équipe Cosmos Group
+                                L\'équipe COSMOS Group
                             </p>
                             <p style="margin: 0 0 15px 0; color: #6b7280; font-size: 14px;">
                                 39 Boulevard du 30 juin, Gombe/Kinshasa
@@ -1123,7 +1127,7 @@ class EmailService {
     public function sendAcademyEmail($academyData) {
         // Utiliser le canal contact mais avec une adresse spécifique
         $to = 'academie@emergencemag.net';
-        $subject = 'Nouvelle inscription Cosmos Academy - ' . $academyData['programme'];
+        $subject = 'Nouvelle inscription COSMOS Academy - ' . $academyData['programme'];
         $bodyText = $this->buildAcademyEmailMessage($academyData);
         $replyTo = $academyData['email'];
         $replyToName = $academyData['nom_prenom'];
@@ -1146,7 +1150,7 @@ class EmailService {
      */
     public function sendAcademyConfirmation($academyData) {
         $to = $academyData['email'];
-        $subject = 'Confirmation d\'inscription - Cosmos Academy';
+        $subject = 'Confirmation d\'inscription - COSMOS Academy';
         $bodyHtml = $this->buildAcademyConfirmationMessage($academyData);
         $bodyText = strip_tags(str_replace(['<br>', '<br/>', '<br />'], "\n", $bodyHtml));
         
@@ -1185,7 +1189,7 @@ class EmailService {
             'autre' => 'Autre'
         ];
         
-        $message = "Nouvelle inscription à Cosmos Academy\n\n";
+        $message = "Nouvelle inscription à COSMOS Academy\n\n";
         $message .= "=== INFORMATIONS DU CANDIDAT ===\n\n";
         $message .= "Nom et prénom : " . $data['nom_prenom'] . "\n";
         $message .= "Âge : " . $data['age'] . " ans\n";
@@ -1212,7 +1216,7 @@ class EmailService {
         $message .= "Date d'inscription : " . date('d/m/Y H:i:s') . "\n\n";
         
         $message .= "---\n";
-        $message .= "Cosmos Academy\n";
+        $message .= "COSMOS Academy\n";
         $message .= SITE_URL . "\n";
         
         return $message;
@@ -1252,8 +1256,8 @@ class EmailService {
                     <!-- Header -->
                     <tr>
                         <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px 30px; text-align: center;">
-                            <img src="' . SITE_URL . '/logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group" style="height: 42px; margin-bottom: 15px;" />
-                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">Cosmos Academy</h1>
+                            <img src="' . SITE_URL . '/logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS Group" style="height: 42px; margin-bottom: 15px;" />
+                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">COSMOS Academy</h1>
                             <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 14px; opacity: 0.9;">Programme d\'accompagnement des jeunes</p>
                         </td>
                     </tr>
@@ -1277,7 +1281,7 @@ class EmailService {
                             </p>
                             
                             <p style="margin: 0 0 25px 0; color: #4b5563; font-size: 16px; line-height: 1.6;">
-                                Nous avons bien reçu votre inscription à Cosmos Academy et nous vous en remercions. Votre candidature sera examinée attentivement par notre équipe.
+                                Nous avons bien reçu votre inscription à COSMOS Academy et nous vous en remercions. Votre candidature sera examinée attentivement par notre équipe.
                             </p>
                             
                             <!-- Program Details Box -->
@@ -1330,7 +1334,7 @@ class EmailService {
                     <tr>
                         <td style="background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
                             <p style="margin: 0 0 10px 0; color: #1f2937; font-size: 16px; font-weight: 600;">
-                                L\'équipe Cosmos Academy
+                                L\'équipe COSMOS Academy
                             </p>
                             <p style="margin: 0 0 15px 0; color: #6b7280; font-size: 14px;">
                                 39 Boulevard du 30 juin, Gombe/Kinshasa
@@ -1381,7 +1385,7 @@ class EmailService {
      */
     public function sendRecruiterConfirmation($recruiterData) {
         $to = $recruiterData['email'];
-        $subject = 'Confirmation de votre demande de recrutement - Cosmos Group';
+        $subject = 'Confirmation de votre demande de recrutement - COSMOS Group';
         $bodyHtml = $this->buildRecruiterConfirmationMessage($recruiterData);
         $bodyText = strip_tags(str_replace(['<br>', '<br/>', '<br />'], "\n", $bodyHtml));
         
@@ -1487,8 +1491,8 @@ class EmailService {
                     <!-- Header -->
                     <tr>
                         <td style="background: linear-gradient(135deg, #064795 0%, #3fa7de 100%); padding: 40px 30px; text-align: center;">
-                            <img src="' . SITE_URL . '/logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="Cosmos Group" style="height: 42px; margin-bottom: 15px;" />
-                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">Cosmos Group</h1>
+                            <img src="' . SITE_URL . '/logo/cropped-cropped-cropped-Logo-cosmosdrc-1-125x42.png" alt="COSMOS Group" style="height: 42px; margin-bottom: 15px;" />
+                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">COSMOS Group</h1>
                             <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 14px; opacity: 0.9;">Votre partenaire RH de confiance</p>
                         </td>
                     </tr>
@@ -1627,7 +1631,7 @@ class EmailService {
                     <tr>
                         <td style="background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
                             <p style="margin: 0 0 10px 0; color: #1f2937; font-size: 16px; font-weight: 600;">
-                                L\'équipe Cosmos Group
+                                L\'équipe COSMOS Group
                             </p>
                             <p style="margin: 0 0 15px 0; color: #6b7280; font-size: 14px;">
                                 39 Boulevard du 30 juin, Gombe/Kinshasa

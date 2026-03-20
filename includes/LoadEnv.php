@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Chargeur de variables d'environnement depuis .env
- * Cosmos Group - Système de recrutement
+ * COSMOS Group - Système de recrutement
  */
 
 class LoadEnv {

@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Script de traitement de l'abonnement newsletter
- * Cosmos Group - Envoi direct à news@emergencemag.net
+ * COSMOS Group - Envoi direct à news@emergencemag.net
  * SANS STOCKAGE EN BASE DE DONNÉES - Envoi email uniquement
  */
 

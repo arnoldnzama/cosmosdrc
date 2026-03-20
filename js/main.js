@@ -1,4 +1,4 @@
-// JavaScript principal pour Cosmos Group
+﻿// JavaScript principal pour COSMOS Group
 document.addEventListener('DOMContentLoaded', function () {
     var navToggle = document.querySelector('.nav-toggle');
     var navMenu = document.querySelector('.nav-menu');
@@ -1090,7 +1090,7 @@ function handleApplyClick(e) {
         'Poste non spécifié';
     const jobCompany = this.getAttribute('data-job-company') ||
         this.closest('.job-card')?.querySelector('.company-name')?.textContent ||
-        'Cosmos Group';
+        'COSMOS Group';
     const jobLocation = this.getAttribute('data-job-location') ||
         this.closest('.job-card')?.querySelector('.job-location')?.textContent ||
         'Kinshasa';

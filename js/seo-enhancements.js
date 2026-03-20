@@ -1,4 +1,4 @@
-// Améliorations SEO pour Cosmos Group
+﻿// Améliorations SEO pour COSMOS Group
 document.addEventListener('DOMContentLoaded', function() {
     
     // ===== TRACKING DES INTERACTIONS UTILISATEUR =====
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (params.q && params.q.trim()) {
             const searchTerm = params.q.trim();
-            title.textContent = `Emploi ${searchTerm} en RDC | Cosmos Group`;
+            title.textContent = `Emploi ${searchTerm} en RDC | COSMOS Group`;
             description.content = `Trouvez des offres d'emploi ${searchTerm} en RDC. Opportunités à Kinshasa.`;
         }
     }

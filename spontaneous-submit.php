@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Script de soumission de candidature spontanée
- * Cosmos Group - Candidature spontanée
+ * COSMOS Group - Candidature spontanée
  * Destinataire: cs@emergencemag.net
  */
 
@@ -180,7 +180,7 @@ try {
     };
 
     $mail->setFrom($smtpConfig['from_email'], $smtpConfig['from_name']);
-    $mail->addAddress('cs@emergencemag.net', 'Cosmos Group - Candidatures Spontanées');
+    $mail->addAddress('cs@emergencemag.net', 'COSMOS Group - Candidatures Spontanées');
     $mail->addReplyTo($email, $nom);
 
     $mail->Subject = "Candidature spontanée - $poste ($domaine) - $nom";
@@ -209,7 +209,7 @@ try {
     if ($lettreSafeName) $body .= "- Lettre de motivation : " . basename($_FILES['lettre']['name']) . "\n";
     $body .= "\nDate : " . date('d/m/Y H:i:s') . "\n";
     $body .= "IP   : " . ($_SERVER['REMOTE_ADDR'] ?? 'inconnue') . "\n\n";
-    $body .= "Cordialement,\nSystème de candidature Cosmos Group\nhttps://cosmos.emergencemag.net";
+    $body .= "Cordialement,\nSystème de candidature COSMOS Group\nhttps://COSMOS.emergencemag.net";
 
     $mail->isHTML(false);
     $mail->Body = $body;
@@ -245,7 +245,7 @@ try {
         $mailConfirm->setFrom($smtpConfig['from_email'], $smtpConfig['from_name']);
         $mailConfirm->addAddress($email, $nom);
 
-        $mailConfirm->Subject = "Confirmation de votre candidature spontanée - Cosmos Group";
+        $mailConfirm->Subject = "Confirmation de votre candidature spontanée - COSMOS Group";
 
         $confirmBody  = "Bonjour $nom,\n\n";
         $confirmBody .= "Nous avons bien reçu votre candidature spontanée pour le poste de $poste dans le domaine $domaine.\n\n";
@@ -258,7 +258,7 @@ try {
         $confirmBody .= "Pour toute question, contactez-nous :\n";
         $confirmBody .= "- Email     : hello@cosmosdrc.com\n";
         $confirmBody .= "- WhatsApp  : +243 98 21 61 066\n\n";
-        $confirmBody .= "Cordialement,\nL'équipe Cosmos Group\nhttps://cosmos.emergencemag.net";
+        $confirmBody .= "Cordialement,\nL'équipe COSMOS Group\nhttps://COSMOS.emergencemag.net";
 
         $mailConfirm->isHTML(false);
         $mailConfirm->Body = $confirmBody;
